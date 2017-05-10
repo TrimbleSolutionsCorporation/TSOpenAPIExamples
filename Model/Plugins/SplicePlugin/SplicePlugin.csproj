@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
-  <Import Project="..\..\..\packages\TeklaOpenAPI.2017.0.6809\build\TeklaOpenAPI.props" Condition="Exists('..\..\..\packages\TeklaOpenAPI.2017.0.6809\build\TeklaOpenAPI.props')" />
+  <Import Project="..\..\..\packages\TeklaOpenAPI.2016.0.81.3\build\TeklaOpenAPI.props" Condition="Exists('..\..\..\packages\TeklaOpenAPI.2016.0.81.3\build\TeklaOpenAPI.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -57,48 +57,48 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="Tekla.Application.Library, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2017.0.6809\lib\Tekla.Application.Library.dll</HintPath>
+    <Reference Include="Tekla.Application.Library, Version=2016.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\TeklaOpenAPI.2016.0.81.3\lib\Tekla.Application.Library.dll</HintPath>
       <Private>True</Private>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Tekla.Structures, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2017.0.6809\lib\Tekla.Structures.dll</HintPath>
+    <Reference Include="Tekla.Structures, Version=2016.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\TeklaOpenAPI.2016.0.81.3\lib\Tekla.Structures.dll</HintPath>
       <Private>True</Private>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Tekla.Structures.Analysis, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2017.0.6809\lib\Tekla.Structures.Analysis.dll</HintPath>
+    <Reference Include="Tekla.Structures.Analysis, Version=2016.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\TeklaOpenAPI.2016.0.81.3\lib\Tekla.Structures.Analysis.dll</HintPath>
       <Private>True</Private>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Tekla.Structures.Catalogs, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2017.0.6809\lib\Tekla.Structures.Catalogs.dll</HintPath>
+    <Reference Include="Tekla.Structures.Catalogs, Version=2016.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\TeklaOpenAPI.2016.0.81.3\lib\Tekla.Structures.Catalogs.dll</HintPath>
       <Private>True</Private>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Tekla.Structures.Datatype, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2017.0.6809\lib\Tekla.Structures.Datatype.dll</HintPath>
+    <Reference Include="Tekla.Structures.Datatype, Version=2016.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\TeklaOpenAPI.2016.0.81.3\lib\Tekla.Structures.Datatype.dll</HintPath>
       <Private>True</Private>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Tekla.Structures.Dialog, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2017.0.6809\lib\Tekla.Structures.Dialog.dll</HintPath>
+    <Reference Include="Tekla.Structures.Dialog, Version=2016.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\TeklaOpenAPI.2016.0.81.3\lib\Tekla.Structures.Dialog.dll</HintPath>
       <Private>True</Private>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Tekla.Structures.Drawing, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2017.0.6809\lib\Tekla.Structures.Drawing.dll</HintPath>
+    <Reference Include="Tekla.Structures.Drawing, Version=2016.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\TeklaOpenAPI.2016.0.81.3\lib\Tekla.Structures.Drawing.dll</HintPath>
       <Private>True</Private>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Tekla.Structures.Model, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2017.0.6809\lib\Tekla.Structures.Model.dll</HintPath>
+    <Reference Include="Tekla.Structures.Model, Version=2016.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\TeklaOpenAPI.2016.0.81.3\lib\Tekla.Structures.Model.dll</HintPath>
       <Private>True</Private>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Tekla.Structures.Plugins, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2017.0.6809\lib\Tekla.Structures.Plugins.dll</HintPath>
+    <Reference Include="Tekla.Structures.Plugins, Version=2016.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\TeklaOpenAPI.2016.0.81.3\lib\Tekla.Structures.Plugins.dll</HintPath>
       <Private>True</Private>
       <Private>False</Private>
     </Reference>
@@ -118,7 +118,7 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\packages\TeklaOpenAPI.2017.0.6809\build\TeklaOpenAPI.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\TeklaOpenAPI.2017.0.6809\build\TeklaOpenAPI.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\TeklaOpenAPI.2016.0.81.3\build\TeklaOpenAPI.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\TeklaOpenAPI.2016.0.81.3\build\TeklaOpenAPI.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

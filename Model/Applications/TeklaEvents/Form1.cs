@@ -21,7 +21,6 @@ namespace TeklaEvents
             {
                 ModelEvents = new Events();
                 ModelEvents.SelectionChange += this.ModelEvents_SelectionChanged;
-                ModelEvents.ModelObjectChanged += this.ModelEvents_ModelObjectChanged;
                 ModelEvents.ModelSave += this.ModelEvents_ModelSave;
                 ModelEvents.TeklaStructuresExit += this.ModelEvents_TeklaExit;
 
@@ -33,17 +32,6 @@ namespace TeklaEvents
                 MessageBox.Show(ex.Message);
             }
 
-        }
-
-        private void ModelEvents_ModelObjectChanged(System.Collections.Generic.List<ChangeData> changes)
-        {
-            lock (_changedObjectHandlerLock)
-            {
-                new System.Threading.Tasks.Task(delegate
-                {
-                    MessageBox.Show("ModelObject changed: " + changes[0].Type.ToString() + " Id: " + changes[0].Object.Identifier.ID.ToString() + " type: " + changes[0].Object.GetType().ToString());
-                }).Start();
-            };
         }
 
         private void ModelEvents_SelectionChanged()
