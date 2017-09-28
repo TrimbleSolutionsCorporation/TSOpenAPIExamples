@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicViews", "Drawings\Applications\BasicViews\BasicViews.csproj", "{B766A520-16B3-4311-8F7D-6C17D79BDE58}"
 EndProject
@@ -76,6 +76,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BentPlateModificationExample", "Model\Applications\BentPlateExample\BentPlateModificationExample\BentPlateModificationExample.csproj", "{7BF0BD98-F300-4B4A-BC5C-96459852B389}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebarSetExamples", "Model\Applications\RebarSetExamples\RebarSetExamples.csproj", "{FCB68C03-E300-4B11-BA94-9BD9D0699CD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Print_Drawing_DPM", "Drawings\Applications\Print_Drawing_DPM\Print_Drawing_DPM.csproj", "{542A886D-A333-45C2-8FE3-53A0B50539C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiralBeamExample", "Model\Applications\SpiralBeamExample\SpiralBeamExample.csproj", "{38D90D58-166F-4932-A60F-43393FDBF543}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -379,8 +383,27 @@ Global
 		{FCB68C03-E300-4B11-BA94-9BD9D0699CD5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FCB68C03-E300-4B11-BA94-9BD9D0699CD5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{FCB68C03-E300-4B11-BA94-9BD9D0699CD5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{542A886D-A333-45C2-8FE3-53A0B50539C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{542A886D-A333-45C2-8FE3-53A0B50539C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{542A886D-A333-45C2-8FE3-53A0B50539C1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{542A886D-A333-45C2-8FE3-53A0B50539C1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{542A886D-A333-45C2-8FE3-53A0B50539C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{542A886D-A333-45C2-8FE3-53A0B50539C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{542A886D-A333-45C2-8FE3-53A0B50539C1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{542A886D-A333-45C2-8FE3-53A0B50539C1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{38D90D58-166F-4932-A60F-43393FDBF543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D90D58-166F-4932-A60F-43393FDBF543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D90D58-166F-4932-A60F-43393FDBF543}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{38D90D58-166F-4932-A60F-43393FDBF543}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{38D90D58-166F-4932-A60F-43393FDBF543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D90D58-166F-4932-A60F-43393FDBF543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D90D58-166F-4932-A60F-43393FDBF543}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{38D90D58-166F-4932-A60F-43393FDBF543}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2D4D923-76D8-4C6E-9311-519744E14D29}
 	EndGlobalSection
 EndGlobal

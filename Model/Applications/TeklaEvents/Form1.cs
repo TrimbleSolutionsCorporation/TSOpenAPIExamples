@@ -23,6 +23,7 @@ namespace TeklaEvents
                 ModelEvents.SelectionChange += this.ModelEvents_SelectionChanged;
                 ModelEvents.ModelObjectChanged += this.ModelEvents_ModelObjectChanged;
                 ModelEvents.ModelSave += this.ModelEvents_ModelSave;
+                ModelEvents.Interrupted += this.OnInterrupted;
                 ModelEvents.TeklaStructuresExit += this.ModelEvents_TeklaExit;
 
                 ModelEvents.Register();
@@ -56,6 +57,11 @@ namespace TeklaEvents
             MessageBox.Show("ModelSave");
         }
         
+        private void OnInterrupted()
+        {
+            MessageBox.Show("Interrupted");
+        }
+
         private void ModelEvents_TeklaExit()
         {
             ModelEvents.UnRegister();
