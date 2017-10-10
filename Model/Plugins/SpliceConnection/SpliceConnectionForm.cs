@@ -91,4 +91,21 @@ public partial class SpliceConnection : PluginFormBase
     {
         SetThisControlEnableCheckBoxChecked(sender);
     }
+
+    // Use the following method if UI contains ImageListComboBox controls
+
+    //private void ImageListComboBoxSelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    ComboBox comboBox = sender as ComboBox;
+
+    //    if (comboBox != null)
+    //    {
+    //        ImageListComboBox imageListComboBox = comboBox.Parent as ImageListComboBox;
+
+    //        if (imageListComboBox != null)
+    //        {
+    //            SetThisControlEnableCheckBoxChecked(imageListComboBox);
+    //        }
+    //    }
+    //}
 }
