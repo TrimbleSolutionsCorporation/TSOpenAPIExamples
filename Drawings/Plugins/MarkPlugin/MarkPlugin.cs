@@ -65,7 +65,7 @@ namespace MarkPlugin
 
             if(IsDefaultValue(Data.Angle))
             {
-                Data.Angle = 180.0;
+                Data.Angle = 0.0; // Default value of drawing plugins can be set with empty text field or 0.0
             }
             if(IsDefaultValue(Data.Text))
             {
