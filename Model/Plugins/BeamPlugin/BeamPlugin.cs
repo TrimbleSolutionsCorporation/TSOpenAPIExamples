@@ -103,6 +103,7 @@ namespace BeamPlugin
             }
             catch (Exception Ex)
             {
+                Console.WriteLine("Exception: " + Ex.ToString());
             }
 
             return true;

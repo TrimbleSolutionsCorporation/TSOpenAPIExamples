@@ -15,7 +15,6 @@ namespace BoundingBoxDrawer
         {
             _drawingHandler.GetConnectionStatus();
 
-            DrawingHandler.SetMessageExecutionStatus(DrawingHandler.MessageExecutionModeEnum.BY_COMMIT);
             Tekla.Structures.Drawing.UI.Events e = new Tekla.Structures.Drawing.UI.Events();
             e.SelectionChange += e_SelectionChange;
             e.Register();

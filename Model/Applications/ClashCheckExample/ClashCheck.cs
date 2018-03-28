@@ -172,9 +172,9 @@ namespace ClashCheckExample
                 TsEvent.ClashCheckDone += TsEventOnClashCheckDone;
                 TsEvent.Register();
             }
-            catch (ApplicationException Exp)
+            catch (ApplicationException Exc)
             {
-                result = false;
+                Console.WriteLine("Exception: " + Exc.ToString());
             }
 
             DateTime start = DateTime.Now;

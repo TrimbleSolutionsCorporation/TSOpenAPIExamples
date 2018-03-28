@@ -55,7 +55,7 @@ namespace DimensionExample
                             }
 
                             ViewBase ViewBase = myPart.GetView();
-                            StraightDimensionSet.StraightDimensionSetAttributes attr = new StraightDimensionSet.StraightDimensionSetAttributes();
+                            StraightDimensionSet.StraightDimensionSetAttributes attr = new StraightDimensionSet.StraightDimensionSetAttributes(myPart);
 
                             if (myBeam.StartPoint.X != myBeam.EndPoint.X)
                             {

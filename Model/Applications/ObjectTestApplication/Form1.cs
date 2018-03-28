@@ -1242,8 +1242,6 @@ namespace ObjectTestApplication
             grid.ExtensionRightY = 2000.0;
             grid.ExtensionRightZ = 2000.0;
             grid.IsMagnetic = true;
-            grid.ExtensionForMagneticArea = 0.0;
-            grid.Color = 1;
 
             if (!grid.Insert())
                 WriteLine("Grid Insert failed!");
@@ -1268,8 +1266,6 @@ namespace ObjectTestApplication
             grid.ExtensionRightY = 5000.0;
             grid.ExtensionRightZ = 5000.0;
             grid.IsMagnetic = false;
-            grid.ExtensionForMagneticArea = 1000.0;
-            grid.Color = 10;
 
             if (!grid.Modify())
                 WriteLine("Grid Modify failed!");
@@ -2665,9 +2661,8 @@ namespace ObjectTestApplication
 
             Solid Solid = Beam.GetSolid();
 
-            ArrayList Points = Solid.Intersect(new TS.Point(0, 0, 0),
-                new TS.Point(1000, 0, 0),
-                new TS.Point(0, 1000, 0));
+            ArrayList Points = (ArrayList)Solid.IntersectAllFaces(new TS.Point(0, 0, 0), 
+                new TS.Point(1000, 0, 0), new TS.Point(0, 1000, 0));
             WriteLine("Got " + Points.Count + " plane intersection loops");
             IEnumerator LoopsEnum = Points.GetEnumerator();
             int nLoops = 0;

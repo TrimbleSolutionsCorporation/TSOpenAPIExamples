@@ -89,7 +89,6 @@ namespace InsertMarkPlugin
                 ModelObject modelObject = (ModelObject)InputDefinitionFactory.GetDrawingObject(inputs[0]);
 
                 Model myModel = new Model();
-                DrawingHandler.SetMessageExecutionStatus(DrawingHandler.MessageExecutionModeEnum.INSTANT);
 
                 Point partMiddleStart = null, partMiddleEnd = null, partCenterPoint = null;
                 GetPartPoints(myModel, view, modelObject, out partMiddleStart, out partMiddleEnd, out partCenterPoint);
