@@ -17,6 +17,7 @@ namespace WPFPlugin
         private TD.Distance offset = new TD.Distance();
         private string componentname = string.Empty;
         private int componentnumber = 0;
+        private int lengthfactor = 0;
         #endregion
 
         #region Properties
@@ -56,6 +57,13 @@ namespace WPFPlugin
             get { return componentnumber; }
             set { componentnumber = value; OnPropertyChanged("ComponentNumber"); }
         }
+        [StructuresDialog("lengthfactor", typeof(TD.Integer))]
+        public int LengthFactor
+        {
+            get { return lengthfactor; }
+            set { lengthfactor = value; OnPropertyChanged("LengthFactor"); }
+        }
+
         #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;

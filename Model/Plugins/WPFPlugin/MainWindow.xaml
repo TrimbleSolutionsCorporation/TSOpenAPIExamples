@@ -31,5 +31,12 @@
         <UIControls:WpfFilterCheckBox HorizontalAlignment="Left" Margin="136,230,0,0" VerticalAlignment="Top" AttributeName="componentname"/>
         <TextBox x:Name="componentnumberBox" HorizontalAlignment="Left" Height="23" Margin="308,227,0,0" TextWrapping="Wrap" Text="{Binding ComponentNumber, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
         <UIControls:WpfFilterCheckBox HorizontalAlignment="Left" Margin="286,230,0,0" VerticalAlignment="Top" AttributeName="componentnumber"/>
+        <ComboBox HorizontalAlignment="Left" Margin="453,75,0,0" VerticalAlignment="Top" Width="90" SelectedIndex="{Binding Path=LengthFactor, Mode=TwoWay}">
+            <TextBlock Text="1"/>
+            <TextBlock Text="2"/>
+            <TextBlock Text="3"/>
+            <TextBlock Text="4"/>
+        </ComboBox>
+        <Label Content="{tsd:Loc albl_Length_factor}" HorizontalAlignment="Left" Margin="337,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.754,-0.24"/>
     </Grid>
 </tsd:PluginWindowBase>

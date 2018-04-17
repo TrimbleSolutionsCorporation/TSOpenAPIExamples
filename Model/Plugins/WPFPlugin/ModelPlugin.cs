@@ -34,6 +34,10 @@ namespace WPFPlugin
 
         [StructuresField("componentnumber")]
         public int componentnumber;
+
+        [StructuresField("lengthfactor")]
+        public int lengthfactor;
+
         #endregion
     }
 
@@ -51,6 +55,7 @@ namespace WPFPlugin
         private string _Profile = string.Empty;
         private string _Material = string.Empty;
         private double _Offset = 0.0;
+        private int _LengthFactor = 0;
         #endregion
 
         #region Properties
@@ -100,6 +105,15 @@ namespace WPFPlugin
                 Point StartPoint = Points[0] as Point;
                 Point EndPoint = Points[1] as Point;
 
+                Point LengthVector = new Point(EndPoint.X - StartPoint.X, EndPoint.Y - StartPoint.Y, EndPoint.Z - StartPoint.Z);
+
+                if (_LengthFactor > 0)
+                {
+                    EndPoint.X = _LengthFactor * LengthVector.X + StartPoint.X;
+                    EndPoint.Y = _LengthFactor * LengthVector.Y + StartPoint.Y;
+                    EndPoint.Z = _LengthFactor * LengthVector.Z + StartPoint.Z;
+                }
+
                 Beam beam = new Beam(StartPoint, EndPoint);
                 beam.Position.PlaneOffset = _Offset;
                 beam.Name = _PartName;
@@ -129,6 +143,7 @@ namespace WPFPlugin
             _Profile = Data.profile;
             _Material = Data.material;
             _Offset = Data.offset;
+            _LengthFactor = Data.lengthfactor + 1;
 
             if (IsDefaultValue(_PartName))
                 _PartName = "TEST";
@@ -138,6 +153,8 @@ namespace WPFPlugin
                 _Material = "STEEL_UNDEFINED";
             if (IsDefaultValue(_Offset))
                 _Offset = 0;
+            if (IsDefaultValue(_LengthFactor) || _LengthFactor == 0)
+                _Offset = 1;
         }
 
         // Write your private methods here.

@@ -97,3 +97,23 @@ string_utf8 albl_Offset
     entry = ("ptg", "Deslocamento");
     entry = ("rus", "Смещение");
 };
+
+string_utf8 albl_Length_factor
+{
+    entry = ("enu", "Length Factor");
+    entry = ("chs", "Length Factor***");
+    entry = ("cht", "Length Factor***");
+    entry = ("csy", "Length Factor***");
+    entry = ("deu", "Length Factor***");
+    entry = ("esp", "Length Factor***");
+    entry = ("fra", "Length Factor***");
+    entry = ("hun", "Length Factor***");
+    entry = ("ita", "Length Factor***");
+    entry = ("jpn", "Length Factor***");
+    entry = ("kor", "Length Factor***");
+    entry = ("nld", "Length Factor***");
+    entry = ("plk", "Length Factor***");
+    entry = ("ptb", "Length Factor***");
+    entry = ("ptg", "Length Factor***");
+    entry = ("rus", "Length Factor***");
+};
