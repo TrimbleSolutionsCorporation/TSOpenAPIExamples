@@ -1,42 +1,199 @@
-﻿<tsd:PluginWindowBase x:Class="WPFPlugin.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"
-        xmlns:local="clr-namespace:WPFPlugin"
-        xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
-        mc:Ignorable="d"
-        Title="{tsd:Loc albl_Test_plugin}" Height="355" Width="590" HorizontalAlignment="Stretch">
-    <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0">
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="159,74,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-        <UIControls:WpfFilterCheckBox HorizontalAlignment="Left" Margin="136,78,0,0" VerticalAlignment="Top" AttributeName="name"/>
-        <Label x:Name="label" Content="{tsd:Loc albl_Part_name}" HorizontalAlignment="Left" Margin="20,71,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="159,112,0,0" TextWrapping="Wrap" Text="{Binding Profilename, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-        <UIControls:WpfFilterCheckBox HorizontalAlignment="Left" Margin="136,115,0,0" VerticalAlignment="Top" AttributeName="profile"/>
-        <Label x:Name="label_Copy" Content="{tsd:Loc albl_Profile}" HorizontalAlignment="Left" Margin="20,109,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="159,148,0,0" TextWrapping="Wrap" Text="{Binding Offset, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-        <UIControls:WpfFilterCheckBox HorizontalAlignment="Left" Margin="136,152,0,0" VerticalAlignment="Top" AttributeName="offset"/>
-        <Label x:Name="label_Copy1" Content="{tsd:Loc albl_Offset}" HorizontalAlignment="Left" Margin="20,147,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
-        <Label x:Name="label_Material" Content="{tsd:Loc albl_Material}" HorizontalAlignment="Left" Margin="20,186,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
-        <UIControls:WpfSaveLoad HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top" Height="51" />
-        <UIControls:WpfOkApplyModifyGetOnOffCancel HorizontalAlignment="Stretch" Margin="0,150,0,0" VerticalAlignment="Bottom" Height="51" ApplyClicked="WPFOkApplyModifyGetOnOffCancel_ApplyClicked" CancelClicked="WPFOkApplyModifyGetOnOffCancel_CancelClicked" GetClicked="WPFOkApplyModifyGetOnOffCancel_GetClicked" OkClicked="WPFOkApplyModifyGetOnOffCancel_OkClicked" OnOffClicked="WPFOkApplyModifyGetOnOffCancel_OnOffClicked" ModifyClicked="WPFOkApplyModifyGetOnOffCancel_ModifyClicked"/>
-        <TextBox x:Name="materialBox" HorizontalAlignment="Left" Height="23" Margin="159,187,0,0" TextWrapping="Wrap" Text="{Binding Material, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-        <UIControls:WpfFilterCheckBox HorizontalAlignment="Left" Margin="136,190,0,0" VerticalAlignment="Top" AttributeName="material"/>
-        <UIControls:WpfMaterialCatalog x:Name="materialCatalog" HorizontalAlignment="Left" Margin="311,187,0,0" VerticalAlignment="Top" SelectClicked="WPFMaterialCatalog_SelectClicked" SelectionDone="WPFMaterialCatalog_SelectionDone" FontSize="6" BorderThickness="0"/>
-        <UIControls:WpfProfileCatalog x:Name="profileCatalog" HorizontalAlignment="Left" Margin="312,111,0,0" VerticalAlignment="Top" SelectClicked="profileCatalog_SelectClicked" SelectionDone="profileCatalog_SelectionDone"/>
-        <Label x:Name="label_component" Content="{tsd:Loc albl_Component}" HorizontalAlignment="Left" Margin="20,223,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
-        <TextBox x:Name="componentnameBox" HorizontalAlignment="Left" Height="23" Margin="159,227,0,0" TextWrapping="Wrap" Text="{Binding ComponentName, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-        <UIControls:WpfComponentCatalog x:Name="componentCatalog" HorizontalAlignment="Left" Margin="442,228,0,0" VerticalAlignment="Top" SelectClicked="componentCatalog_SelectClicked" SelectionDone="componentCatalog_SelectionDone"/>
-        <UIControls:WpfFilterCheckBox HorizontalAlignment="Left" Margin="136,230,0,0" VerticalAlignment="Top" AttributeName="componentname"/>
-        <TextBox x:Name="componentnumberBox" HorizontalAlignment="Left" Height="23" Margin="308,227,0,0" TextWrapping="Wrap" Text="{Binding ComponentNumber, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-        <UIControls:WpfFilterCheckBox HorizontalAlignment="Left" Margin="286,230,0,0" VerticalAlignment="Top" AttributeName="componentnumber"/>
-        <ComboBox HorizontalAlignment="Left" Margin="453,75,0,0" VerticalAlignment="Top" Width="90" SelectedIndex="{Binding Path=LengthFactor, Mode=TwoWay}">
-            <TextBlock Text="1"/>
-            <TextBlock Text="2"/>
-            <TextBlock Text="3"/>
-            <TextBlock Text="4"/>
-        </ComboBox>
-        <Label Content="{tsd:Loc albl_Length_factor}" HorizontalAlignment="Left" Margin="337,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.754,-0.24"/>
+﻿<tsd:PluginWindowBase
+    x:Class="WPFPlugin.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPFPlugin"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"
+    Title="{tsd:Loc albl_Test_plugin}"
+    Width="590"
+    Height="355"
+    HorizontalAlignment="Stretch"
+    mc:Ignorable="d">
+    <d:UserControl.DataContext>
+        <local:MainWindowViewModel />
+    </d:UserControl.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--
+                    This resource URL found in FusionExample/Properties/DesignTimeResources.xaml on github
+                    It imports the TS style used at runtime, so it's useful to better be able to see the end results.
+                -->
+                <ResourceDictionary Source="/Fusion;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="48" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" MinHeight="48" />
+        </Grid.RowDefinitions>
+        <UIControls:WpfSaveLoad
+            Grid.Row="0"
+            Margin="0,0,0,0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Label
+                    x:Name="partNameLabel"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="{tsd:Loc albl_Part_name}" />
+                <UIControls:WpfFilterCheckBox
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    AttributeName="name" />
+                <TextBox
+                    x:Name="partNameTextBox"
+                    Width="120"
+                    Height="23"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Text="{Binding Name, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Label
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="{tsd:Loc albl_Length_factor}"
+                    RenderTransformOrigin="0.754,-0.24" />
+                <ComboBox
+                    Width="90"
+                    VerticalAlignment="Center"
+                    SelectedIndex="{Binding Path=LengthFactor, Mode=TwoWay}">
+                    <TextBlock Text="1" />
+                    <TextBlock Text="2" />
+                    <TextBlock Text="3" />
+                    <TextBlock Text="4" />
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Label
+                    x:Name="label_Copy"
+                    Width="100"
+                    Height="30"
+                    Content="{tsd:Loc albl_Profile}" />
+                <UIControls:WpfFilterCheckBox VerticalAlignment="Center" AttributeName="profile" />
+                <TextBox
+                    x:Name="textBox_Copy"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding Profilename, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                <UIControls:WpfProfileCatalog
+                    x:Name="profileCatalog"
+                    VerticalAlignment="Center"
+                    SelectClicked="profileCatalog_SelectClicked"
+                    SelectionDone="profileCatalog_SelectionDone" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Label
+                    x:Name="label_Copy1"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="{tsd:Loc albl_Offset}" />
+                <UIControls:WpfFilterCheckBox
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    AttributeName="offset" />
+                <TextBox
+                    x:Name="textBox_Copy1"
+                    Width="120"
+                    Height="23"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Text="{Binding Offset, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                <Label
+                    x:Name="label_Material"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="{tsd:Loc albl_Material}" />
+                <UIControls:WpfFilterCheckBox
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    AttributeName="material" />
+                <TextBox
+                    x:Name="materialBox"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding Material, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                <UIControls:WpfMaterialCatalog
+                    x:Name="materialCatalog"
+                    VerticalAlignment="Center"
+                    BorderThickness="0"
+                    FontSize="6"
+                    SelectClicked="WPFMaterialCatalog_SelectClicked"
+                    SelectionDone="WPFMaterialCatalog_SelectionDone" />
+            </StackPanel>
+            <StackPanel
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Orientation="Horizontal">
+                <Label
+                    x:Name="label_component"
+                    Width="100"
+                    Height="30"
+                    VerticalAlignment="Center"
+                    Content="{tsd:Loc albl_Component}" />
+                <UIControls:WpfFilterCheckBox VerticalAlignment="Center" AttributeName="componentname" />
+                <TextBox
+                    x:Name="componentnameBox"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding ComponentName, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                <UIControls:WpfFilterCheckBox VerticalAlignment="Center" AttributeName="componentnumber" />
+                <TextBox
+                    x:Name="componentnumberBox"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding ComponentNumber, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                <UIControls:WpfComponentCatalog
+                    x:Name="componentCatalog"
+                    VerticalAlignment="Center"
+                    SelectClicked="componentCatalog_SelectClicked"
+                    SelectionDone="componentCatalog_SelectionDone" />
+            </StackPanel>
+        </Grid>
+        <UIControls:WpfOkApplyModifyGetOnOffCancel
+            Grid.Row="2"
+            ApplyClicked="WPFOkApplyModifyGetOnOffCancel_ApplyClicked"
+            CancelClicked="WPFOkApplyModifyGetOnOffCancel_CancelClicked"
+            GetClicked="WPFOkApplyModifyGetOnOffCancel_GetClicked"
+            ModifyClicked="WPFOkApplyModifyGetOnOffCancel_ModifyClicked"
+            OkClicked="WPFOkApplyModifyGetOnOffCancel_OkClicked"
+            OnOffClicked="WPFOkApplyModifyGetOnOffCancel_OnOffClicked" />
     </Grid>
 </tsd:PluginWindowBase>
