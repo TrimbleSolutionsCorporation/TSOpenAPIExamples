@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Table>
+
+  <MsgLibStrings>
+    <StrName>albl_Ellipse_Plugin</StrName>
+    <enu>Ellipse Plugin</enu>
+    <chs>Ellipse Plugin***</chs>
+    <cht>Ellipse Plugin***</cht>
+    <csy>Ellipse Plugin***</csy>
+    <deu>Ellipse Plugin***</deu>
+    <esp>Ellipse Plugin***</esp>
+    <fra>Ellipse Plugin***</fra>
+    <hun>Ellipse Plugin***</hun>
+    <ita>Ellipse Plugin***</ita>
+    <jpn>Ellipse Plugin***</jpn>
+    <nld>Ellipse Plugin***</nld>
+    <plk>Ellipse Plugin***</plk>
+    <ptb>Ellipse Plugin***</ptb>
+    <ptg>Ellipse Plugin***</ptg>
+    <rus>Ellipse Plugin***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_MajorAxis</StrName>
+    <enu>Major axis</enu>
+    <chs>Major axis***</chs>
+    <cht>Major axis***</cht>
+    <csy>Major axis***</csy>
+    <deu>Major axis***</deu>
+    <esp>Major axis***</esp>
+    <fra>Major axis***</fra>
+    <hun>Major axis***</hun>
+    <ita>Major axis***</ita>
+    <jpn>Major axis***</jpn>
+    <nld>Major axis***</nld>
+    <plk>Major axis***</plk>
+    <ptb>Major axis***</ptb>
+    <ptg>Major axis***</ptg>
+    <rus>Major axis***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_MinorAxis</StrName>
+    <enu>Minor axis</enu>
+    <chs>Minor axis***</chs>
+    <cht>Minor axis***</cht>
+    <csy>Minor axis***</csy>
+    <deu>Minor axis***</deu>
+    <esp>Minor axis***</esp>
+    <fra>Minor axis***</fra>
+    <hun>Minor axis***</hun>
+    <ita>Minor axis***</ita>
+    <jpn>Minor axis***</jpn>
+    <nld>Minor axis***</nld>
+    <plk>Minor axis***</plk>
+    <ptb>Minor axis***</ptb>
+    <ptg>Minor axis***</ptg>
+    <rus>Minor axis***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Y_degrees</StrName>
+    <enu>Y (degrees)</enu>
+    <chs>Y (degrees)***</chs>
+    <cht>Y (degrees)***</cht>
+    <csy>Y (degrees)***</csy>
+    <deu>Y (degrees)***</deu>
+    <esp>Y (degrees)***</esp>
+    <fra>Y (degrees)***</fra>
+    <hun>Y (degrees)***</hun>
+    <ita>Y (degrees)***</ita>
+    <jpn>Y (degrees)***</jpn>
+    <nld>Y (degrees)***</nld>
+    <plk>Y (degrees)***</plk>
+    <ptb>Y (degrees)***</ptb>
+    <ptg>Y (degrees)***</ptg>
+    <rus>Y (degrees)***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Magnetism</StrName>
+    <enu>Magnetism</enu>
+    <chs>Magnetism***</chs>
+    <cht>Magnetism***</cht>
+    <csy>Magnetism***</csy>
+    <deu>Magnetism***</deu>
+    <esp>Magnetism***</esp>
+    <fra>Magnetism***</fra>
+    <hun>Magnetism***</hun>
+    <ita>Magnetism***</ita>
+    <jpn>Magnetism***</jpn>
+    <nld>Magnetism***</nld>
+    <plk>Magnetism***</plk>
+    <ptb>Magnetism***</ptb>
+    <ptg>Magnetism***</ptg>
+    <rus>Magnetism***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Magnetic_grid_plane</StrName>
+    <enu>Magnetic grid plane</enu>
+    <chs>Magnetic grid plane***</chs>
+    <cht>Magnetic grid plane***</cht>
+    <csy>Magnetic grid plane***</csy>
+    <deu>Magnetic grid plane***</deu>
+    <esp>Magnetic grid plane***</esp>
+    <fra>Magnetic grid plane***</fra>
+    <hun>Magnetic grid plane***</hun>
+    <ita>Magnetic grid plane***</ita>
+    <jpn>Magnetic grid plane***</jpn>
+    <nld>Magnetic grid plane***</nld>
+    <plk>Magnetic grid plane***</plk>
+    <ptb>Magnetic grid plane***</ptb>
+    <ptg>Magnetic grid plane***</ptg>
+    <rus>Magnetic grid plane***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Extension_for_magnetic_area</StrName>
+    <enu>Extension for magnetic area</enu>
+    <chs>Extension for magnetic area***</chs>
+    <cht>Extension for magnetic area***</cht>
+    <csy>Extension for magnetic area***</csy>
+    <deu>Extension for magnetic area***</deu>
+    <esp>Extension for magnetic area***</esp>
+    <fra>Extension for magnetic area***</fra>
+    <hun>Extension for magnetic area***</hun>
+    <ita>Extension for magnetic area***</ita>
+    <jpn>Extension for magnetic area***</jpn>
+    <nld>Extension for magnetic area***</nld>
+    <plk>Extension for magnetic area***</plk>
+    <ptb>Extension for magnetic area***</ptb>
+    <ptg>Extension for magnetic area***</ptg>
+    <rus>Extension for magnetic area***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Labels</StrName>
+    <enu>Labels</enu>
+    <chs>Labels***</chs>
+    <cht>Labels***</cht>
+    <csy>Labels***</csy>
+    <deu>Labels***</deu>
+    <esp>Labels***</esp>
+    <fra>Labels***</fra>
+    <hun>Labels***</hun>
+    <ita>Labels***</ita>
+    <jpn>Labels***</jpn>
+    <nld>Labels***</nld>
+    <plk>Labels***</plk>
+    <ptb>Labels***</ptb>
+    <ptg>Labels***</ptg>
+    <rus>Labels***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Line_Extensions</StrName>
+    <enu>Line extensions</enu>
+    <chs>Line extensions***</chs>
+    <cht>Line extensions***</cht>
+    <csy>Line extensions***</csy>
+    <deu>Line extensions***</deu>
+    <esp>Line extensions***</esp>
+    <fra>Line extensions***</fra>
+    <hun>Line extensions***</hun>
+    <ita>Line extensions***</ita>
+    <jpn>Line extensions***</jpn>
+    <nld>Line extensions***</nld>
+    <plk>Line extensions***</plk>
+    <ptb>Line extensions***</ptb>
+    <ptg>Line extensions***</ptg>
+    <rus>Line extensions***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Left</StrName>
+    <enu>Left</enu>
+    <chs>Left***</chs>
+    <cht>Left***</cht>
+    <csy>Left***</csy>
+    <deu>Left***</deu>
+    <esp>Left***</esp>
+    <fra>Left***</fra>
+    <hun>Left***</hun>
+    <ita>Left***</ita>
+    <jpn>Left***</jpn>
+    <nld>Left***</nld>
+    <plk>Left***</plk>
+    <ptb>Left***</ptb>
+    <ptg>Left***</ptg>
+    <rus>Left***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Right</StrName>
+    <enu>Right</enu>
+    <chs>Right***</chs>
+    <cht>Right***</cht>
+    <csy>Right***</csy>
+    <deu>Right***</deu>
+    <esp>Right***</esp>
+    <fra>Right***</fra>
+    <hun>Right***</hun>
+    <ita>Right***</ita>
+    <jpn>Right***</jpn>
+    <nld>Right***</nld>
+    <plk>Right***</plk>
+    <ptb>Right***</ptb>
+    <ptg>Right***</ptg>
+    <rus>Right***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Above</StrName>
+    <enu>Above</enu>
+    <chs>Above***</chs>
+    <cht>Above***</cht>
+    <csy>Above***</csy>
+    <deu>Above***</deu>
+    <esp>Above***</esp>
+    <fra>Above***</fra>
+    <hun>Above***</hun>
+    <ita>Above***</ita>
+    <jpn>Above***</jpn>
+    <nld>Above***</nld>
+    <plk>Above***</plk>
+    <ptb>Above***</ptb>
+    <ptg>Above***</ptg>
+    <rus>Above***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Below</StrName>
+    <enu>Below</enu>
+    <chs>Below***</chs>
+    <cht>Below***</cht>
+    <csy>Below***</csy>
+    <deu>Below***</deu>
+    <esp>Below***</esp>
+    <fra>Below***</fra>
+    <hun>Below***</hun>
+    <ita>Below***</ita>
+    <jpn>Below***</jpn>
+    <nld>Below***</nld>
+    <plk>Below***</plk>
+    <ptb>Below***</ptb>
+    <ptg>Below***</ptg>
+    <rus>Below***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Preview</StrName>
+    <enu>Preview</enu>
+    <chs>Preview***</chs>
+    <cht>Preview***</cht>
+    <csy>Preview***</csy>
+    <deu>Preview***</deu>
+    <esp>Preview***</esp>
+    <fra>Preview***</fra>
+    <hun>Preview***</hun>
+    <ita>Preview***</ita>
+    <jpn>Preview***</jpn>
+    <nld>Preview***</nld>
+    <plk>Preview***</plk>
+    <ptb>Preview***</ptb>
+    <ptg>Preview***</ptg>
+    <rus>Preview***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Dummy</StrName>
+    <enu>Dummy</enu>
+    <chs>Dummy***</chs>
+    <cht>Dummy***</cht>
+    <csy>Dummy***</csy>
+    <deu>Dummy***</deu>
+    <esp>Dummy***</esp>
+    <fra>Dummy***</fra>
+    <hun>Dummy***</hun>
+    <ita>Dummy***</ita>
+    <jpn>Dummy***</jpn>
+    <nld>Dummy***</nld>
+    <plk>Dummy***</plk>
+    <ptb>Dummy***</ptb>
+    <ptg>Dummy***</ptg>
+    <rus>Dummy***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Pick_center_point</StrName>
+    <enu>Pick center point</enu>
+    <chs>Pick center point***</chs>
+    <cht>Pick center point***</cht>
+    <csy>Pick center point***</csy>
+    <deu>Pick center point***</deu>
+    <esp>Pick center point***</esp>
+    <fra>Pick center point***</fra>
+    <hun>Pick center point***</hun>
+    <ita>Pick center point***</ita>
+    <jpn>Pick center point***</jpn>
+    <nld>Pick center point***</nld>
+    <plk>Pick center point***</plk>
+    <ptb>Pick center point***</ptb>
+    <ptg>Pick center point***</ptg>
+    <rus>Pick center point***</rus>
+  </MsgLibStrings>
+  <MsgLibStrings>
+    <StrName>albl_Pick_major_axis_point</StrName>
+    <enu>Pick major axis point</enu>
+    <chs>Pick major axis point***</chs>
+    <cht>Pick major axis point***</cht>
+    <csy>Pick major axis point***</csy>
+    <deu>Pick major axis point***</deu>
+    <esp>Pick major axis point***</esp>
+    <fra>Pick major axis point***</fra>
+    <hun>Pick major axis point***</hun>
+    <ita>Pick major axis point***</ita>
+    <jpn>Pick major axis point***</jpn>
+    <nld>Pick major axis point***</nld>
+    <plk>Pick major axis point***</plk>
+    <ptb>Pick major axis point***</ptb>
+    <ptg>Pick major axis point***</ptg>
+    <rus>Pick major axis point***</rus>
+  </MsgLibStrings>
+</Table>
