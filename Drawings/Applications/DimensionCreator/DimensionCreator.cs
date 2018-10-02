@@ -51,6 +51,8 @@ namespace DimensionCreator
             distance = distance / viewScale;
             AngleDimension ad = new AngleDimension(view, pointList[0], pointList[1], pointList[2], distance);
             ad.Insert();
+
+            new DrawingHandler().GetActiveDrawing().CommitChanges();
         }
 
 
@@ -61,6 +63,8 @@ namespace DimensionCreator
             PickPoints(3, ref pointList, ref view);
             RadiusDimension rd = new RadiusDimension(view, pointList[0], pointList[1], pointList[2], distance);
             rd.Insert();
+
+            new DrawingHandler().GetActiveDrawing().CommitChanges();
         }
 
         internal static void CreateStraightDimension(double distance)
@@ -86,6 +90,8 @@ namespace DimensionCreator
             sds.Attributes.RightMiddleTag.Add(new TextElement("RightMiddle"));
             sds.Attributes.RightUpperTag.Add(new TextElement("RightUpper"));
             bool isOk = sds.Modify();
+
+            new DrawingHandler().GetActiveDrawing().CommitChanges();
         }
 
         internal static void CreateCurvedOrthoDimension(double distance)
@@ -95,6 +101,8 @@ namespace DimensionCreator
             PickPoints(Points, ref pointList, ref view);
             new CurvedDimensionSetHandler().CreateCurvedDimensionSetOrthogonal(view, pointList[0], pointList[1], pointList[pointList.Count-1], pointList,
                                                                                distance);
+
+            new DrawingHandler().GetActiveDrawing().CommitChanges();
         }
 
         internal static void CreateCurvedRadialDimension(double distance)
@@ -104,6 +112,8 @@ namespace DimensionCreator
             PickPoints(3, ref pointList, ref view);
             new CurvedDimensionSetHandler().CreateCurvedDimensionSetRadial(view, pointList[0], pointList[1], pointList[2], pointList,
                                                                                distance);
+
+            new DrawingHandler().GetActiveDrawing().CommitChanges();
         }
     }
 }
