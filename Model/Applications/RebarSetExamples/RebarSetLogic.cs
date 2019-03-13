@@ -215,7 +215,7 @@ namespace RebarSetExamples
 
             var strip = new RebarSplitter();
             strip.Father = rebarSet;
-            strip.LapLength = 100;
+            strip.Lapping.LapLength = 100;
             strip.StaggerType = RebarSplitter.StaggerTypeEnum.STAGGER_LEFT;
             strip.StaggerOffset = 200;
             strip.SplitOffset = 50;
@@ -414,7 +414,7 @@ namespace RebarSetExamples
 
             var splitter = new RebarSplitter();
             splitter.Father = rebarSet;
-            splitter.LapLength = 100;
+            splitter.Lapping.LapLength = 100;
             splitter.StaggerType = RebarSplitter.StaggerTypeEnum.STAGGER_LEFT;
             splitter.StaggerOffset = 200;
             splitter.SplitOffset = 50;

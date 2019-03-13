@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Tekla.Structures.Geometry3d;
 using Tekla.Structures.Drawing;
 using Line = Tekla.Structures.Drawing.Line;
+using Arc = Tekla.Structures.Drawing.Arc;
 
 namespace EllipsePlugin
 {
