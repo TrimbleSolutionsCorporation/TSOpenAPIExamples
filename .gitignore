@@ -18,6 +18,7 @@
 x64/
 x86/
 bld/
+ObjDir/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
@@ -250,3 +251,9 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/Drawings/Plugins/InsertMarkPlugin/InsertMarkPlugin.cs.bak
+/Drawings/Applications/DimensionExample/DimensionExample.cs.bak
+/Drawings/Applications/BoundingBoxDrawer/BoundingBoxDrawer.cs.bak
+/Model/Plugins/BeamPlugin/BeamPlugin.cs.bak
+/Model/Applications/ObjectTestApplication/Form1.cs.bak
+/Model/Applications/ClashCheckExample/ClashCheck.cs.bak

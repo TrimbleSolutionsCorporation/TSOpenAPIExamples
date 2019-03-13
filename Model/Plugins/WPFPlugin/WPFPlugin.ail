@@ -1,0 +1,119 @@
+﻿string_utf8 albl_Part_name
+{
+    entry = ("enu", "Part name");
+    entry = ("chs", "零件名称");
+    entry = ("cht", "零件名稱");
+    entry = ("csy", "Název položky");
+    entry = ("deu", "Bauteilbezeichnung");
+    entry = ("esp", "Nombre parte");
+    entry = ("fra", "Nom de la pièce");
+    entry = ("hun", "Elem neve");
+    entry = ("ita", "Nome parte");
+    entry = ("jpn", "部材名");
+    entry = ("kor", "부재 이름");
+    entry = ("nld", "Onderdeelnaam");
+    entry = ("plk", "Nazwa elementu");
+    entry = ("ptb", "Nome da peça");
+    entry = ("ptg", "Nome da peça");
+    entry = ("rus", "Имя детали");
+};
+
+string_utf8 albl_Profile
+{
+    entry = ("enu", "Profile");
+    entry = ("chs", "型材/截面/型号");
+    entry = ("cht", "斷面規格");
+    entry = ("csy", "Profil");
+    entry = ("deu", "Profil");
+    entry = ("esp", "Perfil");
+    entry = ("fra", "Profil");
+    entry = ("hun", "Szelvény");
+    entry = ("ita", "Profilo");
+    entry = ("jpn", "プロファイル");
+    entry = ("kor", "프로파일");
+    entry = ("nld", "Profiel");
+    entry = ("plk", "Profil");
+    entry = ("ptb", "Perfil");
+    entry = ("ptg", "Perfil");
+    entry = ("rus", "Профиль");
+};
+
+string_utf8 albl_Test_plugin
+{
+    entry = ("enu", "Test plug-in");
+    entry = ("chs", "Test plug-in***");
+    entry = ("cht", "Test plug-in***");
+    entry = ("csy", "Test plug-in***");
+    entry = ("deu", "Test plug-in***");
+    entry = ("esp", "Test plug-in***");
+    entry = ("fra", "Test plug-in***");
+    entry = ("hun", "Test plug-in***");
+    entry = ("ita", "Test plug-in***");
+    entry = ("jpn", "Test plug-in***");
+    entry = ("kor", "Test plug-in***");
+    entry = ("nld", "Test plug-in***");
+    entry = ("plk", "Test plug-in***");
+    entry = ("ptb", "Test plug-in***");
+    entry = ("ptg", "Test plug-in***");
+    entry = ("rus", "Test plug-in***");
+};
+
+string_utf8 albl_Component
+{
+    entry = ("enu", "Component");
+    entry = ("chs", "组件");
+    entry = ("cht", "元件");
+    entry = ("csy", "Komponent");
+    entry = ("deu", "Komponente");
+    entry = ("esp", "Componente");
+    entry = ("fra", "Composant");
+    entry = ("hun", "Komponens");
+    entry = ("ita", "Componente");
+    entry = ("jpn", "コンポーネント");
+    entry = ("kor", "컴포넌트");
+    entry = ("nld", "Component");
+    entry = ("plk", "Komponent");
+    entry = ("ptb", "Componente");
+    entry = ("ptg", "Componente");
+    entry = ("rus", "Компонент");
+};
+
+string_utf8 albl_Offset
+{
+    entry = ("enu", "Offset");
+    entry = ("chs", "偏移");
+    entry = ("cht", "偏移");
+    entry = ("csy", "Odsazení");
+    entry = ("deu", "Versatz");
+    entry = ("esp", "Desplazamiento");
+    entry = ("fra", "Décalage");
+    entry = ("hun", "Eltolás");
+    entry = ("ita", "Offset");
+    entry = ("jpn", "オフセット");
+    entry = ("kor", "오프셋");
+    entry = ("nld", "Offset");
+    entry = ("plk", "Odsunięcie");
+    entry = ("ptb", "Deslocamento");
+    entry = ("ptg", "Deslocamento");
+    entry = ("rus", "Смещение");
+};
+
+string_utf8 albl_Length_factor
+{
+    entry = ("enu", "Length Factor");
+    entry = ("chs", "Length Factor***");
+    entry = ("cht", "Length Factor***");
+    entry = ("csy", "Length Factor***");
+    entry = ("deu", "Length Factor***");
+    entry = ("esp", "Length Factor***");
+    entry = ("fra", "Length Factor***");
+    entry = ("hun", "Length Factor***");
+    entry = ("ita", "Length Factor***");
+    entry = ("jpn", "Length Factor***");
+    entry = ("kor", "Length Factor***");
+    entry = ("nld", "Length Factor***");
+    entry = ("plk", "Length Factor***");
+    entry = ("ptb", "Length Factor***");
+    entry = ("ptg", "Length Factor***");
+    entry = ("rus", "Length Factor***");
+};
