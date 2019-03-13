@@ -93,6 +93,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossSectionProfiles", "Mod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DimensionHeadExample", "Drawings\Applications\DimensionHeadExample\DimensionHeadExample.csproj", "{4D5D93D5-8D56-403E-81B8-AF0D7498EB57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelMark", "Drawings\Applications\LevelMark\LevelMark.csproj", "{8A658E89-F086-417A-BDCA-175D32F08084}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -459,6 +461,14 @@ Global
 		{4D5D93D5-8D56-403E-81B8-AF0D7498EB57}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D5D93D5-8D56-403E-81B8-AF0D7498EB57}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4D5D93D5-8D56-403E-81B8-AF0D7498EB57}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8A658E89-F086-417A-BDCA-175D32F08084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A658E89-F086-417A-BDCA-175D32F08084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A658E89-F086-417A-BDCA-175D32F08084}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8A658E89-F086-417A-BDCA-175D32F08084}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8A658E89-F086-417A-BDCA-175D32F08084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A658E89-F086-417A-BDCA-175D32F08084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A658E89-F086-417A-BDCA-175D32F08084}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8A658E89-F086-417A-BDCA-175D32F08084}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
