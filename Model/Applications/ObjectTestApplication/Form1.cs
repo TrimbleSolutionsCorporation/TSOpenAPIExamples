@@ -1302,7 +1302,7 @@ namespace ObjectTestApplication
             if (Success)
             {
                 Grid = Enumerator.Current as Grid;
-                gridPlane.Father = Grid;
+                gridPlane.Parent = Grid;
             }
             else
             {
