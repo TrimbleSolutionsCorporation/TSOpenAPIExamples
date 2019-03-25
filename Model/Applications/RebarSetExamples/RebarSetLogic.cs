@@ -10,16 +10,16 @@ namespace RebarSetExamples
     class RebarSetLogic
     {
 
-      // Change hardcoded values to test other rebar properties
-      internal class Parameters
+        // Change hardcoded values to test other rebar properties
+        internal class Parameters
         {
             internal const double Width = 800;
             internal const double Depth = 1200;
             internal const double Height = 500;
-            internal const string Name = "The Name";
-            internal const double BendingRadius = 42.0;
+            internal const string Name = "REBAR";
+            internal const double BendingRadius = 20.0;
             internal const double SpacingTarget = 200.0;
-            internal const int LayerOrderNumber = 17;
+            internal const int LayerOrderNumber = 0;
         }
 
         internal class Message
@@ -54,10 +54,10 @@ namespace RebarSetExamples
         private static void SetProperties(RebarSet rebarSet)
         {
             rebarSet.RebarProperties.Name = Parameters.Name;
-            rebarSet.RebarProperties.Grade = "The Grade";
+            rebarSet.RebarProperties.Grade = "H";
             rebarSet.RebarProperties.BendingRadius = Parameters.BendingRadius;
             rebarSet.RebarProperties.Class = 7;
-            rebarSet.RebarProperties.Size = "16.0";
+            rebarSet.RebarProperties.Size = "10";
             rebarSet.LayerOrderNumber = Parameters.LayerOrderNumber;
         }
 
@@ -204,28 +204,6 @@ namespace RebarSetExamples
             return strip;
         }
 
-        private static RebarSplitter CreateSplitter()
-        {
-            var rebarSet = new RebarSet();
-            SetProperties(rebarSet);
-            rebarSet.LegFaces.Add(CreateLegFace1());
-            rebarSet.LegFaces.Add(CreateLegFace2());
-            rebarSet.Guidelines.Add(CreateGuideline1());
-            rebarSet.Insert();
-
-            var strip = new RebarSplitter();
-            strip.Father = rebarSet;
-            strip.Lapping.LapLength = 100;
-            strip.StaggerType = RebarSplitter.StaggerTypeEnum.STAGGER_LEFT;
-            strip.StaggerOffset = 200;
-            strip.SplitOffset = 50;
-            strip.Curve.AddContourPoint(new ContourPoint(new Point(400, 200, 0), null));
-            strip.Curve.AddContourPoint(new ContourPoint(new Point(400, Parameters.Depth - 200, 0), null));
-            strip.Insert();
-
-            return strip;
-        }
-        
         #endregion
 
 
@@ -271,7 +249,7 @@ namespace RebarSetExamples
 
         internal void ModifyLegs(Identifier rebarSetId)
         {
-            RebarSet rebarSet = new RebarSet{Identifier = rebarSetId};
+            RebarSet rebarSet = new RebarSet { Identifier = rebarSetId };
             rebarSet.Select();
 
             //rebarSet.LegFaces.RemoveAt(0); // This is also possible to modify rebar geometry
@@ -338,7 +316,7 @@ namespace RebarSetExamples
 
         internal void ChangeModifier(Identifier propertyModifierId)
         {
-            RebarPropertyModifier strip = new RebarPropertyModifier{Identifier = propertyModifierId};
+            RebarPropertyModifier strip = new RebarPropertyModifier { Identifier = propertyModifierId };
             strip.Select();
 
             strip.RebarProperties.Size = "20";
@@ -354,7 +332,7 @@ namespace RebarSetExamples
 
         internal void DeleteModifier(Identifier propertyModifierId)
         {
-            RebarPropertyModifier strip = new RebarPropertyModifier {Identifier = propertyModifierId};
+            RebarPropertyModifier strip = new RebarPropertyModifier { Identifier = propertyModifierId };
             strip.Delete();
 
             new Model().CommitChanges();
@@ -382,7 +360,7 @@ namespace RebarSetExamples
 
         public void ChangeEndDetail(Identifier endDetailModifierId)
         {
-            var endDetail = new RebarEndDetailModifier {Identifier = endDetailModifierId};
+            var endDetail = new RebarEndDetailModifier { Identifier = endDetailModifierId };
             endDetail.Select();
 
             endDetail.RebarHook.Shape = RebarHookData.RebarHookShapeEnum.HOOK_135_DEGREES;
@@ -414,6 +392,8 @@ namespace RebarSetExamples
 
             var splitter = new RebarSplitter();
             splitter.Father = rebarSet;
+            splitter.SplitType = RebarSplitter.SplitTypeEnum.LAPPING;
+            splitter.Lapping.LappingType = RebarLapping.LappingTypeEnum.CUSTOM_LAPPING;
             splitter.Lapping.LapLength = 100;
             splitter.StaggerType = RebarSplitter.StaggerTypeEnum.STAGGER_LEFT;
             splitter.StaggerOffset = 200;
@@ -429,9 +409,17 @@ namespace RebarSetExamples
 
         internal void ChangeSplitter(Identifier rebarSplitterId)
         {
-            var splitter = new RebarSplitter {Identifier = rebarSplitterId};
+            var splitter = new RebarSplitter { Identifier = rebarSplitterId };
             splitter.Select();
 
+            splitter.SplitType = RebarSplitter.SplitTypeEnum.CRANKING;
+            splitter.Cranking.CrankingType = RebarCranking.CrankingTypeEnum.CUSTOM_CRANKING;
+            splitter.Cranking.CrankSide = RebarCranking.CrankSideEnum.CRANK_RIGHT;
+            splitter.Cranking.CrankRotation = 90.0;
+            splitter.Cranking.CrankStraightLength = 150.0;
+            splitter.Cranking.CrankedLengthType = RebarCranking.CrankedLengthTypeEnum.DIAGONAL_RATIO;
+            splitter.Cranking.CrankedRatio = 13.0;
+            splitter.Cranking.CrankedOffset = 40.0;
             splitter.StaggerType = RebarSplitter.StaggerTypeEnum.STAGGER_RIGHT;
             splitter.StaggerOffset = 250;
             var contourSplitter = splitter.Curve.ContourPoints;
@@ -475,7 +463,7 @@ namespace RebarSetExamples
 
         internal void DeleteCutPlane(Identifier cutPlaneId)
         {
-            var cutter1 = new CutPlane {Identifier = cutPlaneId};
+            var cutter1 = new CutPlane { Identifier = cutPlaneId };
             cutter1.Select();
             cutter1.Delete();
 
@@ -483,3 +471,4 @@ namespace RebarSetExamples
         }
     }
 }
+
