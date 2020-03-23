@@ -60,7 +60,7 @@ namespace DimensionExample
                             if (myBeam.StartPoint.X != myBeam.EndPoint.X)
                             {
                                 StraightDimensionSet XDimensions = new StraightDimensionSetHandler().CreateDimensionSet(ViewBase, PointList, new Vector(0, 100, 0), 100, attr);
-                                XDimensions.Insert();
+                                CurrentDrawing.CommitChanges();
                             }
 
                             new Model().GetWorkPlaneHandler().SetCurrentTransformationPlane(SavePlane);
