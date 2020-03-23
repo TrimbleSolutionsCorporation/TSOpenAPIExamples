@@ -15,8 +15,8 @@
     <d:UserControl.DataContext>
         <local:MainWindowViewModel />
     </d:UserControl.DataContext>
-    
-    // Used if Fusion is available
+
+    <!-- Used if Fusion is available-->
     <!--<Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
