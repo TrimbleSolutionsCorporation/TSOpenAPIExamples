@@ -15,17 +15,19 @@
     <d:UserControl.DataContext>
         <local:MainWindowViewModel />
     </d:UserControl.DataContext>
-    <Window.Resources>
+    
+    // Used if Fusion is available
+    <!--<Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!--
+                --><!--
                     This resource URL found in FusionExample/Properties/DesignTimeResources.xaml on github
                     It imports the TS style used at runtime, so it's useful to better be able to see the end results.
-                -->
+                --><!--
                 <ResourceDictionary Source="/Fusion;component/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </Window.Resources>
+    </Window.Resources>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="48" />
