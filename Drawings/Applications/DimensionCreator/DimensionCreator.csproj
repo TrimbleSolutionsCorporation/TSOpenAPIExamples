@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
-  <Import Project="..\..\..\packages\TeklaOpenAPI.2021.0.0\build\TeklaOpenAPI.props" Condition="Exists('..\..\..\packages\TeklaOpenAPI.2021.0.0\build\TeklaOpenAPI.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -57,43 +56,35 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tekla.Application.Library, Version=2021.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2021.0.0\lib\Tekla.Application.Library.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Tekla.Structures, Version=2021.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2021.0.0\lib\Tekla.Structures.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Tekla.Structures.Analysis, Version=2021.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2021.0.0\lib\Tekla.Structures.Analysis.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\packages\Tekla.Structures.2021.0.0\lib\net40\Tekla.Structures.dll</HintPath>
     </Reference>
     <Reference Include="Tekla.Structures.Catalogs, Version=2021.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2021.0.0\lib\Tekla.Structures.Catalogs.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\packages\Tekla.Structures.Catalogs.2021.0.0\lib\net40\Tekla.Structures.Catalogs.dll</HintPath>
     </Reference>
     <Reference Include="Tekla.Structures.Datatype, Version=2021.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2021.0.0\lib\Tekla.Structures.Datatype.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\packages\Tekla.Structures.Datatype.2021.0.0\lib\net40\Tekla.Structures.Datatype.dll</HintPath>
     </Reference>
     <Reference Include="Tekla.Structures.Dialog, Version=2021.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2021.0.0\lib\Tekla.Structures.Dialog.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\packages\Tekla.Structures.Dialog.2021.0.0\lib\net40\Tekla.Structures.Dialog.dll</HintPath>
     </Reference>
     <Reference Include="Tekla.Structures.Drawing, Version=2021.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2021.0.0\lib\Tekla.Structures.Drawing.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\packages\Tekla.Structures.Drawing.2021.0.0\lib\net40\Tekla.Structures.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="Tekla.Structures.Model, Version=2021.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2021.0.0\lib\Tekla.Structures.Model.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\packages\Tekla.Structures.Model.2021.0.0\lib\net40\Tekla.Structures.Model.dll</HintPath>
     </Reference>
     <Reference Include="Tekla.Structures.Plugins, Version=2021.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\TeklaOpenAPI.2021.0.0\lib\Tekla.Structures.Plugins.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\packages\Tekla.Structures.Plugins.2021.0.0\lib\net40\Tekla.Structures.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Tekla.Technology.MsgLib, Version=2.1.0.18312, Culture=neutral, PublicKeyToken=a70cba4ef557ee03, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Tekla.Technology.Msglib.2.1.18312\lib\net40\Tekla.Technology.MsgLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Tekla.Technology.Rkit, Version=2.1.4.14283, Culture=neutral, PublicKeyToken=a70cba4ef557ee03, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Tekla.Technology.Rkit.2.1.4.17310\lib\net40\Tekla.Technology.Rkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -134,14 +125,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />
+    <Content Include="Resources\element_catalog_cross_section.bmp" />
+    <Content Include="Resources\element_catalog_cross_section_sketch.bmp" />
+    <Content Include="Resources\element_catalog_cross_section_user.bmp" />
+    <Content Include="Resources\prtyp_tree_1.bmp" />
+    <Content Include="Resources\prtyp_tree_10.bmp" />
+    <Content Include="Resources\prtyp_tree_11.bmp" />
+    <Content Include="Resources\prtyp_tree_13.bmp" />
+    <Content Include="Resources\prtyp_tree_15.bmp" />
+    <Content Include="Resources\prtyp_tree_2.bmp" />
+    <Content Include="Resources\prtyp_tree_3.bmp" />
+    <Content Include="Resources\prtyp_tree_4.bmp" />
+    <Content Include="Resources\prtyp_tree_5.bmp" />
+    <Content Include="Resources\prtyp_tree_6.bmp" />
+    <Content Include="Resources\prtyp_tree_7.bmp" />
+    <Content Include="Resources\prtyp_tree_8.bmp" />
+    <Content Include="Resources\prtyp_tree_9.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\packages\TeklaOpenAPI.2021.0.0\build\TeklaOpenAPI.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\TeklaOpenAPI.2021.0.0\build\TeklaOpenAPI.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
