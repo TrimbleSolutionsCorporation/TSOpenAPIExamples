@@ -99,6 +99,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadialGridExample", "Model\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportComponents", "Model\Applications\ExportComponents\ExportComponents.csproj", "{18D03CA2-E07D-4A28-B8C2-CFAED1A492EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeldMarkExample", "Drawings\Applications\WeldMarkExample\WeldMarkExample.csproj", "{644E970E-36C1-4199-9A2E-F09CF4E07E65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -489,6 +491,14 @@ Global
 		{18D03CA2-E07D-4A28-B8C2-CFAED1A492EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18D03CA2-E07D-4A28-B8C2-CFAED1A492EB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{18D03CA2-E07D-4A28-B8C2-CFAED1A492EB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
