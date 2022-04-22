@@ -96,11 +96,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.resx">
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>
-      </SubType>
-    </Compile>
     <Compile Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
