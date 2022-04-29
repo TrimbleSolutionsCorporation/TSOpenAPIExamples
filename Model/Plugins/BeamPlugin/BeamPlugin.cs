@@ -63,6 +63,11 @@ namespace BeamPlugin
 
             MyBeam.Profile.ProfileString = _Profile;
             MyBeam.Finish = "PAINT";
+
+            // With this we help internal code to assign same ID to beam when plugin is modified.
+            // To avoid some problems related to links with UDA values or booleans (cuts, fittings) for example.
+            MyBeam.SetLabel("MyBeam01");
+
             MyBeam.Insert();
         }
 
