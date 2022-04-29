@@ -172,6 +172,11 @@ namespace SpliceConn
                 plate1.Profile.ProfileString = plate2.Profile.ProfileString = "PL" + (int)webThickness + "*" + (int)_PlateLength;
                 plate1.Finish = plate2.Finish = "PAINT";
 
+                // With this we help internal code to assign same ID to plates when plugin is modified.
+                // To avoid some problems related to links with UDA values or booleans (cuts, fittings) for example.
+                plate1.SetLabel("MyPlate01");
+                plate2.SetLabel("MyPlate02");
+
                 plate1.Insert();
                 plate2.Insert();
 
