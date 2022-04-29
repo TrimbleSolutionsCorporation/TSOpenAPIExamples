@@ -83,6 +83,11 @@ namespace BeamCustomPart
             myBeam.Position.Depth = TSM.Position.DepthEnum.MIDDLE;
             myBeam.Position.Plane = TSM.Position.PlaneEnum.RIGHT;
             myBeam.Position.Rotation = TSM.Position.RotationEnum.BELOW;
+
+            // With this we help internal code to assign same ID to top flange plate when plugin is modified.
+            // To avoid some problems related to links with UDA values or booleans (cuts, fittings) for example.
+            myBeam.SetLabel("MyTopFlangePlate");
+
             myBeam.Insert();
         }
 
@@ -99,6 +104,11 @@ namespace BeamCustomPart
             myBeam.Position.Depth = TSM.Position.DepthEnum.MIDDLE;
             myBeam.Position.Plane = TSM.Position.PlaneEnum.LEFT;
             myBeam.Position.Rotation = TSM.Position.RotationEnum.TOP;
+
+            // With this we help internal code to assign same ID to bottom flange plate when plugin is modified.
+            // To avoid some problems related to links with UDA values or booleans (cuts, fittings) for example.
+            myBeam.SetLabel("MyBottomFlangePlate");
+
             myBeam.Insert();
         }
 
@@ -113,6 +123,11 @@ namespace BeamCustomPart
             myBeam.Position.Depth = TSM.Position.DepthEnum.MIDDLE;
             myBeam.Position.Plane = TSM.Position.PlaneEnum.MIDDLE;
             myBeam.Position.Rotation = TSM.Position.RotationEnum.BACK;
+
+            // With this we help internal code to assign same ID to web plate when plugin is modified.
+            // To avoid some problems related to links with UDA values or booleans (cuts, fittings) for example.
+            myBeam.SetLabel("MyWebPlate");
+
             myBeam.Insert();
         }
 
