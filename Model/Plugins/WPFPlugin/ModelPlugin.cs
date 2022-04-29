@@ -119,6 +119,11 @@ namespace WPFPlugin
                 beam.Name = _PartName;
                 beam.Profile.ProfileString = _Profile;
                 beam.Material.MaterialString = _Material;
+
+                // With this we help internal code to assign same ID to beam when plugin is modified.
+                // To avoid some problems related to links with UDA values or booleans (cuts, fittings) for example.
+                beam.SetLabel("MyWPFBeam01");
+
                 beam.Insert();
 
                 Operation.DisplayPrompt("Selected component " + _Data.componentname + " : " + _Data.componentnumber.ToString());
