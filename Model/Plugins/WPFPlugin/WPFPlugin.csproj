@@ -11,7 +11,7 @@
     <RootNamespace>WPFPlugin</RootNamespace>
     <AssemblyName>WPFPlugin</AssemblyName>
     <ApplicationIcon>Resources\TeklaStructures.ico</ApplicationIcon>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
