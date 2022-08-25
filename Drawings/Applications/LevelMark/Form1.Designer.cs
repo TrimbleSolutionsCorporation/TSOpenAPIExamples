@@ -208,7 +208,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::LevelMark_2019.Resource1.Untitled;
+            this.pictureBox1.Image = global::LevelMark.Resource1.Untitled;
             this.pictureBox1.Location = new System.Drawing.Point(104, 45);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(269, 155);

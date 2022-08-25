@@ -13,7 +13,7 @@ namespace LevelMarkTest
         {
             InitializeComponent();
         }
-        public void SetDataToForm(LevelMark levelMark)
+        public void SetDataToForm(Tekla.Structures.Drawing.LevelMark levelMark)
         {
             this.Text = "Level Mark Test";
             if(levelMark == null)
@@ -27,13 +27,13 @@ namespace LevelMarkTest
 
             tb_AssociatedObject.Text = levelMark.ModelObjectIdentifier.ID.ToString();
 
-            if(levelMark.SubType == LevelMark.LevelMarkType.NoArrowNoLeaderLine)
+            if(levelMark.SubType == Tekla.Structures.Drawing.LevelMark.LevelMarkType.NoArrowNoLeaderLine)
                 cb_SubType.SelectedIndex = 0;
-            else if(levelMark.SubType == LevelMark.LevelMarkType.ArrowWithoutLeaderLine)
+            else if(levelMark.SubType == Tekla.Structures.Drawing.LevelMark.LevelMarkType.ArrowWithoutLeaderLine)
                 cb_SubType.SelectedIndex = 1;
-            else if(levelMark.SubType == LevelMark.LevelMarkType.InclinedLeaderLine)
+            else if(levelMark.SubType == Tekla.Structures.Drawing.LevelMark.LevelMarkType.InclinedLeaderLine)
                 cb_SubType.SelectedIndex = 2;
-            else if(levelMark.SubType == LevelMark.LevelMarkType.OrthogonalLeaderLine)
+            else if(levelMark.SubType == Tekla.Structures.Drawing.LevelMark.LevelMarkType.OrthogonalLeaderLine)
                 cb_SubType.SelectedIndex = 3;
             else
                 cb_Color.SelectedIndex = -1;
@@ -60,19 +60,19 @@ namespace LevelMarkTest
                 cb_Color.SelectedIndex = -1;
         }
 
-        public void GetDataFromForm(LevelMark levelMark)
+        public void GetDataFromForm(Tekla.Structures.Drawing.LevelMark levelMark)
         {
             if(levelMark == null)
                 return;
 
             if(cb_SubType.SelectedIndex == 0)
-                levelMark.SubType = LevelMark.LevelMarkType.NoArrowNoLeaderLine;
+                levelMark.SubType = Tekla.Structures.Drawing.LevelMark.LevelMarkType.NoArrowNoLeaderLine;
             else if(cb_SubType.SelectedIndex == 1)
-                levelMark.SubType = LevelMark.LevelMarkType.ArrowWithoutLeaderLine;
+                levelMark.SubType = Tekla.Structures.Drawing.LevelMark.LevelMarkType.ArrowWithoutLeaderLine;
             else if(cb_SubType.SelectedIndex == 2)
-                levelMark.SubType = LevelMark.LevelMarkType.InclinedLeaderLine;
+                levelMark.SubType = Tekla.Structures.Drawing.LevelMark.LevelMarkType.InclinedLeaderLine;
             else
-                levelMark.SubType = LevelMark.LevelMarkType.OrthogonalLeaderLine;
+                levelMark.SubType = Tekla.Structures.Drawing.LevelMark.LevelMarkType.OrthogonalLeaderLine;
 
             if(cb_SubType.SelectedIndex == 2 || cb_SubType.SelectedIndex == 3)
             {
@@ -105,7 +105,7 @@ namespace LevelMarkTest
             {
                 if(allObjectsOnSheet.Current is Tekla.Structures.Drawing.LevelMark)
                 {
-                    LevelMark levelMark = allObjectsOnSheet.Current as Tekla.Structures.Drawing.LevelMark;
+                    Tekla.Structures.Drawing.LevelMark levelMark = allObjectsOnSheet.Current as Tekla.Structures.Drawing.LevelMark;
 
                     if(levelMark == null)
                         continue;
@@ -128,7 +128,7 @@ namespace LevelMarkTest
             }
         }
 
-        public LevelMark GetSelectedLevelMark()
+        public Tekla.Structures.Drawing.LevelMark GetSelectedLevelMark()
         {
             DrawingHandler myDrawingHandler = new DrawingHandler();
             DrawingObjectSelector dos = myDrawingHandler.GetDrawingObjectSelector();
@@ -137,7 +137,7 @@ namespace LevelMarkTest
             {
                 if(allObjectsOnSheet.Current is Tekla.Structures.Drawing.LevelMark)
                 {
-                    LevelMark levelMark = allObjectsOnSheet.Current as Tekla.Structures.Drawing.LevelMark;
+                    Tekla.Structures.Drawing.LevelMark levelMark = allObjectsOnSheet.Current as Tekla.Structures.Drawing.LevelMark;
                     return levelMark;
                 }
             }
@@ -234,7 +234,7 @@ namespace LevelMarkTest
             if(!GetInsertionData(ByPickPoints, ByPickObject, ref obj, ref view, ref insertionPoint, ref basePoint))
                 return;
 
-            LevelMark levelMark = new LevelMark(view, insertionPoint, basePoint, obj);
+            Tekla.Structures.Drawing.LevelMark levelMark = new Tekla.Structures.Drawing.LevelMark(view, insertionPoint, basePoint, obj);
 
             GetDataFromForm(levelMark);
 
@@ -304,7 +304,7 @@ namespace LevelMarkTest
 
         private void b_Get_Click(object sender, EventArgs e)
         {
-            LevelMark levelmark = GetSelectedLevelMark();
+            Tekla.Structures.Drawing.LevelMark levelmark = GetSelectedLevelMark();
             SetDataToForm(levelmark);
         }
 
