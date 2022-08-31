@@ -8,8 +8,8 @@
     <ProjectGuid>{40F88506-D5F1-4D64-9CD3-A2E7802D7EA2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BeamApplication</RootNamespace>
-    <AssemblyName>BeamApplication</AssemblyName>
+    <RootNamespace>ShapeCatalog</RootNamespace>
+    <AssemblyName>ShapeCatalog</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
