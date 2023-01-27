@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebarSample1", "Model\Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebarSample2", "Model\Applications\RebarExamples\RebarSample2\RebarSample2.csproj", "{058984C6-C995-4519-A8B5-5A7BED40B56B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebarSample3", "Model\Applications\RebarExamples\RebarSample3\RebarSample3.csproj", "{BFE12976-B532-46D2-BFC4-1449A605BEA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebarSample3_INP_Plugin", "Model\Applications\RebarExamples\RebarSample3\RebarSample3_INP_Plugin.csproj", "{BFE12976-B532-46D2-BFC4-1449A605BEA8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormPlugin", "Model\Plugins\FormPlugin\FormPlugin.csproj", "{1AD57232-14CF-4C4C-914D-8CCC039D693C}"
 EndProject
