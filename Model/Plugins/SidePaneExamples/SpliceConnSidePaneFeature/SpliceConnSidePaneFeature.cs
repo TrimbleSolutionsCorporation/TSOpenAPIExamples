@@ -2,11 +2,12 @@
 
 namespace SpliceConnSidePaneFeature
 {
+    // After being compiled, SpliceConnSidePaneFeature.dll must be copied to folder: \Environments\common\extensions\features
     public class SpliceConnSidePaneFeature : PluginPropertyPaneFeatureBase
     {
         public SpliceConnSidePaneFeature()
         {
-            //InitializeFeature("SpliceConnection", "Title", string.Empty);
+            // SpliceConnection project is also available in TeklaStructures Open API Examples solution
             this.InitializeFeature("SpliceConnection", "SpliceConnection", "no_help_implemented", PropertyPaneType.Connection, string.Empty, false);
             BuildTemplate();
         }

@@ -2,12 +2,12 @@
 
 namespace BeamPluginSidePaneFeature
 {
-    // After being compiled, CustomPartSidePaneFeature.dll must be copied to folder: \Environments\common\extensions\features
+    // After being compiled, BeamPluginSidePaneFeature.dll must be copied to folder: \Environments\common\extensions\features
     public class BeamPluginSidePaneFeature : PluginPropertyPaneFeatureBase
     {
         public BeamPluginSidePaneFeature()
         {
-            // BeamCustomPart project is also available in TeklaStructures Open API Examples solution
+            // BeamPlugin project is also available in TeklaStructures Open API Examples solution
             this.InitializeFeature("BeamPlugin", "BeamPlugin", "no_help_implemented", PropertyPaneType.Plugin, string.Empty, false);
             BuildTemplate();
         }
