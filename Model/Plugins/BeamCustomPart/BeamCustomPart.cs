@@ -24,6 +24,8 @@ namespace BeamCustomPart
     /// </summary>
     [Plugin("BeamCustomPart")] // Mandatory field which defines that the class is a plug-in-and stores the name of the plug-in to the system.
     [PluginUserInterface("BeamCustomPart.BeamCustomPartForm")] // Mandatory field which defines the user interface the plug-in uses. A windows form class of a .inp file.
+    [CustomPartPositioningType(CustomPartPositioningType.POSITIONING_BY_INPUTPOINTS)]
+    //[CustomPartPositioningType(CustomPartPositioningType.POSITIONING_BY_CENTER_OF_BOUNDING_BOX)]
     public class BeamCustomPart : CustomPartBase
     {
         private double lengthFactor;
