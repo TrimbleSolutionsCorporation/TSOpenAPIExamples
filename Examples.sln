@@ -101,6 +101,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportComponents", "Model\A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeldMarkExample", "Drawings\Applications\WeldMarkExample\WeldMarkExample.csproj", "{644E970E-36C1-4199-9A2E-F09CF4E07E65}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomPartSidePaneFeature", "Model\Plugins\SidePaneExamples\CustomPartSidePaneFeature\CustomPartSidePaneFeature.csproj", "{16EAD2A5-E5BB-430F-B67B-9504321C3FF6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpliceConnSidePaneFeature", "Model\Plugins\SidePaneExamples\SpliceConnSidePaneFeature\SpliceConnSidePaneFeature.csproj", "{9DBA690E-7EB3-4F23-9A11-7ED86702AB6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeamPluginSidePaneFeature", "Model\Plugins\SidePaneExamples\BeamPluginSidePaneFeature\BeamPluginSidePaneFeature.csproj", "{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -499,6 +505,30 @@ Global
 		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Release|Any CPU.Build.0 = Release|Any CPU
 		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{644E970E-36C1-4199-9A2E-F09CF4E07E65}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{16EAD2A5-E5BB-430F-B67B-9504321C3FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16EAD2A5-E5BB-430F-B67B-9504321C3FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16EAD2A5-E5BB-430F-B67B-9504321C3FF6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{16EAD2A5-E5BB-430F-B67B-9504321C3FF6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{16EAD2A5-E5BB-430F-B67B-9504321C3FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16EAD2A5-E5BB-430F-B67B-9504321C3FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16EAD2A5-E5BB-430F-B67B-9504321C3FF6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{16EAD2A5-E5BB-430F-B67B-9504321C3FF6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9DBA690E-7EB3-4F23-9A11-7ED86702AB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DBA690E-7EB3-4F23-9A11-7ED86702AB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DBA690E-7EB3-4F23-9A11-7ED86702AB6A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9DBA690E-7EB3-4F23-9A11-7ED86702AB6A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9DBA690E-7EB3-4F23-9A11-7ED86702AB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DBA690E-7EB3-4F23-9A11-7ED86702AB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DBA690E-7EB3-4F23-9A11-7ED86702AB6A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9DBA690E-7EB3-4F23-9A11-7ED86702AB6A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

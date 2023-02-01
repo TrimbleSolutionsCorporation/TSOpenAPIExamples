@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputPath>\bin\Debug\</OutputPath>
+    <BaseOutputPath>\bin\Debug\</BaseOutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Tekla.Structures.Plugins.PropertyPane" Version="2023.0.1" />
+    <PackageReference Include="TeklaFusion" Version="4.0.13" />
+  </ItemGroup>
+</Project>
