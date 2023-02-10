@@ -4,10 +4,6 @@
              xmlns:local="clr-namespace:WpfBeamApplication">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <!-- <ResourceDictionary Source="pack://application:,,,/Tekla.BIM.UI.Wpf;component/Themes/Generic.xaml" />-->
-                <ResourceDictionary Source="pack://application:,,,/Fusion;component/Themes/Generic.xaml" />
-            </ResourceDictionary.MergedDictionaries>
             <!-- Dummy Style, anything you won't use goes -->
             <Style TargetType="{x:Type Rectangle}" />
         </ResourceDictionary>
