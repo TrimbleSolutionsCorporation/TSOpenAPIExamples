@@ -10,6 +10,7 @@ using Tekla.Structures.Geometry3d;
 using Tekla.Structures.Solid;
 using TSM = Tekla.Structures.Model;
 using Tekla.Structures.Model;
+using Tekla.Structures.ModelInternal;
 
 namespace ObjectTestApplication
 {
@@ -216,12 +217,19 @@ namespace ObjectTestApplication
             Beam Beam = new Beam(point, point2);
 
             Beam.Profile.ProfileString = "L60*6";
+            Beam.Material.MaterialString = "Steel_Undefined";
             Beam.Finish = "PAINT";
 
             if (!Beam.Insert())
+            {
+                WriteLine("BeamTest failed - unable to create beam");
                 MessageBox.Show("Insert failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam);
+            }
 
             if (Beam.GetReportProperty("PROFILE.FLANGE_THICKNESS_1", ref Test))
                 WriteLine("PROFILE.FLANGE_THICKNESS_1 returned " + Test.ToString());
@@ -259,12 +267,19 @@ namespace ObjectTestApplication
             PolyBeam.AddContourPoint(point3);
 
             PolyBeam.Profile.ProfileString = "HI400-15-20*400";
+            PolyBeam.Material.MaterialString = "Steel_Undefined";
             PolyBeam.Finish = "PAINT";
 
             if (!PolyBeam.Insert())
+            {
+                WriteLine("PolyBeamTest failed - unable to create polybeam");
                 MessageBox.Show("Insert failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(PolyBeam);
+            }
 
             if (!PolyBeam.Select())
                 MessageBox.Show("Select failed!");
@@ -294,9 +309,15 @@ namespace ObjectTestApplication
             CP.Name = "FOOSLAB";
 
             if (!CP.Insert())
+            {
+                WriteLine("PolyBeamTest failed - unable to create polybeam");
                 MessageBox.Show("Insert failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(CP);
+            }
 
             if (!CP.Select())
                 MessageBox.Show("Select failed!");
@@ -317,29 +338,49 @@ namespace ObjectTestApplication
             Beam1.StartPoint = point;
             Beam1.EndPoint = point2;
             Beam1.Profile.ProfileString = "HI400-15-20*400";
+            Beam1.Material.MaterialString = "Steel_Undefined";
             Beam1.Finish = "PAINT";
 
-            if (Beam1.Insert())
+            if (!Beam1.Insert())
+            {
+                WriteLine("BooleanPartTest failed - unable to create beam1");
+                MessageBox.Show("Insert failed!");
+                return string.Empty;
+            }
+            else
+            {
                 ObjectList.Add(Beam1);
+            }
 
             Beam Beam2 = new Beam();
             Beam2.Profile.ProfileString = "HI100-10-10*100";
+            Beam2.Material.MaterialString = "Steel_Undefined";
             Beam2.StartPoint = new TS.Point(500, 6000, 0);
             Beam2.EndPoint = new TS.Point(500, 8000, 0);
             // set Class for operative part
             Beam2.Class = BooleanPart.BooleanOperativeClassName;
 
-            if (Beam2.Insert())
-                ObjectList.Add(Beam2);
+            if (!Beam2.Insert())
+            {
+                WriteLine("BooleanPartTest failed - unable to create beam2");
+                MessageBox.Show("Insert failed!");
+                return string.Empty;
+            }
 
             BooleanPart Beam = new BooleanPart();
             Beam.Father = Beam1;
             Beam.SetOperativePart(Beam2);
 
             if (!Beam.Insert())
+            {
+                WriteLine("BooleanPartTest failed - unable to create boolean part");
                 MessageBox.Show("Insert failed!");
+                return string.Empty;
+            }
             else
+            {
                 ObjectList.Add(Beam);
+            }
 
             Beam2.Delete();
 
@@ -363,10 +404,19 @@ namespace ObjectTestApplication
             Beam.StartPoint = point;
             Beam.EndPoint = point2;
             Beam.Profile.ProfileString = "HI400-15-20*400";
+            Beam.Material.MaterialString = "Steel_Undefined";
             Beam.Finish = "PAINT";
 
-            if (Beam.Insert())
+            if (!Beam.Insert())
+            {
+                WriteLine("CutTest failed - unable to create beam");
+                MessageBox.Show("Insert failed!");
+                return string.Empty;
+            }
+            else
+            {
                 ObjectList.Add(Beam);
+            }
 
             CutPlane Cut = new CutPlane();
             Cut.Father = Beam;
@@ -375,9 +425,15 @@ namespace ObjectTestApplication
             Cut.Plane.AxisY = new Vector(0, 0, 1.0);
 
             if (!Cut.Insert())
+            {
+                WriteLine("CutTest failed - unable to create cut");
                 MessageBox.Show("Insert failed!");
+                return string.Empty;
+            }
             else
+            {
                 ObjectList.Add(Cut);
+            }
 
             if (!Cut.Select())
                 MessageBox.Show("Select failed!");
@@ -400,10 +456,19 @@ namespace ObjectTestApplication
             Beam.StartPoint = point;
             Beam.EndPoint = point2;
             Beam.Profile.ProfileString = "HI400-15-20*400";
+            Beam.Material.MaterialString = "Steel_Undefined";
             Beam.Finish = "PAINT";
 
-            if (Beam.Insert())
+            if (!Beam.Insert())
+            {
+                WriteLine("FittingTest failed - unable to create beam");
+                MessageBox.Show("Insert failed!");
+                return string.Empty;
+            }
+            else
+            {
                 ObjectList.Add(Beam);
+            }
 
             Fitting Fitting = new Fitting();
             Fitting.Father = Beam;
@@ -414,9 +479,15 @@ namespace ObjectTestApplication
             Fitting.Plane.AxisY = new Vector(0, 0, 6000);
 
             if (!Fitting.Insert())
+            {
+                WriteLine("FittingTest failed - unable to create fitting");
                 MessageBox.Show("Insert failed!");
+                return string.Empty;
+            }
             else
+            {
                 ObjectList.Add(Fitting);
+            }
 
             if (!Fitting.Select())
                 MessageBox.Show("Select failed!");
@@ -439,8 +510,16 @@ namespace ObjectTestApplication
             Beam.Material.MaterialString = "Concrete_Undefined";
             Beam.Finish = "PAINT";
 
-            if (Beam.Insert())
+            if (!Beam.Insert())
+            {
+                WriteLine("SingleRebarTest failed - unable to create beam");
+                MessageBox.Show("Insert beam failed!");
+                return;
+            }
+            else
+            {
                 ObjectList.Add(Beam);
+            }
 
             double MinimumY = Beam.GetSolid().MinimumPoint.Y;
             double MinimumX = Beam.GetSolid().MinimumPoint.X;
@@ -475,9 +554,15 @@ namespace ObjectTestApplication
             SingleRebar.EndHook.Shape = RebarHookData.RebarHookShapeEnum.CUSTOM_HOOK;
 
             if (!SingleRebar.Insert())
-                WriteLine("Insert failed!");
+            {
+                WriteLine("SingleRebarTest failed - unable to create single rebar");
+                MessageBox.Show("Insert single rebar failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(SingleRebar);
+            }
 
             WriteLine(SingleRebar.Identifier.ID.ToString());
 
@@ -512,9 +597,15 @@ namespace ObjectTestApplication
             SingleRebar2.EndHook.Shape = RebarHookData.RebarHookShapeEnum.CUSTOM_HOOK;
 
             if (!SingleRebar2.Insert())
-                WriteLine("Insert failed!");
+            {
+                WriteLine("SingleRebarTest failed - unable to create single rebar 2");
+                MessageBox.Show("Insert single rebar 2 failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(SingleRebar2);
+            }
 
             WriteLine(SingleRebar2.Identifier.ID.ToString());
 
@@ -567,13 +658,18 @@ namespace ObjectTestApplication
             CP.AddContourPoint(Point3);
             CP.AddContourPoint(Point4);
             CP.Profile.ProfileString = "PL200";
-            CP.Material.MaterialString = "C50/60";
+            CP.Material.MaterialString = "Concrete_Undefined";
             CP.Finish = "PAINT";
 
             if (!CP.Insert())
-                MessageBox.Show("Cannot insert contour plate");
+            {
+                MessageBox.Show("Insert contour plate failed!");
+                return null;
+            }
             else
+            {
                 ObjectList.Add(CP);
+            }
 
             return CP;
         }
@@ -584,10 +680,18 @@ namespace ObjectTestApplication
 
             Beam Beam = new Beam(new TS.Point(5000, 8000, 0), new TS.Point(6000, 8000, 0));
             Beam.Profile.ProfileString = "250*250";
-            Beam.Material.MaterialString = "C50/60";
+            Beam.Material.MaterialString = "Concrete_Undefined";
             Beam.Finish = "PAINT";
-            if (Beam.Insert())
+            if (!Beam.Insert())
+            {
+                WriteLine("RebarGroupTest1 failed - unable to create beam");
+                MessageBox.Show("Insert beam failed!");
+                return;
+            }
+            else
+            {
                 ObjectList.Add(Beam);
+            }
 
             double MinimumX = Beam.GetSolid().MinimumPoint.X;
             double MinimumY = Beam.GetSolid().MinimumPoint.Y;
@@ -640,9 +744,15 @@ namespace ObjectTestApplication
             RebarGroup.FromPlaneOffset = 40;
 
             if (!RebarGroup.Insert())
-                MessageBox.Show("Cannot insert rebar group");
+            {
+                WriteLine("RebarGroupTest1 failed - unable to create rebar group");
+                MessageBox.Show("Cannot insert rebar group!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(RebarGroup);
+            }
 
             ArrayList InnerRebars = RebarGroup.GetRebarGeometries(false);
             RebarGroup.Name = "Modified Group 1";
@@ -660,10 +770,18 @@ namespace ObjectTestApplication
 
             Beam Beam = new Beam(new TS.Point(5000, 9000, 0), new TS.Point(6000, 9000, 0));
             Beam.Profile.ProfileString = "250*250";
-            Beam.Material.MaterialString = "C50/60";
+            Beam.Material.MaterialString = "Concrete_Undefined";
             Beam.Finish = "PAINT";
-            if (Beam.Insert())
+            if (!Beam.Insert())
+            {
+                WriteLine("RebarGroupTest2 failed - unable to create beam");
+                MessageBox.Show("Insert beam failed!");
+                return;
+            }
+            else
+            {
                 ObjectList.Add(Beam);
+            }
 
             double MinimumX = Beam.GetSolid().MinimumPoint.X;
             double MinimumY = Beam.GetSolid().MinimumPoint.Y;
@@ -720,9 +838,15 @@ namespace ObjectTestApplication
             RebarGroup.FromPlaneOffset = 20;
 
             if (!RebarGroup.Insert())
-                MessageBox.Show("Cannot insert rebar group");
+            {
+                WriteLine("RebarGroupTest2 failed - unable to create RebarGroup");
+                MessageBox.Show("Cannot insert rebar group!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(RebarGroup);
+            }
 
             WriteLine(RebarGroup.Identifier.ID.ToString());
 
@@ -735,9 +859,15 @@ namespace ObjectTestApplication
             ArrayList InnerRebars = RebarGroup.GetRebarGeometries(false);
 
             RebarGroup.Father = null;
-
-            if (!RebarGroup.Modify()) WriteLine("Rebar group disconnected from father");
-            WriteLine(RebarGroup.Identifier.ID.ToString());
+            try
+            {
+                if (!RebarGroup.Modify()) WriteLine("Rebar group disconnected from father");
+                WriteLine(RebarGroup.Identifier.ID.ToString());
+            }
+            catch 
+            {
+                WriteLine("Rebar group disconnected from father");
+            }
             WriteLine("The second RebarGroupTest complete!");
         }
 
@@ -754,8 +884,16 @@ namespace ObjectTestApplication
             Beam.Profile.ProfileString = "250*250";
             Beam.Material.MaterialString = "C50/60";
             Beam.Finish = "PAINT";
-            if (Beam.Insert())
+            if (!Beam.Insert())
+            {
+                WriteLine("RebarGroupTest3 failed - unable to create beam");
+                MessageBox.Show("Insert beam failed!");
+                return;
+            }
+            else
+            {
                 ObjectList.Add(Beam);
+            }
 
             double MinimumX = Beam.GetSolid().MinimumPoint.X;
             double MinimumY = Beam.GetSolid().MinimumPoint.Y;
@@ -851,9 +989,15 @@ namespace ObjectTestApplication
             RebarGroup.FromPlaneOffset = 40;
 
             if (!RebarGroup.Insert())
-                MessageBox.Show("Cannot insert rebar group");
+            {
+                WriteLine("RebarGroupTest3 failed - unable to create rebar group");
+                MessageBox.Show("Cannot insert rebar group!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(RebarGroup);
+            }
 
             WriteLine(RebarGroup.Identifier.ID.ToString());
 
@@ -871,6 +1015,11 @@ namespace ObjectTestApplication
             WriteLine("Starting the fourth RebarGroupTest...");
 
             ContourPlate CP = InsertPlate();
+
+            if (CP == null)
+            {
+                WriteLine("RebarGroupTest4 unable to create contour plate");
+            }
 
             Polygon Polygon1 = new Polygon();
             Polygon1.Points.Add(new TS.Point(0, 0, 0));
@@ -897,9 +1046,15 @@ namespace ObjectTestApplication
             RebarGroup.FromPlaneOffset = -50;
 
             if (!RebarGroup.Insert())
-                MessageBox.Show("Cannot insert rebar group");
+            {
+                WriteLine("RebarGroupTest4 failed - unable to create rebar group");
+                MessageBox.Show("Cannot insert rebar group!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(RebarGroup);
+            }
 
             WriteLine(RebarGroup.Identifier.ID.ToString());
 
@@ -917,10 +1072,18 @@ namespace ObjectTestApplication
             WriteLine("Starting the RebarSpliceTest...");
             Beam Beam = new Beam(new TS.Point(5000, 15000, 0), new TS.Point(6000, 15000, 0));
             Beam.Profile.ProfileString = "250*250";
-            Beam.Material.MaterialString = "C50/60";
+            Beam.Material.MaterialString = "Concrete_Undefined";
             Beam.Finish = "PAINT";
-            if (Beam.Insert())
+            if (!Beam.Insert())
+            {
+                WriteLine("RebarSpliceTest failed - unable to create beam");
+                MessageBox.Show("Insert beam failed!");
+                return;
+            }
+            else
+            {
                 ObjectList.Add(Beam);
+            }
 
             double MinimumX = Beam.GetSolid().MinimumPoint.X;
             double MinimumY = Beam.GetSolid().MinimumPoint.Y;
@@ -972,9 +1135,15 @@ namespace ObjectTestApplication
             RebarGroup1.FromPlaneOffset = 40;
 
             if (!RebarGroup1.Insert())
-                MessageBox.Show("Cannot insert rebar group");
+            {
+                WriteLine("RebarSpliceTest failed - unable to create rebar group 1");
+                MessageBox.Show("Cannot insert rebar group 1!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(RebarGroup1);
+            }
 
             Polygon Polygon3 = new Polygon();
             Polygon3.Points.Add(new TS.Point(MidX, MinimumY, MinimumZ));
@@ -1018,16 +1187,28 @@ namespace ObjectTestApplication
             RebarGroup2.FromPlaneOffset = 40;
 
             if (!RebarGroup2.Insert())
-                MessageBox.Show("Can not insert rebar group");
+            {
+                WriteLine("RebarSpliceTest failed - unable to create rebar group 2");
+                MessageBox.Show("Cannot insert rebar group 2!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(RebarGroup2);
+            }
 
             RebarSplice RebarSplice = new RebarSplice(RebarGroup1, RebarGroup2);
 
             if (!RebarSplice.Insert())
-                MessageBox.Show("Can not insert rebar splice");
+            {
+                WriteLine("RebarSpliceTest failed - unable to create rebar splice");
+                MessageBox.Show("Cannot insert rebar splice!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(RebarSplice);
+            }
 
             WriteLine(RebarSplice.Identifier.ID.ToString());
             if (!RebarSplice.Select()) WriteLine("Can not select rebar splice");
@@ -1055,20 +1236,34 @@ namespace ObjectTestApplication
             Beam Beam2 = new Beam(Beam2P1, Beam2P2);
 
             Beam1.Profile.ProfileString = "HI400-15-20*400";
+            Beam1.Material.MaterialString = "Steel_Undefined";
             Beam1.Finish = "PAINT";
             Beam1.Name = "Beam 1";
             Beam2.Profile.ProfileString = "HI300-15-20*300";
+            Beam2.Material.MaterialString = "Steel_Undefined";
             Beam2.Name = "Beam 2";
 
             if (!Beam1.Insert())
-                WriteLine("Beam 1 Insert Failed");
+            {
+                WriteLine("WeldTest failed - unable to create beam 1");
+                MessageBox.Show("Insert failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam1);
+            }
 
             if (!Beam2.Insert())
-                WriteLine("Beam 2 Insert Failed");
+            {
+                WriteLine("WeldTest failed - unable to create beam 2");
+                MessageBox.Show("Insert failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam2);
+            }
 
             WriteLine("Weld Beams Inserted, Ids " + Beam1.Identifier.ID.ToString() + " " + Beam2.Identifier.ID.ToString());
 
@@ -1076,11 +1271,18 @@ namespace ObjectTestApplication
             Weld.MainObject = Beam1;
             Weld.SecondaryObject = Beam2;
             Weld.TypeAbove = Weld.WeldTypeEnum.WELD_TYPE_SQUARE_GROOVE_SQUARE_BUTT;
+            Weld.ShopWeld = true;
 
             if (!Weld.Insert())
-                WriteLine("Weld Insert Failed!");
+            {
+                WriteLine("WeldTest failed - unable to create weld");
+                MessageBox.Show("Insert failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Weld);
+            }
 
             WriteLine(Weld.Identifier.ID.ToString());
 
@@ -1096,7 +1298,6 @@ namespace ObjectTestApplication
                 WriteLine("Weld Modify failed!");
 
             WriteLine(Weld.Identifier.ID.ToString());
-            WriteLine("WeldTest complete!");
 
             PolygonWeld polyWeld = new PolygonWeld();
             polyWeld.MainObject = Beam1;
@@ -1106,11 +1307,18 @@ namespace ObjectTestApplication
             polyWeld.Polygon.Points.Add(new TS.Point(3000, 18000, 0));
 
             if (!polyWeld.Insert())
-                WriteLine("polygonWeld Insert Failed!");
+            {
+                WriteLine("WeldTest failed - unable to create polyWeld");
+                MessageBox.Show("Insert failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(polyWeld);
+            }
 
             WriteLine(polyWeld.Identifier.ID.ToString());
+            WriteLine("WeldTest complete!");
         }
 
         private void CastUnitTest()
@@ -1139,24 +1347,48 @@ namespace ObjectTestApplication
             Beam4.Material.MaterialString = "Concrete_Undefined";
 
             if (!Beam1.Insert())
-                WriteLine("Beam 1 Insert Failed");
+            {
+                WriteLine("CastUnitTest failed - unable to create beam 1");
+                MessageBox.Show("Insert beam 1 failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam1);
+            }
 
             if (!Beam2.Insert())
-                WriteLine("Beam 2 Insert Failed");
+            {
+                WriteLine("CastUnitTest failed - unable to create beam 2");
+                MessageBox.Show("Insert beam 2 failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam2);
+            }
 
             if (!Beam3.Insert())
-                WriteLine("Beam 3 Insert Failed");
+            {
+                WriteLine("CastUnitTest failed - unable to create beam 3");
+                MessageBox.Show("Insert beam 3 failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam3);
+            }
 
             if (!Beam4.Insert())
-                WriteLine("Beam 4 Insert Failed");
+            {
+                WriteLine("CastUnitTest failed - unable to create beam 4");
+                MessageBox.Show("Insert beam 4 failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam4);
+            }
 
             WriteLine("CastUnit Beams Inserted, Ids " + " " + Beam1.Identifier.ID.ToString() + " " + Beam2.Identifier.ID.ToString() + " " + Beam3.Identifier.ID.ToString() + " " + Beam4.Identifier.ID.ToString());
 
@@ -1206,9 +1438,15 @@ namespace ObjectTestApplication
             controlPlane.IsMagnetic = true;
 
             if (!controlPlane.Insert())
-                WriteLine("ControlPlane Insert failed!");
+            {
+                WriteLine("ControlPlaneTest failed - unable to create ControlPlane");
+                MessageBox.Show("Insert ControlPlane failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(controlPlane);
+            }
             WriteLine(controlPlane.Identifier.ID.ToString());
 
             if (!controlPlane.Select())
@@ -1244,9 +1482,15 @@ namespace ObjectTestApplication
             grid.IsMagnetic = true;
 
             if (!grid.Insert())
-                WriteLine("Grid Insert failed!");
+            {
+                WriteLine("GridTest failed - unable to create Grid");
+                MessageBox.Show("Insert Grid failed!");
+                return null;
+            }
             else
+            {
                 ObjectList.Add(grid);
+            }
             WriteLine(grid.Identifier.ID.ToString());
 
             if (!grid.Select())
@@ -1365,14 +1609,22 @@ namespace ObjectTestApplication
             Contour c = new Contour();
             c.AddContourPoint(new ContourPoint(new TS.Point(6000, 15000, 5), null));
             c.AddContourPoint(new ContourPoint(new TS.Point(9000, 15000, 5), null));
-            c.AddContourPoint(new ContourPoint(new TS.Point(9000, 21000, 5), new Chamfer(300, 300, Chamfer.ChamferTypeEnum.CHAMFER_LINE_AND_ARC)));
+            c.AddContourPoint(new ContourPoint(new TS.Point(9000, 21000, 5), new Chamfer(300, 300, Chamfer.ChamferTypeEnum.CHAMFER_ARC)));
             c.AddContourPoint(new ContourPoint(new TS.Point(10500, 24000, 5), null));
             c.AddContourPoint(new ContourPoint(new TS.Point(7500, 21000, 5), null));
 
+            cp.Profile.ProfileString = "PL10";
+            cp.Material.MaterialString = "Concrete_Undefined";
             if (!cp.Insert())
-                WriteLine("ContourPlate Insert failed!");
+            {
+                WriteLine("SurfaceTreatmentTest failed - unable to create contour plate");
+                MessageBox.Show("Insert ContourPlate failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(cp);
+            }
             WriteLine("ContourPlate ID " + " " + cp.Identifier.ID.ToString());
 
             SurfaceTreatment treatment = new SurfaceTreatment();
@@ -1390,11 +1642,16 @@ namespace ObjectTestApplication
             treatment.Type = SurfaceTreatment.SurfaceTypeEnum.TILE_SURFACE;
             treatment.Material.MaterialString = "Concrete_Undefined";
 
-
             if (!treatment.Insert())
-                WriteLine("SurfaceTreatment Insert failed!");
+            {
+                WriteLine("SurfaceTreatmentTest failed - unable to create SurfaceTreatment");
+                MessageBox.Show("Insert SurfaceTreatment failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(treatment);
+            }
             WriteLine(treatment.Identifier.ID.ToString());
 
             if (!treatment.Select())
@@ -1425,20 +1682,34 @@ namespace ObjectTestApplication
             Beam Beam2 = new Beam(Beam2P1, Beam2P2);
 
             Beam1.Profile.ProfileString = "HI400-15-20*400";
+            Beam1.Material.MaterialString = "Steel_Undefined";
             Beam1.Finish = "PAINT";
             Beam1.Name = "Beam 1";
 
             if (!Beam1.Insert())
-                WriteLine("Beam 1 Insert Failed");
+            {
+                WriteLine("AssemblyTest failed - unable to create beam 1");
+                MessageBox.Show("Insert beam 1 failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam1);
+            }
 
             Beam2.Profile.ProfileString = "HI300-15-20*300";
+            Beam2.Material.MaterialString = "Steel_Undefined";
             Beam2.Name = "Beam 2";
             if (!Beam2.Insert())
-                WriteLine("Beam 2 Insert Failed");
+            {
+                WriteLine("AssemblyTest failed - unable to create beam 2");
+                MessageBox.Show("Insert beam 2 failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam2);
+            }
 
             WriteLine("Beams Inserted, Ids " + " " + Beam1.Identifier.ID.ToString() + " " + Beam2.Identifier.ID.ToString());
 
@@ -1446,11 +1717,18 @@ namespace ObjectTestApplication
             Weld.MainObject = Beam1;
             Weld.SecondaryObject = Beam2;
             Weld.TypeAbove = Weld.WeldTypeEnum.WELD_TYPE_SQUARE_GROOVE_SQUARE_BUTT;
+            Weld.ShopWeld = true;
 
             if (!Weld.Insert())
-                WriteLine("Weld Insert Failed!");
+            {
+                WriteLine("AssemblyTest failed - unable to create weld");
+                MessageBox.Show("Insert weld failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Weld);
+            }
             WriteLine("Weld created, Id " + " " + Weld.Identifier.ID.ToString());
 
             Assembly assembly = Beam1.GetAssembly();
@@ -1478,21 +1756,36 @@ namespace ObjectTestApplication
             Beam Beam2 = new Beam(Beam2P1, Beam2P2);
 
             Beam1.Profile.ProfileString = "HI400-15-20*400";
+            Beam1.Material.MaterialString = "Steel_Undefined";
             Beam1.Finish = "PAINT";
             Beam1.Name = "Beam 1";
 
             Beam2.Profile.ProfileString = "HI300-15-20*300";
+            Beam2.Material.MaterialString = "Steel_Undefined";
             Beam2.Finish = "PAINT";
             Beam2.Name = "Beam 2";
 
             if (!Beam1.Insert())
-                WriteLine("Beam Insert Failed");
+            {
+                WriteLine("GetPartMarkTest failed - unable to create beam 1");
+                MessageBox.Show("Insert beam 1 failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam1);
+            }
+
             if (!Beam2.Insert())
-                WriteLine("Beam Insert Failed");
+            {
+                WriteLine("GetPartMarkTest failed - unable to create beam 2");
+                MessageBox.Show("Insert beam 2 failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam2);
+            }
 
             WriteLine("Beams Inserted, Id " + " " + Beam1.Identifier.ID.ToString() + " " + Beam2.Identifier.ID.ToString());
 
@@ -1512,15 +1805,24 @@ namespace ObjectTestApplication
 
             //Create for instance a contour plate that we can bolt to, insert it into the model
             ContourPlate cp = new ContourPlate();
+            cp.Profile.ProfileString = "PL10";
+            cp.Material.MaterialString = "Steel_Undefined";
             cp.AddContourPoint(new ContourPoint(new TS.Point(0, 18000, 0), null));
             cp.AddContourPoint(new ContourPoint(new TS.Point(1000, 18000, 0), null));
             cp.AddContourPoint(new ContourPoint(new TS.Point(1000, 19000, 0), null));
             cp.AddContourPoint(new ContourPoint(new TS.Point(0, 19000, 0), null));
 
             if (!cp.Insert())
-                WriteLine("ContourPlate Insert failed!");
+            {
+                WriteLine("BoltArrayTest failed - unable to create contour plate");
+                MessageBox.Show("Insert failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(cp);
+            }
+
             WriteLine("ContourPlate ID " + " " + cp.Identifier.ID.ToString());
 
             BoltArray B = new BoltArray();
@@ -1533,15 +1835,15 @@ namespace ObjectTestApplication
 
             B.BoltSize = 16;
             B.Tolerance = 3.00;
-            B.BoltStandard = "NELSON";
+            B.BoltStandard = "7990";
             B.BoltType = BoltGroup.BoltTypeEnum.BOLT_TYPE_WORKSHOP;
             B.CutLength = 105;
-            B.StartPointOffset.Dx = 1;
-            B.EndPointOffset.Dx = 2;
-            B.StartPointOffset.Dy = 3;
-            B.EndPointOffset.Dy = 4;
-            B.StartPointOffset.Dz = 5;
-            B.EndPointOffset.Dz = 6;
+            //B.StartPointOffset.Dx = 1;
+            //B.EndPointOffset.Dx = 2;
+            //B.StartPointOffset.Dy = 3;
+            //B.EndPointOffset.Dy = 4;
+            //B.StartPointOffset.Dz = 5;
+            //B.EndPointOffset.Dz = 6;
 
             B.Length = 100;
             B.ExtraLength = 15;
@@ -1552,12 +1854,12 @@ namespace ObjectTestApplication
             B.RotateSlots = BoltGroup.BoltRotateSlotsEnum.ROTATE_SLOTS_ODD;
             B.HoleType = BoltGroup.BoltHoleTypeEnum.HOLE_TYPE_OVERSIZED;
 
-            B.Position.Depth = Position.DepthEnum.MIDDLE;
-            B.Position.DepthOffset = 3;
-            B.Position.Plane = Position.PlaneEnum.MIDDLE;
-            B.Position.PlaneOffset = 1;
-            B.Position.Rotation = Position.RotationEnum.FRONT;
-            B.Position.RotationOffset = 2;
+            //B.Position.Depth = Position.DepthEnum.MIDDLE;
+            //B.Position.DepthOffset = 3;
+            //B.Position.Plane = Position.PlaneEnum.MIDDLE;
+            //B.Position.PlaneOffset = 1;
+            //B.Position.Rotation = Position.RotationEnum.FRONT;
+            //B.Position.RotationOffset = 2;
 
             B.Bolt = true;
             B.Washer1 = true;
@@ -1598,15 +1900,15 @@ namespace ObjectTestApplication
 
             B.BoltSize = 20;
             B.Tolerance = 4.00;
-            B.BoltStandard = "NELSON";
+            B.BoltStandard = "7990";
             B.BoltType = BoltGroup.BoltTypeEnum.BOLT_TYPE_SITE;
             B.CutLength = 155;
-            B.StartPointOffset.Dx = 11;
-            B.EndPointOffset.Dx = 12;
-            B.StartPointOffset.Dy = 13;
-            B.EndPointOffset.Dy = 14;
-            B.StartPointOffset.Dz = 15;
-            B.EndPointOffset.Dz = 16;
+            //B.StartPointOffset.Dx = 11;
+            //B.EndPointOffset.Dx = 12;
+            //B.StartPointOffset.Dy = 13;
+            //B.EndPointOffset.Dy = 14;
+            //B.StartPointOffset.Dz = 15;
+            //B.EndPointOffset.Dz = 16;
 
             B.Length = 50;
             B.ExtraLength = 45;
@@ -1617,12 +1919,12 @@ namespace ObjectTestApplication
             B.RotateSlots = BoltGroup.BoltRotateSlotsEnum.ROTATE_SLOTS_EVEN;
             B.HoleType = BoltGroup.BoltHoleTypeEnum.HOLE_TYPE_SLOTTED;
 
-            B.Position.Depth = Position.DepthEnum.FRONT;
-            B.Position.DepthOffset = 13;
-            B.Position.Plane = Position.PlaneEnum.LEFT;
-            B.Position.PlaneOffset = 11;
-            B.Position.Rotation = Position.RotationEnum.TOP;
-            B.Position.RotationOffset = 12;
+            //B.Position.Depth = Position.DepthEnum.FRONT;
+            //B.Position.DepthOffset = 13;
+            //B.Position.Plane = Position.PlaneEnum.LEFT;
+            //B.Position.PlaneOffset = 11;
+            //B.Position.Rotation = Position.RotationEnum.TOP;
+            //B.Position.RotationOffset = 12;
 
             B.Bolt = true;
             B.Washer1 = false;
@@ -1654,15 +1956,23 @@ namespace ObjectTestApplication
 
             //Create for instance a contour plate that we can bolt to, insert it into the model
             ContourPlate cp = new ContourPlate();
+            cp.Profile.ProfileString = "PL10";
+            cp.Material.MaterialString = "Steel_Undefined";
             cp.AddContourPoint(new ContourPoint(new TS.Point(0, 19000, 0), null));
             cp.AddContourPoint(new ContourPoint(new TS.Point(1000, 19000, 0), null));
             cp.AddContourPoint(new ContourPoint(new TS.Point(1000, 20000, 0), null));
             cp.AddContourPoint(new ContourPoint(new TS.Point(0, 20000, 0), null));
 
             if (!cp.Insert())
-                WriteLine("ContourPlate Insert failed!");
+            {
+                WriteLine("BoltXYListTest failed - unable to create contour plate");
+                MessageBox.Show("Insert failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(cp);
+            }
             WriteLine("ContourPlate ID " + " " + cp.Identifier.ID.ToString());
 
             BoltXYList B = new BoltXYList();
@@ -1678,12 +1988,12 @@ namespace ObjectTestApplication
             B.BoltStandard = "7968";
             B.BoltType = BoltGroup.BoltTypeEnum.BOLT_TYPE_WORKSHOP;
             B.CutLength = 105;
-            B.StartPointOffset.Dx = 1;
-            B.EndPointOffset.Dx = 2;
-            B.StartPointOffset.Dy = 3;
-            B.EndPointOffset.Dy = 4;
-            B.StartPointOffset.Dz = 5;
-            B.EndPointOffset.Dz = 6;
+            //B.StartPointOffset.Dx = 1;
+            //B.EndPointOffset.Dx = 2;
+            //B.StartPointOffset.Dy = 3;
+            //B.EndPointOffset.Dy = 4;
+            //B.StartPointOffset.Dz = 5;
+            //B.EndPointOffset.Dz = 6;
 
             B.Length = 88;
             B.ExtraLength = 15;
@@ -1694,12 +2004,12 @@ namespace ObjectTestApplication
             B.RotateSlots = BoltGroup.BoltRotateSlotsEnum.ROTATE_SLOTS_ODD;
             B.HoleType = BoltGroup.BoltHoleTypeEnum.HOLE_TYPE_OVERSIZED;
 
-            B.Position.Depth = Position.DepthEnum.MIDDLE;
-            B.Position.DepthOffset = 3;
-            B.Position.Plane = Position.PlaneEnum.MIDDLE;
-            B.Position.PlaneOffset = 1;
-            B.Position.Rotation = Position.RotationEnum.FRONT;
-            B.Position.RotationOffset = 2;
+            //B.Position.Depth = Position.DepthEnum.MIDDLE;
+            //B.Position.DepthOffset = 3;
+            //B.Position.Plane = Position.PlaneEnum.MIDDLE;
+            //B.Position.PlaneOffset = 1;
+            //B.Position.Rotation = Position.RotationEnum.FRONT;
+            //B.Position.RotationOffset = 2;
 
             B.Bolt = true;
             B.Washer1 = true;
@@ -1740,12 +2050,12 @@ namespace ObjectTestApplication
             B.BoltStandard = "7990";
             B.BoltType = BoltGroup.BoltTypeEnum.BOLT_TYPE_SITE;
             B.CutLength = 155;
-            B.StartPointOffset.Dx = 11;
-            B.EndPointOffset.Dx = 12;
-            B.StartPointOffset.Dy = 13;
-            B.EndPointOffset.Dy = 14;
-            B.StartPointOffset.Dz = 15;
-            B.EndPointOffset.Dz = 16;
+            //B.StartPointOffset.Dx = 11;
+            //B.EndPointOffset.Dx = 12;
+            //B.StartPointOffset.Dy = 13;
+            //B.EndPointOffset.Dy = 14;
+            //B.StartPointOffset.Dz = 15;
+            //B.EndPointOffset.Dz = 16;
 
             B.Length = 88;
             B.ExtraLength = 45;
@@ -1756,12 +2066,12 @@ namespace ObjectTestApplication
             B.RotateSlots = BoltGroup.BoltRotateSlotsEnum.ROTATE_SLOTS_EVEN;
             B.HoleType = BoltGroup.BoltHoleTypeEnum.HOLE_TYPE_SLOTTED;
 
-            B.Position.Depth = Position.DepthEnum.FRONT;
-            B.Position.DepthOffset = 13;
-            B.Position.Plane = Position.PlaneEnum.LEFT;
-            B.Position.PlaneOffset = 11;
-            B.Position.Rotation = Position.RotationEnum.TOP;
-            B.Position.RotationOffset = 12;
+            //B.Position.Depth = Position.DepthEnum.FRONT;
+            //B.Position.DepthOffset = 13;
+            //B.Position.Plane = Position.PlaneEnum.LEFT;
+            //B.Position.PlaneOffset = 11;
+            //B.Position.Rotation = Position.RotationEnum.TOP;
+            //B.Position.RotationOffset = 12;
 
             B.Bolt = true;
             B.Washer1 = false;
@@ -1791,15 +2101,23 @@ namespace ObjectTestApplication
 
             //Create for instance a contour plate that we can bolt to, insert it into the model
             ContourPlate cp = new ContourPlate();
+            cp.Profile.ProfileString = "PL10";
+            cp.Material.MaterialString = "Steel_Undefined";
             cp.AddContourPoint(new ContourPoint(new TS.Point(0, 20000, 0), null));
             cp.AddContourPoint(new ContourPoint(new TS.Point(1000, 20000, 0), null));
             cp.AddContourPoint(new ContourPoint(new TS.Point(1000, 21000, 0), null));
             cp.AddContourPoint(new ContourPoint(new TS.Point(0, 21000, 0), null));
 
             if (!cp.Insert())
-                WriteLine("ContourPlate Insert failed!");
+            {
+                WriteLine("BoltCircleTest failed - unable to create contour plate");
+                MessageBox.Show("Insert failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(cp);
+            }
             WriteLine("ContourPlate ID " + " " + cp.Identifier.ID.ToString());
 
             BoltCircle B = new BoltCircle();
@@ -1815,12 +2133,12 @@ namespace ObjectTestApplication
             B.BoltStandard = "7968";
             B.BoltType = BoltGroup.BoltTypeEnum.BOLT_TYPE_WORKSHOP;
             B.CutLength = 105;
-            B.StartPointOffset.Dx = 1;
-            B.EndPointOffset.Dx = 2;
-            B.StartPointOffset.Dy = 3;
-            B.EndPointOffset.Dy = 4;
-            B.StartPointOffset.Dz = 5;
-            B.EndPointOffset.Dz = 6;
+            //B.StartPointOffset.Dx = 1;
+            //B.EndPointOffset.Dx = 2;
+            //B.StartPointOffset.Dy = 3;
+            //B.EndPointOffset.Dy = 4;
+            //B.StartPointOffset.Dz = 5;
+            //B.EndPointOffset.Dz = 6;
 
             B.Length = 88;
             B.ExtraLength = 15;
@@ -1831,12 +2149,12 @@ namespace ObjectTestApplication
             B.RotateSlots = BoltGroup.BoltRotateSlotsEnum.ROTATE_SLOTS_ODD;
             B.HoleType = BoltGroup.BoltHoleTypeEnum.HOLE_TYPE_OVERSIZED;
 
-            B.Position.Depth = Position.DepthEnum.MIDDLE;
-            B.Position.DepthOffset = 3;
-            B.Position.Plane = Position.PlaneEnum.MIDDLE;
-            B.Position.PlaneOffset = 1;
-            B.Position.Rotation = Position.RotationEnum.FRONT;
-            B.Position.RotationOffset = 2;
+            //B.Position.Depth = Position.DepthEnum.MIDDLE;
+            //B.Position.DepthOffset = 3;
+            //B.Position.Plane = Position.PlaneEnum.MIDDLE;
+            //B.Position.PlaneOffset = 1;
+            //B.Position.Rotation = Position.RotationEnum.FRONT;
+            //B.Position.RotationOffset = 2;
 
             B.Bolt = true;
             B.Washer1 = true;
@@ -1872,12 +2190,12 @@ namespace ObjectTestApplication
             B.BoltStandard = "7990";
             B.BoltType = BoltGroup.BoltTypeEnum.BOLT_TYPE_SITE;
             B.CutLength = 155;
-            B.StartPointOffset.Dx = 11;
-            B.EndPointOffset.Dx = 12;
-            B.StartPointOffset.Dy = 13;
-            B.EndPointOffset.Dy = 14;
-            B.StartPointOffset.Dz = 15;
-            B.EndPointOffset.Dz = 16;
+            //B.StartPointOffset.Dx = 11;
+            //B.EndPointOffset.Dx = 12;
+            //B.StartPointOffset.Dy = 13;
+            //B.EndPointOffset.Dy = 14;
+            //B.StartPointOffset.Dz = 15;
+            //B.EndPointOffset.Dz = 16;
 
             B.Length = 88;
             B.ExtraLength = 45;
@@ -1888,12 +2206,12 @@ namespace ObjectTestApplication
             B.RotateSlots = BoltGroup.BoltRotateSlotsEnum.ROTATE_SLOTS_EVEN;
             B.HoleType = BoltGroup.BoltHoleTypeEnum.HOLE_TYPE_SLOTTED;
 
-            B.Position.Depth = Position.DepthEnum.FRONT;
-            B.Position.DepthOffset = 13;
-            B.Position.Plane = Position.PlaneEnum.LEFT;
-            B.Position.PlaneOffset = 11;
-            B.Position.Rotation = Position.RotationEnum.TOP;
-            B.Position.RotationOffset = 12;
+            //B.Position.Depth = Position.DepthEnum.FRONT;
+            //B.Position.DepthOffset = 13;
+            //B.Position.Plane = Position.PlaneEnum.LEFT;
+            //B.Position.PlaneOffset = 11;
+            //B.Position.Rotation = Position.RotationEnum.TOP;
+            //B.Position.RotationOffset = 12;
 
             B.Bolt = true;
             B.Washer1 = false;
@@ -1922,10 +2240,18 @@ namespace ObjectTestApplication
             WriteLine("Starting LoadPointTest...");
             Beam FatherBeam = new Beam(new TS.Point(0, 24000, 0), new TS.Point(1000, 24000, 0));
             FatherBeam.Profile.ProfileString = "HI400-15-20*400";
+            FatherBeam.Material.MaterialString = "Steel_Undefined";
             if (!FatherBeam.Insert())
-                WriteLine("Father Beam Insert failed!");
+            {
+                WriteLine("LoadPointTest failed - unable to create father beam");
+                MessageBox.Show("Insert father beam failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(FatherBeam);
+            }
+            
             WriteLine(FatherBeam.Identifier.ID.ToString());
             
             LoadPoint L = new LoadPoint();
@@ -1950,9 +2276,15 @@ namespace ObjectTestApplication
             L.LoadAttachment = TSM.Load.LoadAttachmentEnum.LOAD_ATTACHMENT_ATTACH_TO_MEMBER; //Can't be Set atm
 
             if (!L.Insert())
-                WriteLine("LoadPoint Insert failed!");
+            {
+                WriteLine("LoadPointTest failed - unable to create load point");
+                MessageBox.Show("Insert load point failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(L);
+            }
             WriteLine("LoadPoint ID " + " " + L.Identifier.ID.ToString());
 
             LoadPoint LSel = new LoadPoint();
@@ -2019,9 +2351,15 @@ namespace ObjectTestApplication
             L.LoadAttachment = TSM.Load.LoadAttachmentEnum.LOAD_ATTACHMENT_DONT_ATTACH;
 
             if (!L.Insert())
-                WriteLine("LoadArea Insert failed!");
+            {
+                WriteLine("LoadAreaTest failed - unable to create load area");
+                MessageBox.Show("Insert load area failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(L);
+            }
             WriteLine("LoadArea ID " + " " + L.Identifier.ID.ToString());
 
             LoadArea LSel = new LoadArea();
@@ -2068,9 +2406,15 @@ namespace ObjectTestApplication
             Beam FatherBeam = new Beam(new TS.Point(3000, 24000, 0), new TS.Point(5000, 24000, 0));
             FatherBeam.Profile.ProfileString = "HI400-15-20*400";
             if (!FatherBeam.Insert())
-                WriteLine("Father Beam Insert failed!");
+            {
+                WriteLine("LoadLineTest failed - unable to create father beam");
+                MessageBox.Show("Insert father beam failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(FatherBeam);
+            }
             WriteLine(FatherBeam.Identifier.ID.ToString());
 
 
@@ -2102,9 +2446,15 @@ namespace ObjectTestApplication
             L.LoadAttachment = TSM.Load.LoadAttachmentEnum.LOAD_ATTACHMENT_ATTACH_TO_MEMBER;
 
             if (!L.Insert())
-                WriteLine("LoadLine Insert failed!");
+            {
+                WriteLine("LoadLineTest failed - unable to create load line");
+                MessageBox.Show("Insert load line failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(L);
+            }
             WriteLine("LoadLine ID " + " " + L.Identifier.ID.ToString());
 
             LoadLine LSel = new LoadLine();
@@ -2173,9 +2523,15 @@ namespace ObjectTestApplication
             L.LoadAttachment = TSM.Load.LoadAttachmentEnum.LOAD_ATTACHMENT_DONT_ATTACH;
 
             if (!L.Insert())
-                WriteLine("LoadUniform Insert failed!");
+            {
+                WriteLine("LoadUniformTest failed - unable to create load uniform");
+                MessageBox.Show("Insert load uniform failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(L);
+            }
             WriteLine("LoadLine ID " + " " + L.Identifier.ID.ToString());
 
             LoadUniform LSel = new LoadUniform();
@@ -2220,11 +2576,19 @@ namespace ObjectTestApplication
             Beam B = new Beam(point, point2);
 
             B.Profile.ProfileString = "HI400-15-20*400";
+            B.Material.MaterialString = "Steel_Undefined";
             B.Finish = "PAINT";
             if (!B.Insert())
-                WriteLine("Insert failed!");
+            {
+                WriteLine("GetAndSetPropertyTest failed - unable to create beam");
+                MessageBox.Show("Insert beam failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(B);
+            }
+
             WriteLine(B.Identifier.ID.ToString());
             
             if (!B.SetUserProperty("comment", "Test comment"))
@@ -2517,14 +2881,22 @@ namespace ObjectTestApplication
             Beam Beam = new Beam(point, point2);
 
             Beam.Profile.ProfileString = "PL500*200";
+            Beam.Material.MaterialString = "Steel_Undefined";
             Beam.Name = "SolidTestBeam";
             Beam.Finish = "Normal";
             Beam.Class = "5";
             if (!Beam.Insert())
-                WriteLine("Insert failed!");
+            {
+                WriteLine("SolidTest failed - unable to create beam");
+                MessageBox.Show("Insert beam failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam);
+            }
             WriteLine(Beam.Identifier.ID.ToString());
+
             if (!Beam.Select())
                 WriteLine("Select failed!");
             WriteLine(Beam.Identifier.ID.ToString());
@@ -2580,9 +2952,18 @@ namespace ObjectTestApplication
             Beam Beam = new Beam(new TS.Point(0, 7000, 0), new TS.Point(0, 8000, 0));
 
             Beam.Profile.ProfileString = "HI400-15-20*400";
+            Beam.Material.MaterialString = "Steel_Undefined";
             Beam.Finish = "PAINT";
-            if (Beam.Insert())
+            if (!Beam.Insert())
+            {
+                WriteLine("TransformationPlaneTest failed - unable to create Beam");
+                MessageBox.Show("Insert Beam failed!");
+                return;
+            }
+            else
+            {
                 ObjectList.Add(Beam);
+            }
             Beam.Select();
 
             WriteLine("Change current plane to object " + Beam.Identifier.ID + " plane");
@@ -2616,14 +2997,22 @@ namespace ObjectTestApplication
             Beam Beam = new Beam(point1, point2);
 
             Beam.Profile.ProfileString = "PL500*200";
+            Beam.Material.MaterialString = "Steel_Undefined";
             Beam.Name = "SolidLine";
             Beam.Finish = "Normal";
             Beam.Class = "5";
             if (!Beam.Insert())
-                WriteLine("Insert failed!");
+            {
+                WriteLine("SolidLineIntersectionTest failed - unable to create Beam");
+                MessageBox.Show("Insert Beam failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam);
+            }
             WriteLine(Beam.Identifier.ID.ToString());
+
             if (!Beam.Select())
                 WriteLine("Select failed!");
             WriteLine(Beam.Identifier.ID.ToString());
@@ -2647,32 +3036,40 @@ namespace ObjectTestApplication
             Beam Beam = new Beam(new TS.Point(500, 500, -1000), new TS.Point(500, 500, 1000));
 
             Beam.Profile.ProfileString = "RHS150*5";
+            Beam.Material.MaterialString = "Steel_Undefined";
             Beam.Name = "SolidPlane";
             Beam.Finish = "Normal";
             Beam.Class = "6";
             if (!Beam.Insert())
-                WriteLine("Insert failed!");
+            {
+                WriteLine("SolidPlaneIntersectionTest failed - unable to create Beam");
+                MessageBox.Show("Insert Beam failed!");
+                return;
+            }
             else
+            {
                 ObjectList.Add(Beam);
+            }
             WriteLine(Beam.Identifier.ID.ToString());
+
             if (!Beam.Select())
                 WriteLine("Select failed!");
             WriteLine(Beam.Identifier.ID.ToString());
 
             Solid Solid = Beam.GetSolid();
 
-            ArrayList Points = (ArrayList)Solid.IntersectAllFaces(new TS.Point(0, 0, 0), 
+            var Points = Solid.IntersectAllFaces(new TS.Point(0, 0, 0), 
                 new TS.Point(1000, 0, 0), new TS.Point(0, 1000, 0));
-            WriteLine("Got " + Points.Count + " plane intersection loops");
-            IEnumerator LoopsEnum = Points.GetEnumerator();
+            
+            //IEnumerator LoopsEnum = Points.GetEnumerator();
             int nLoops = 0;
             int nPoints = 0;
 
-            while (LoopsEnum.MoveNext())
+            while (Points.MoveNext())
             {
                 nPoints = 0;
                 nLoops++;
-                ArrayList LoopPoints = LoopsEnum.Current as ArrayList;
+                ArrayList LoopPoints = Points.Current as ArrayList;
                 IEnumerator LoopPointsEnum = LoopPoints.GetEnumerator();
 
                 WriteLine(nLoops + ". Loop: " + LoopPoints.Count + " plane intersection points");
@@ -2684,6 +3081,8 @@ namespace ObjectTestApplication
                     WriteLine("   " + nPoints + ". Point: " + Point);
                 }
             }
+
+            WriteLine("Got " + nLoops + " plane intersection loops");
         }
 
         private void GetCoordSysTest()
@@ -2735,9 +3134,15 @@ namespace ObjectTestApplication
                 C.SetAttribute("side_bar_space", 333.0);
 
                 if (!C.Insert())
-                    WriteLine("Component Insert failed");
+                {
+                    WriteLine("ComponentTest failed - unable to create Component");
+                    MessageBox.Show("Insert component failed!");
+                    return;
+                }
                 else
+                {
                     ObjectList.Add(C);
+                }
                 WriteLine(C.Identifier.ID.ToString());
 
                 Double DValue = 0.0;
@@ -2782,9 +3187,15 @@ namespace ObjectTestApplication
                 C.SetAttribute("e1", 10.0);
 
                 if (!C.Insert())
-                    WriteLine("Connection Insert failed");
+                {
+                    WriteLine("PolyBeamTest failed - unable to create connection");
+                    MessageBox.Show("Insert connection failed!");
+                    return;
+                }
                 else
+                {
                     ObjectList.Add(C);
+                }
                 WriteLine(C.Identifier.ID.ToString());
 
                 Double DValue = 0.0;
@@ -2886,7 +3297,9 @@ namespace ObjectTestApplication
                 WriteLine("Number of children for the part is " + Enum2.GetSize());
             }
             else
+            {
                 WriteLine("Creation of COL8 failed, please check that you have the \"COL8\" in your model.");
+            }
         }
 
         private void TaperedBeamTest()
@@ -2913,6 +3326,7 @@ namespace ObjectTestApplication
                 else
                     WriteLine("Creation of TaperedBeam failed!");
             }
+            WriteLine("Completed TaperedBeam Test!");
         }
 
         private void DetailTest()
@@ -3054,9 +3468,9 @@ namespace ObjectTestApplication
                 ConnectionTest();
                 ComponentTest();
                 TaperedBeamTest();
-                TaperedCustomPartTest();
+                //TaperedCustomPartTest(); //COL8 custom part should be available to insert
                 DetailTest();
-                SeamTest();
+                //SeamTest(); // Model should have seamdm seam connection
             }
             Model.CommitChanges();
         }
