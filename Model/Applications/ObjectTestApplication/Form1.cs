@@ -88,13 +88,13 @@ namespace ObjectTestApplication
             // 
             // statusBar1
             // 
-            this.statusBar1.Location = new System.Drawing.Point(0, 296);
+            this.statusBar1.Location = new System.Drawing.Point(0, 523);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
             this.statusBarPanel1,
             this.statusBarPanel2});
             this.statusBar1.ShowPanels = true;
-            this.statusBar1.Size = new System.Drawing.Size(568, 22);
+            this.statusBar1.Size = new System.Drawing.Size(568, 25);
             this.statusBar1.TabIndex = 1;
             // 
             // statusBarPanel1
@@ -102,7 +102,7 @@ namespace ObjectTestApplication
             this.statusBarPanel1.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring;
             this.statusBarPanel1.Name = "statusBarPanel1";
             this.statusBarPanel1.Text = "Objecttest started..";
-            this.statusBarPanel1.Width = 451;
+            this.statusBarPanel1.Width = 447;
             // 
             // statusBarPanel2
             // 
@@ -112,20 +112,20 @@ namespace ObjectTestApplication
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox1.Location = new System.Drawing.Point(0, 200);
+            this.textBox1.Location = new System.Drawing.Point(0, 207);
             this.textBox1.MaxLength = 2147483647;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(568, 96);
+            this.textBox1.Size = new System.Drawing.Size(568, 316);
             this.textBox1.TabIndex = 5;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(368, 32);
+            this.button6.Location = new System.Drawing.Point(416, 28);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 80);
+            this.button6.Size = new System.Drawing.Size(144, 72);
             this.button6.TabIndex = 7;
             this.button6.Text = "Run Selected Tests";
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -151,26 +151,26 @@ namespace ObjectTestApplication
             "EnumerationTest",
             "SolidTests",
             "ComponentTests"});
-            this.checkedListBox1.Location = new System.Drawing.Point(16, 24);
+            this.checkedListBox1.Location = new System.Drawing.Point(19, 28);
             this.checkedListBox1.MultiColumn = true;
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(288, 154);
+            this.checkedListBox1.Size = new System.Drawing.Size(346, 157);
             this.checkedListBox1.TabIndex = 9;
             this.checkedListBox1.ThreeDCheckBoxes = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(368, 120);
+            this.button1.Location = new System.Drawing.Point(416, 120);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 56);
+            this.button1.Size = new System.Drawing.Size(144, 65);
             this.button1.TabIndex = 10;
             this.button1.Text = "Clear Model";
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(568, 318);
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 15);
+            this.ClientSize = new System.Drawing.Size(568, 548);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.button6);
@@ -331,6 +331,8 @@ namespace ObjectTestApplication
 
         private string BooleanPartTest()
         {
+            WriteLine("Starting BooleanPartTest...");
+
             TS.Point point = new TS.Point(0, 7000, 0);
             TS.Point point2 = new TS.Point(1000, 7000, 0);
 
@@ -392,11 +394,14 @@ namespace ObjectTestApplication
             if (!Beam.Modify())
                 MessageBox.Show("Modify failed!");
 
+            WriteLine("BooleanPartTest complete!");
             return Beam.Identifier.ID.ToString();
         }
 
         private string CutTest()
         {
+            WriteLine("Starting CutTest...");
+
             TS.Point point = new TS.Point(5000, 5000, 0);
             TS.Point point2 = new TS.Point(6000, 5000, 0);
 
@@ -444,11 +449,14 @@ namespace ObjectTestApplication
             if (!Cut.Modify())
                 MessageBox.Show("Modify failed!");
 
+            WriteLine("CutTest complete!");
             return Cut.Identifier.ID.ToString();
         }
 
         private string FittingTest()
         {
+            WriteLine("Starting FittingTest...");
+
             TS.Point point = new TS.Point(5000, 6000, 0);
             TS.Point point2 = new TS.Point(6000, 6000, 0);
 
@@ -498,6 +506,7 @@ namespace ObjectTestApplication
             if (!Fitting.Modify())
                 MessageBox.Show("Modify failed!");
 
+            WriteLine("FittingTest complete!");
             return Fitting.Identifier.ID.ToString();
         }
 
