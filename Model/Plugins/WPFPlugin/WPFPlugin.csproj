@@ -10,7 +10,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WPFPlugin</RootNamespace>
     <AssemblyName>WPFPlugin</AssemblyName>
-    <ApplicationIcon>Resources\TeklaStructures.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -110,7 +111,6 @@
     <Content Include="Resources\prtyp_tree_7.bmp" />
     <Content Include="Resources\prtyp_tree_8.bmp" />
     <Content Include="Resources\prtyp_tree_9.bmp" />
-    <Content Include="Resources\TeklaStructures.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
