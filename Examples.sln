@@ -107,6 +107,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpliceConnSidePaneFeature",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeamPluginSidePaneFeature", "Model\Plugins\SidePaneExamples\BeamPluginSidePaneFeature\BeamPluginSidePaneFeature.csproj", "{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawingMarkExample", "Drawings\Applications\DrawingMarkExample\DrawingMarkExample.csproj", "{7A16206F-A9F3-4F31-9C05-A2921CA8ADDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -529,6 +531,14 @@ Global
 		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8CF581BC-A2F5-4BE1-8933-D0178CF1EE7D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7A16206F-A9F3-4F31-9C05-A2921CA8ADDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A16206F-A9F3-4F31-9C05-A2921CA8ADDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A16206F-A9F3-4F31-9C05-A2921CA8ADDC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7A16206F-A9F3-4F31-9C05-A2921CA8ADDC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7A16206F-A9F3-4F31-9C05-A2921CA8ADDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A16206F-A9F3-4F31-9C05-A2921CA8ADDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A16206F-A9F3-4F31-9C05-A2921CA8ADDC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7A16206F-A9F3-4F31-9C05-A2921CA8ADDC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
