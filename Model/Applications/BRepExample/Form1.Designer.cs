@@ -41,11 +41,11 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.shapeType = new System.Windows.Forms.Label();
             this.shapeTypeBox = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -168,6 +168,16 @@
             this.panel1.Size = new System.Drawing.Size(286, 155);
             this.panel1.TabIndex = 13;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(24, 75);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(219, 23);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "Insert CUT cube into catalog";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -210,16 +220,6 @@
             this.panel3.Size = new System.Drawing.Size(286, 98);
             this.panel3.TabIndex = 15;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(24, 75);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(219, 23);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Insert CUT cube into catalog";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +232,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "Form1";
             this.Text = "BRep API example application";
+            this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
