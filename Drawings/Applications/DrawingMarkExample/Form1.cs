@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using Tekla.Structures.Drawing;
+using Tekla.Structures.Geometry3d;
 
 namespace DrawingMarkExample
 {
@@ -112,6 +113,10 @@ namespace DrawingMarkExample
                         if (radioButtonBlue.Checked) textElement.Font.Color = DrawingColors.Blue;
                     }
                 }
+
+                double startPointX = double.Parse(textBoxStartPointX.Text);
+                double startPointY = double.Parse(textBoxStartPointY.Text);
+                currentMark.Placing = new LeaderLinePlacing(new Point(startPointX, startPointY));
 
                 currentMark.Modify();
             }

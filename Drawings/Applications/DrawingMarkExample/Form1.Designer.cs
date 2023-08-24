@@ -39,6 +39,10 @@
             this.radioButtonGreen = new System.Windows.Forms.RadioButton();
             this.radioButtonBlue = new System.Windows.Forms.RadioButton();
             this.buttonUndo = new System.Windows.Forms.Button();
+            this.StartPointX = new System.Windows.Forms.Label();
+            this.StartPointY = new System.Windows.Forms.Label();
+            this.textBoxStartPointX = new System.Windows.Forms.TextBox();
+            this.textBoxStartPointY = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonDelete
@@ -76,7 +80,7 @@
             this.checkBoxProfile.AutoSize = true;
             this.checkBoxProfile.Checked = true;
             this.checkBoxProfile.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxProfile.Location = new System.Drawing.Point(39, 136);
+            this.checkBoxProfile.Location = new System.Drawing.Point(39, 132);
             this.checkBoxProfile.Name = "checkBoxProfile";
             this.checkBoxProfile.Size = new System.Drawing.Size(55, 17);
             this.checkBoxProfile.TabIndex = 3;
@@ -86,7 +90,7 @@
             // checkBoxMainPartSecondary
             // 
             this.checkBoxMainPartSecondary.AutoSize = true;
-            this.checkBoxMainPartSecondary.Location = new System.Drawing.Point(126, 136);
+            this.checkBoxMainPartSecondary.Location = new System.Drawing.Point(126, 132);
             this.checkBoxMainPartSecondary.Name = "checkBoxMainPartSecondary";
             this.checkBoxMainPartSecondary.Size = new System.Drawing.Size(133, 17);
             this.checkBoxMainPartSecondary.TabIndex = 4;
@@ -135,11 +139,49 @@
             this.buttonUndo.UseVisualStyleBackColor = true;
             this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
             // 
+            // StartPointX
+            // 
+            this.StartPointX.AutoSize = true;
+            this.StartPointX.Location = new System.Drawing.Point(41, 227);
+            this.StartPointX.Name = "StartX";
+            this.StartPointX.Size = new System.Drawing.Size(51, 13);
+            this.StartPointX.TabIndex = 9;
+            this.StartPointX.Text = "Start X: ";
+            // 
+            // StartPointY
+            // 
+            this.StartPointY.AutoSize = true;
+            this.StartPointY.Location = new System.Drawing.Point(195, 227);
+            this.StartPointY.Name = "StartY";
+            this.StartPointY.Size = new System.Drawing.Size(51, 13);
+            this.StartPointY.TabIndex = 10;
+            this.StartPointY.Text = "Start Y: ";
+            // 
+            // textBoxStartPointX
+            // 
+            this.textBoxStartPointX.Location = new System.Drawing.Point(88, 224);
+            this.textBoxStartPointX.Name = "textBoxStartPointX";
+            this.textBoxStartPointX.Size = new System.Drawing.Size(97, 20);
+            this.textBoxStartPointX.TabIndex = 11;
+            this.textBoxStartPointX.Text = "0";
+            // 
+            // textBoxStartPointY
+            // 
+            this.textBoxStartPointY.Location = new System.Drawing.Point(243, 224);
+            this.textBoxStartPointY.Name = "textBoxStartPointY";
+            this.textBoxStartPointY.Size = new System.Drawing.Size(97, 20);
+            this.textBoxStartPointY.TabIndex = 12;
+            this.textBoxStartPointY.Text = "0";
+            // 
             // DrawingMarkExampleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 235);
+            this.ClientSize = new System.Drawing.Size(378, 279);
+            this.Controls.Add(this.textBoxStartPointY);
+            this.Controls.Add(this.textBoxStartPointX);
+            this.Controls.Add(this.StartPointY);
+            this.Controls.Add(this.StartPointX);
             this.Controls.Add(this.buttonUndo);
             this.Controls.Add(this.radioButtonBlue);
             this.Controls.Add(this.radioButtonGreen);
@@ -170,6 +212,10 @@
         private System.Windows.Forms.RadioButton radioButtonGreen;
         private System.Windows.Forms.RadioButton radioButtonBlue;
         private System.Windows.Forms.Button buttonUndo;
+        private System.Windows.Forms.Label StartPointX;
+        private System.Windows.Forms.Label StartPointY;
+        private System.Windows.Forms.TextBox textBoxStartPointX;
+        private System.Windows.Forms.TextBox textBoxStartPointY;
     }
 }
 
