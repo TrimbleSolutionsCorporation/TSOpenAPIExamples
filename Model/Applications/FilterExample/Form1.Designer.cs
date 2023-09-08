@@ -285,7 +285,7 @@
             this.Controls.Add(this.checkBox_pourType);
             this.Controls.Add(this.checkBox_pourNumber);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Filter examples for Pours and Surfaces";
             this.ResumeLayout(false);
             this.PerformLayout();
 

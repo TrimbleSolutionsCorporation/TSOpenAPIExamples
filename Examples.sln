@@ -85,7 +85,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFPlugin", "Model\Plugins\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBeamApplication", "Model\Applications\WpfBeamApplication\WpfBeamApplication.csproj", "{AD3BB822-164C-4721-9A85-C83D29129A03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterExample", "Model\Applications\FilterExample\FilterExample.csproj", "{4EC34C7B-3333-486A-8845-4D58A7E8E6CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterPoursSurfacesExample", "Model\Applications\FilterExample\FilterPoursSurfacesExample.csproj", "{4EC34C7B-3333-486A-8845-4D58A7E8E6CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstructionObjectsExample", "Model\Applications\ConstructionObjectsExample\ConstructionObjectsExample.csproj", "{702A9A6C-C75A-453F-8675-B830E0B51216}"
 EndProject
