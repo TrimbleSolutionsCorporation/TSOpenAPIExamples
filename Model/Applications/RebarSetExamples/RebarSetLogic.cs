@@ -124,15 +124,13 @@ namespace RebarSetExamples
         private static RebarGuideline CreateGuideline1()
         {
             var result = new RebarGuideline();
-            result.Spacing.Zones.Add(new RebarSpacingZone
-            {
-                Spacing = Parameters.SpacingTarget,
-                SpacingType = RebarSpacingZone.SpacingEnum.EXACT,
-                Length = 1000,
-                LengthType = RebarSpacingZone.LengthEnum.RELATIVE,
-                NumberOfSpaces = 10,
-                NumberOfSpacesType = RebarSpacingZone.SpacingEnum.TARGET
-            });
+            result.Spacing = RebarSpacing.Create(
+                        RebarSpacing.SpacingType.EXACT_FLEXIBLE_LAST,
+                        new RebarSpacing.Offset(true, 0.0),
+                        new RebarSpacing.Offset(true, 0.0),
+                        200.0);
+
+            result.Spacing.ExcludeType = RebarSpacing.ExcludeTypeEnum.EXCLUDE_TYPE_LAST;
             result.Curve.AddContourPoint(new ContourPoint(new Point(0.0, 0.0, 0.0), null));
             result.Curve.AddContourPoint(new ContourPoint(new Point(0.0, Parameters.Depth, 0.0), null));
             return result;
@@ -141,15 +139,13 @@ namespace RebarSetExamples
         private static RebarGuideline CreateGuideline2()
         {
             var result = new RebarGuideline();
-            result.Spacing.Zones.Add(new RebarSpacingZone
-            {
-                Spacing = 2 * Parameters.SpacingTarget,
-                SpacingType = RebarSpacingZone.SpacingEnum.EXACT,
-                Length = 1000,
-                LengthType = RebarSpacingZone.LengthEnum.RELATIVE,
-                NumberOfSpaces = 10,
-                NumberOfSpacesType = RebarSpacingZone.SpacingEnum.TARGET
-            });
+            result.Spacing = RebarSpacing.Create(
+                        RebarSpacing.SpacingType.EXACT_FLEXIBLE_LAST,
+                        new RebarSpacing.Offset(true, 0.0),
+                        new RebarSpacing.Offset(true, 0.0),
+                        200.0);
+
+            result.Spacing.InheritFromPrimary = true;
             result.Curve.AddContourPoint(new ContourPoint(new Point(Parameters.Width, 0.0, 0.0), null));
             result.Curve.AddContourPoint(new ContourPoint(new Point(Parameters.Width, Parameters.Depth, 0.0), null));
             return result;
