@@ -3,7 +3,6 @@ using System;
 using Tekla.Structures.Drawing;
 using Tekla.Structures.Drawing.UI;
 using Tekla.Structures.Geometry3d;
-using System.Reflection;
 
 namespace BoundingBoxDrawer
 {
@@ -73,40 +72,8 @@ namespace BoundingBoxDrawer
             foreach (DrawingObject drawingObject in allObjectsOnSheet)
             {
                 DrawBBForObject(drawingObject);
-                DrawBBForObjectFrame(drawingObject);
             }
         }
-
-        private static void DrawBBForObjectFrame(DrawingObject drawingObject)
-        {
-            try
-            {
-                // Will throw System.Reflection.AmbiguousMatchException for Mark(Base)
-                PropertyInfo AttributesInfo = drawingObject.GetType().GetProperty("Attributes");
-                object Attributes = AttributesInfo.GetValue(drawingObject, null);
-                object Frame = AttributesInfo.PropertyType.GetProperty("Frame").GetValue(Attributes, null);
-                if (Frame is IObjectAlignedBoundingBox)
-                {
-                    Console.WriteLine("Drawing OABB for {0}.Attributes.Frame", drawingObject.GetType().Name);
-                    DrawBB(drawingObject.GetView(),
-                           (Frame as IObjectAlignedBoundingBox).GetObjectAlignedBoundingBox(),
-                           DrawingColors.Cyan);
-                }
-
-                if (Frame is IAxisAlignedBoundingBox)
-                {
-                    Console.WriteLine("Drawing AABB for {0}.Attributes.Frame", drawingObject.GetType().Name);
-                    DrawBB(drawingObject.GetView(),
-                           (Frame as IAxisAlignedBoundingBox).GetAxisAlignedBoundingBox(),
-                           DrawingColors.Red);
-                }
-            }
-            catch(Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.ToString());
-            }
-        }
-
         private static void DrawBBForObject(DrawingObject drawingObject)
         {
             if (drawingObject is IAxisAlignedBoundingBox)
