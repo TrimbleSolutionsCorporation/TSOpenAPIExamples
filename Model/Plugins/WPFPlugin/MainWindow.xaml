@@ -1,0 +1,201 @@
+﻿<tsd:PluginWindowBase
+    x:Class="WPFPlugin.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPFPlugin"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"
+    Title="{tsd:Loc albl_Test_plugin}"
+    Width="590"
+    Height="355"
+    HorizontalAlignment="Stretch"
+    mc:Ignorable="d">
+    <d:UserControl.DataContext>
+        <local:MainWindowViewModel />
+    </d:UserControl.DataContext>
+
+    <!-- Used if Fusion is available-->
+    <!--<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                --><!--
+                    This resource URL found in FusionExample/Properties/DesignTimeResources.xaml on github
+                    It imports the TS style used at runtime, so it's useful to better be able to see the end results.
+                --><!--
+                <ResourceDictionary Source="/Fusion;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="48" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" MinHeight="48" />
+        </Grid.RowDefinitions>
+        <UIControls:WpfSaveLoad
+            Grid.Row="0"
+            Margin="0,0,0,0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Label
+                    x:Name="partNameLabel"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="{tsd:Loc albl_Part_name}" />
+                <UIControls:WpfFilterCheckBox
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    AttributeName="name" />
+                <TextBox
+                    x:Name="partNameTextBox"
+                    Width="120"
+                    Height="23"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Text="{Binding Name, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Label
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="{tsd:Loc albl_Length_factor}"
+                    RenderTransformOrigin="0.754,-0.24" />
+                <ComboBox
+                    Width="90"
+                    VerticalAlignment="Center"
+                    SelectedIndex="{Binding Path=LengthFactor, Mode=TwoWay}">
+                    <TextBlock Text="1" />
+                    <TextBlock Text="2" />
+                    <TextBlock Text="3" />
+                    <TextBlock Text="4" />
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Label
+                    x:Name="label_Copy"
+                    Width="100"
+                    Height="30"
+                    Content="{tsd:Loc albl_Profile}" />
+                <UIControls:WpfFilterCheckBox VerticalAlignment="Center" AttributeName="profile" />
+                <TextBox
+                    x:Name="textBox_Copy"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding Profilename, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                <UIControls:WpfProfileCatalog
+                    x:Name="profileCatalog"
+                    VerticalAlignment="Center"
+                    SelectClicked="profileCatalog_SelectClicked"
+                    SelectionDone="profileCatalog_SelectionDone" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Label
+                    x:Name="label_Copy1"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="{tsd:Loc albl_Offset}" />
+                <UIControls:WpfFilterCheckBox
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    AttributeName="offset" />
+                <TextBox
+                    x:Name="textBox_Copy1"
+                    Width="120"
+                    Height="23"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Text="{Binding Offset, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                <Label
+                    x:Name="label_Material"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="{tsd:Loc albl_Material}" />
+                <UIControls:WpfFilterCheckBox
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    AttributeName="material" />
+                <TextBox
+                    x:Name="materialBox"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding Material, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                <UIControls:WpfMaterialCatalog
+                    x:Name="materialCatalog"
+                    VerticalAlignment="Center"
+                    BorderThickness="0"
+                    FontSize="6"
+                    SelectClicked="WPFMaterialCatalog_SelectClicked"
+                    SelectionDone="WPFMaterialCatalog_SelectionDone" />
+            </StackPanel>
+            <StackPanel
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Orientation="Horizontal">
+                <Label
+                    x:Name="label_component"
+                    Width="100"
+                    Height="30"
+                    VerticalAlignment="Center"
+                    Content="{tsd:Loc albl_Component}" />
+                <UIControls:WpfFilterCheckBox VerticalAlignment="Center" AttributeName="componentname" />
+                <TextBox
+                    x:Name="componentnameBox"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding ComponentName, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                <UIControls:WpfFilterCheckBox VerticalAlignment="Center" AttributeName="componentnumber" />
+                <TextBox
+                    x:Name="componentnumberBox"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding ComponentNumber, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                <UIControls:WpfComponentCatalog
+                    x:Name="componentCatalog"
+                    VerticalAlignment="Center"
+                    SelectClicked="componentCatalog_SelectClicked"
+                    SelectionDone="componentCatalog_SelectionDone" />
+            </StackPanel>
+        </Grid>
+        <UIControls:WpfOkApplyModifyGetOnOffCancel
+            Grid.Row="2"
+            ApplyClicked="WPFOkApplyModifyGetOnOffCancel_ApplyClicked"
+            CancelClicked="WPFOkApplyModifyGetOnOffCancel_CancelClicked"
+            GetClicked="WPFOkApplyModifyGetOnOffCancel_GetClicked"
+            ModifyClicked="WPFOkApplyModifyGetOnOffCancel_ModifyClicked"
+            OkClicked="WPFOkApplyModifyGetOnOffCancel_OkClicked"
+            OnOffClicked="WPFOkApplyModifyGetOnOffCancel_OnOffClicked" />
+    </Grid>
+</tsd:PluginWindowBase>

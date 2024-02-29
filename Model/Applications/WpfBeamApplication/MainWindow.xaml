@@ -1,0 +1,51 @@
+﻿<tsd:ApplicationWindowBase x:Class="WpfBeamApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBeamApplication"
+        xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog" 
+        xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="490" Width="518">
+    <Grid>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="159,74,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="{tsd:Loc albl_Part_name}" HorizontalAlignment="Left" Margin="20,71,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="159,112,0,0" TextWrapping="Wrap" Text="{Binding Profilename, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label_Copy" Content="{tsd:Loc albl_profile}" HorizontalAlignment="Left" Margin="20,109,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="159,148,0,0" TextWrapping="Wrap" Text="{Binding Offset, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label_Copy1" Content="{tsd:Loc albl_Offset}" HorizontalAlignment="Left" Margin="20,147,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <TextBox x:Name="materialBox" HorizontalAlignment="Left" Height="23" Margin="159,186,0,0" TextWrapping="Wrap" Text="{Binding Material, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label_material" Content="{tsd:Loc albl_Material}" HorizontalAlignment="Left" Margin="20,185,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <UIControls:WpfSaveLoad HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top"/>
+        <UIControls:WpfOkCreateCancel HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Bottom" CancelClicked="WPFOkCreateCancel_CancelClicked" CreateClicked="WPFOkCreateCancel_CreateClicked" OkClicked="WPFOkCreateCancel_OkClicked"/>
+        <UIControls:WpfMaterialCatalog x:Name="materialCatalog" HorizontalAlignment="Left" Margin="312,185,0,0" VerticalAlignment="Top" SelectClicked="materialCatalog_SelectClicked" SelectionDone="materialCatalog_SelectionDone_1"/>
+        <UIControls:WpfProfileCatalog x:Name="profileCatalog" HorizontalAlignment="Left" Margin="312,111,0,0" VerticalAlignment="Top" SelectClicked="profileCatalog_SelectClicked" SelectionDone="profileCatalog_SelectionDone"/>
+        <Label x:Name="label_component" Content="{tsd:Loc albl_Component}" HorizontalAlignment="Left" Margin="20,223,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <TextBox x:Name="componentnameBox" HorizontalAlignment="Left" Height="23" Margin="159,227,0,0" TextWrapping="Wrap" Text="{Binding ComponentName, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <UIControls:WpfComponentCatalog x:Name="componentCatalog" HorizontalAlignment="Left" Margin="426,228,0,0" VerticalAlignment="Top" SelectClicked="componentCatalog_SelectClicked" SelectionDone="componentCatalog_SelectionDone"/>
+        <TextBox x:Name="componentnumberBox" HorizontalAlignment="Left" Height="23" Margin="293,227,0,0" TextWrapping="Wrap" Text="{Binding ComponentNumber, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <UIControls:WpfBoltCatalogStandard 
+            x:Name="boltStandard" 
+            SelectedItem="{Binding BoltStandard, Mode=TwoWay}" 
+            HorizontalAlignment="Left" Margin="159,267,0,0" VerticalAlignment="Top" Width="80"/>
+        <UIControls:WpfBoltCatalogSize 
+            x:Name="boltSize" 
+            SelectedItem="{Binding BoltSize, Mode=TwoWay}" 
+            ItemsSource="{Binding ElementName=boltStandard, Path=BoltSizes}" 
+            HorizontalAlignment="Left" Margin="249,267,0,0" VerticalAlignment="Top" Width="80" />
+        <Label x:Name="label_bolt" Content="{tsd:Loc albl_Bolt}" HorizontalAlignment="Left" Margin="20,264,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <Label x:Name="label_rebar" Content="{tsd:Loc albl_Reinforcement}" HorizontalAlignment="Left" Margin="20,302,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <TextBox x:Name="rebarGrade" HorizontalAlignment="Left" Height="23" Margin="159,306,0,0" TextWrapping="Wrap" Text="{Binding RebarGrade, Mode=TwoWay}" VerticalAlignment="Top" Width="80"/>
+        <UIControls:WpfReinforcementCatalog x:Name="rebarCatalog" HorizontalAlignment="Left" Margin="426,307,0,0" VerticalAlignment="Top" SelectClicked="rebarCatalog_SelectClicked" SelectionDone="rebarCatalog_SelectionDone"/>
+        <TextBox x:Name="rebarSize" HorizontalAlignment="Left" Height="23" Margin="248,306,0,0" TextWrapping="Wrap" Text="{Binding RebarSize, Mode=TwoWay}" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.499,0.942"/>
+        <TextBox x:Name="rebarBend" HorizontalAlignment="Left" Height="23" Margin="335,306,0,0" TextWrapping="Wrap" Text="{Binding RebarBend, Mode=TwoWay}" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.499,0.942"/>
+        <Label x:Name="label_mesh" Content="{tsd:Loc albl_Mesh}" HorizontalAlignment="Left" Margin="20,337,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <TextBox x:Name="meshGrade" HorizontalAlignment="Left" Height="23" Margin="159,341,0,0" TextWrapping="Wrap" Text="{Binding MeshGrade, Mode=TwoWay}" VerticalAlignment="Top" Width="80"/>
+        <UIControls:WpfMeshCatalog x:Name="meshCatalog" HorizontalAlignment="Left" Margin="426,342,0,0" VerticalAlignment="Top" SelectClicked="meshCatalog_SelectClicked" SelectionDone="meshCatalog_SelectionDone"/>
+        <TextBox x:Name="meshName" HorizontalAlignment="Left" Height="23" Margin="248,341,0,0" TextWrapping="Wrap" Text="{Binding MeshName, Mode=TwoWay}" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.499,0.942"/>
+        <Label x:Name="label_shape" Content="{tsd:Loc albl_Shape}" HorizontalAlignment="Left" Margin="20,369,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <TextBox x:Name="shapeName" HorizontalAlignment="Left" Height="23" Margin="159,373,0,0" TextWrapping="Wrap" Text="{Binding ShapeName, Mode=TwoWay}" VerticalAlignment="Top" Width="170"/>
+        <UIControls:WpfShapeCatalog x:Name="shapeCatalog" HorizontalAlignment="Left" Margin="426,374,0,0" VerticalAlignment="Top" SelectClicked="shapeCatalog_SelectClicked" SelectionDone="shapeCatalog_SelectionDone"/>
+    </Grid>
+</tsd:ApplicationWindowBase>
