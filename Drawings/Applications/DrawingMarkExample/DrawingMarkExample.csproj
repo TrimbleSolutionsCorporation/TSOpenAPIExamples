@@ -126,4 +126,11 @@
     <Content Include="Resources\prtyp_tree_9.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\..\packages\TSAppConfigPatcherTask.2.1.1\build\TSAppConfigPatcherTask.targets" Condition="Exists('..\..\..\packages\TSAppConfigPatcherTask.2.1.1\build\TSAppConfigPatcherTask.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\TSAppConfigPatcherTask.2.1.1\build\TSAppConfigPatcherTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\TSAppConfigPatcherTask.2.1.1\build\TSAppConfigPatcherTask.targets'))" />
+  </Target>
 </Project>
