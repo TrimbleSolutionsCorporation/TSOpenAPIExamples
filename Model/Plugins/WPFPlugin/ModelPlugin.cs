@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 using Tekla.Structures.Geometry3d;
 using Tekla.Structures.Model;
@@ -131,7 +130,7 @@ namespace WPFPlugin
             }
             catch (Exception Exc)
             {
-                MessageBox.Show(Exc.ToString());
+                Console.WriteLine("Exception: " + Exc.ToString());
             }
 
             return true;
