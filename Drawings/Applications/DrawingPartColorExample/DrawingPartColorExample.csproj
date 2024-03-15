@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWpf>true</UseWpf>
+	</PropertyGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="Tekla.Structures.Dialog" Version="2024.0.0" />
+    <PackageReference Include="Tekla.Structures.Drawing" Version="2024.0.0" />
+    <PackageReference Include="TSAppConfigPatcherTask" Version="2.1.1" />	
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+
+</Project>

@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DimensionCreator", "Drawing
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDrawingList", "Drawings\Applications\SimpleDrawingList\SimpleDrawingList.csproj", "{4B7321C9-2D66-45EC-B9BC-73C3CC0B0EA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeamApplication", "Model\Applications\BeamApplication\BeamApplication.csproj", "{6819BA54-1AD2-463F-9A23-9AD9A513D91F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeamApplication", "Model\Applications\BeamApplication\BeamApplication.csproj", "{6819BA54-1AD2-463F-9A23-9AD9A513D91F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebarSample1", "Model\Applications\RebarExamples\RebarSample1\RebarSample1.csproj", "{B1038B50-3944-430C-9D1E-CE2A4848F965}"
 EndProject
@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNCSolidExample", "Model\Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlangeBrace", "Model\Plugins\FlangeBrace\FlangeBrace.csproj", "{112D4A6A-387C-4FB7-B904-BE7C565E8563}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeamPlugin", "Model\Plugins\BeamPlugin\BeamPlugin.csproj", "{8BE3173F-A651-4195-AAB7-7DDE4ABB88E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeamPlugin", "Model\Plugins\BeamPlugin\BeamPlugin.csproj", "{8BE3173F-A651-4195-AAB7-7DDE4ABB88E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlotPlugin", "Drawings\Plugins\SlotPlugin\SlotPlugin.csproj", "{EDC9156C-E9CE-446B-92E8-C547D2D4B878}"
 EndProject
@@ -81,9 +81,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Print_Drawing_DPM", "Drawin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiralBeamExample", "Model\Applications\SpiralBeamExample\SpiralBeamExample.csproj", "{38D90D58-166F-4932-A60F-43393FDBF543}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFPlugin", "Model\Plugins\WPFPlugin\WPFPlugin.csproj", "{A2AAA2B7-DE9D-490F-93B1-662230E6CA0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFPlugin", "Model\Plugins\WPFPlugin\WPFPlugin.csproj", "{A2AAA2B7-DE9D-490F-93B1-662230E6CA0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBeamApplication", "Model\Applications\WpfBeamApplication\WpfBeamApplication.csproj", "{AD3BB822-164C-4721-9A85-C83D29129A03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfBeamApplication", "Model\Applications\WpfBeamApplication\WpfBeamApplication.csproj", "{AD3BB822-164C-4721-9A85-C83D29129A03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterPoursSurfacesExample", "Model\Applications\FilterPoursSurfacesExample\FilterPoursSurfacesExample.csproj", "{4EC34C7B-3333-486A-8845-4D58A7E8E6CD}"
 EndProject
@@ -110,6 +110,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawingMarkExample", "Drawings\Applications\DrawingMarkExample\DrawingMarkExample.csproj", "{7A16206F-A9F3-4F31-9C05-A2921CA8ADDC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixFactoryExample", "Model\Applications\MatrixFactoryExample\MatrixFactoryExample.csproj", "{213C9432-374F-4DAA-9B62-F3A15773FF79}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawingPartColorExample", "Drawings\Applications\DrawingPartColorExample\DrawingPartColorExample.csproj", "{E036AAED-497D-412E-B49F-2978DC9365A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -549,6 +551,14 @@ Global
 		{213C9432-374F-4DAA-9B62-F3A15773FF79}.Release|Any CPU.Build.0 = Release|Any CPU
 		{213C9432-374F-4DAA-9B62-F3A15773FF79}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{213C9432-374F-4DAA-9B62-F3A15773FF79}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E036AAED-497D-412E-B49F-2978DC9365A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E036AAED-497D-412E-B49F-2978DC9365A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E036AAED-497D-412E-B49F-2978DC9365A1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E036AAED-497D-412E-B49F-2978DC9365A1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E036AAED-497D-412E-B49F-2978DC9365A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E036AAED-497D-412E-B49F-2978DC9365A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E036AAED-497D-412E-B49F-2978DC9365A1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E036AAED-497D-412E-B49F-2978DC9365A1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

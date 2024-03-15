@@ -1,0 +1,27 @@
+﻿<Window x:Class="DrawingPartColorExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrawingPartColorExample"
+        mc:Ignorable="d"
+        Title="Drawing Part Color Example" Height="424" Width="830" Topmost="True">
+    <Grid Height="389" VerticalAlignment="Top" HorizontalAlignment="Center" Width="810" Margin="0,25,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="264*"/>
+            <RowDefinition Height="53*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="CorrectMarkColor" Content="Pick Color" HorizontalAlignment="Left" Height="32" Margin="338,81,0,0" VerticalAlignment="Top" Width="64" Click="Button_Click"/>
+        <Rectangle x:Name="CorrectMarkColorBox" HorizontalAlignment="Left" Height="32" Margin="225,81,0,0" Stroke="Black" VerticalAlignment="Top" Width="70" Fill="#FF34BA0E"/>
+        <Label Content="Parts with correct mark" HorizontalAlignment="Left" Height="32" Margin="50,81,0,0" VerticalAlignment="Top" Width="149"/>
+        <Button x:Name="WrongMarkColor" Content="Pick Color" HorizontalAlignment="Left" Height="32" Margin="338,143,0,0" VerticalAlignment="Top" Width="64" Click="Button_Click"/>
+        <Rectangle x:Name="WrongMarkColorBox" HorizontalAlignment="Left" Height="32" Margin="225,143,0,0" Stroke="Black" VerticalAlignment="Top" Width="70" Fill="#FFE4F311"/>
+        <Label Content="Parts with incorrect mark" HorizontalAlignment="Left" Height="32" Margin="50,143,0,0" VerticalAlignment="Top" Width="149"/>
+        <Button x:Name="NoMarkColor" Content="Pick Color" HorizontalAlignment="Left" Height="32" Margin="338,201,0,0" VerticalAlignment="Top" Width="64" Click="Button_Click"/>
+        <Rectangle x:Name="NoMarkColorBox" HorizontalAlignment="Left" Height="32" Margin="225,201,0,0" Stroke="Black" VerticalAlignment="Top" Width="70" Fill="#FFB7250F"/>
+        <Label Content="Parts without mark" HorizontalAlignment="Left" Height="32" Margin="50,201,0,0" VerticalAlignment="Top" Width="149"/>
+        <Label Content="This tool can modify color of parts in a drawing" HorizontalAlignment="Left" Height="32" Margin="47,27,0,0" VerticalAlignment="Top" Width="617"/>
+        <Button Content="Modify part colors" HorizontalAlignment="Left" Margin="47,284,0,10" Width="118" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>
