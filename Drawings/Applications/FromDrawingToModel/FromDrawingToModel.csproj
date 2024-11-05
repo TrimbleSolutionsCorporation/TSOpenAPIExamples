@@ -7,9 +7,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Tekla.Structures.Dialog" Version="2024.0.2" />
-		<PackageReference Include="Tekla.Structures.Model" Version="2024.0.2" />
-		<PackageReference Include="Tekla.Structures.Drawing" Version="2024.0.2" />
+		<PackageReference Include="Tekla.Structures.Dialog" Version="2024.0.4" />
+		<PackageReference Include="Tekla.Structures.Model" Version="2024.0.4" />
+		<PackageReference Include="Tekla.Structures.Drawing" Version="2024.0.4" />
 		<PackageReference Include="TSAppConfigPatcherTask" Version="2.1.3" />
 		<Content Include="Resources\*.bmp" />
 	</ItemGroup>
