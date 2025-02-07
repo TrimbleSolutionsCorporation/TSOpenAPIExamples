@@ -27,7 +27,8 @@ namespace PointCloudExample
 
             PointCloud pointCloud = new PointCloud
             {
-                OriginalPath = this.textBox1.Text,
+                OriginalPath = this.textBox1.Text, // Local file
+                // Url = "http://TestUrlAddress/TestPointCloud/", // Web file
                 LocationBy = Guid.Empty,
                 Scale = 1.0
             };
