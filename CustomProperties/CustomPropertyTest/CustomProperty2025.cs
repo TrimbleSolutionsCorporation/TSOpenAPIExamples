@@ -19,7 +19,7 @@ namespace CustomProperty2025
 
         public string GetStringProperty(int objectId)
         {
-            return "TS version - 2025 Beta";
+            return "TS version - 2025";
         }
     }
 }
