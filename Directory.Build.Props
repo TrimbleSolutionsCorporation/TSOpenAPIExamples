@@ -5,6 +5,6 @@
 		<Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
 		<TeklaVersion Condition="'$(Configuration)' == 'Debug'">2025.0</TeklaVersion>
 		<!-- Or TeklaStructures Installation path can be used instead -->
-		<!--TeklaStructuresInstallationPath Condition="'$(Configuration)' == 'Debug'">C:\Program Files\Tekla Structures\2024.0\bin</TeklaStructuresInstallationPath-->
+		<!--TeklaStructuresInstallationPath Condition="'$(Configuration)' == 'Debug'">C:\Program Files\Tekla Structures\2025.0\bin</TeklaStructuresInstallationPath-->
 	</PropertyGroup>
 </Project>
