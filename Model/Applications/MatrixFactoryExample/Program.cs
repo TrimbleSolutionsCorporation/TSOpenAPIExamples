@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Linq;
 using Tekla.Structures.Geometry3d;
 using Tekla.Structures.Model;
 
@@ -28,8 +29,59 @@ namespace MatrixFactoryExample
 
             DeleteExampleObjects();
 
+            ExampleRotateBeamAroundItsCenter();
+
             wph.SetCurrentTransformationPlane(oldPlane);
         }
+
+        private static void ExampleRotateBeamAroundItsCenter()
+        {
+            Model model = new Model();
+            Beam beamToRotate = new Beam(new Point(5000, 5000), new Point(15000, 5000));
+
+            beamToRotate.Profile.ProfileString = "HEA300";
+            beamToRotate.Material.MaterialString = "S235JR";
+            beamToRotate.Class = "3";
+
+            bool beamToRotateInsert = beamToRotate.Insert();
+            model.CommitChanges();
+
+            Vector zVector = new Vector(0, 0, 1);
+            double rotationInRadians = Math.PI / 6; // 30°
+            var points = new Point[] { beamToRotate.StartPoint, beamToRotate.EndPoint };
+            var rotatedPoints = RotatePointsAroundAverage(points, rotationInRadians, zVector);
+            beamToRotate.StartPoint = rotatedPoints[0];
+            beamToRotate.EndPoint = rotatedPoints[1];
+            beamToRotate.Modify();
+            model.CommitChanges();
+
+            beamToRotate.Delete();
+            model.CommitChanges();
+        }
+
+        private static Point[] RotatePointsAroundAverage(Point[] originalPoints, double rotationInRadians, Vector rotationAxis)
+        {
+            var sum = new Point(0, 0, 0);
+            foreach (var p in originalPoints)
+            {
+                sum.X += p.X;
+                sum.Y += p.Y;
+                sum.Z += p.Z;
+            }
+            var average = new Point(sum.X / originalPoints.Length, sum.Y / originalPoints.Length, sum.Z / originalPoints.Length);
+
+            var translationOfAverageToOrigin = new Matrix();
+            translationOfAverageToOrigin[3, 0] = -average.X;
+            translationOfAverageToOrigin[3, 1] = -average.Y;
+            translationOfAverageToOrigin[3, 2] = -average.Z;
+            var translationBack = translationOfAverageToOrigin.GetTranspose();
+
+            Matrix rotation = MatrixFactory.Rotate(rotationInRadians, rotationAxis);
+            var combinedMatrix = translationBack * rotation * translationOfAverageToOrigin;
+
+            return originalPoints.Select(p => combinedMatrix * p).ToArray();
+        }
+
 
         private static void DeleteExampleObjects()
         {
