@@ -1,13 +1,17 @@
 ﻿using System;
-using System.ComponentModel.Composition;
+// using System.ComponentModel.Composition;
 using Tekla.Structures.Model;
 using Tekla.Structures.CustomPropertyPlugin;
 
 namespace CustomPropertyTest
 {
     /// <summary>The test plugin for father component name or number.</summary>
-    [Export(typeof(ICustomPropertyPlugin))]
-    [ExportMetadata("CustomProperty", "CUSTOM.FATHERCOMPONENT")]
+    
+    // MEF attributes are obsolete from TeklaStructures 2025
+    // [Export(typeof(ICustomPropertyPlugin))]
+    // [ExportMetadata("CustomProperty", "CUSTOM.FATHERCOMPONENT")]
+    
+    [CustomPropertyPlugin("CUSTOM.FATHERCOMPONENT")]
     public class CustomPropertyTest : ICustomPropertyPlugin
     {
         private Model model = new Model();
