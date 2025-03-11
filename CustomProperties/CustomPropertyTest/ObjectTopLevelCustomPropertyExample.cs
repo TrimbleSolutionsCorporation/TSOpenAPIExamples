@@ -1,6 +1,5 @@
 ﻿using System;
-using System.ComponentModel.Composition;
-
+// using System.ComponentModel.Composition;
 using Tekla.Structures;
 using Tekla.Structures.Model;
 using Tekla.Structures.CustomPropertyPlugin;
@@ -8,8 +7,12 @@ using Tekla.Structures.CustomPropertyPlugin;
 namespace CustomPropertyTest
 {
     /// <summary>The test plugin for object top level.</summary>
-    [Export(typeof(ICustomPropertyPlugin))]
-    [ExportMetadata("CustomProperty", "CUSTOM.OBJECTTOPLEVEL")]
+
+    // MEF attributes are obsolete from TeklaStructures 2025    
+    // [Export(typeof(ICustomPropertyPlugin))]
+    // [ExportMetadata("CustomProperty", "CUSTOM.OBJECTTOPLEVEL")]
+
+    [CustomPropertyPlugin("CUSTOM.OBJECTTOPLEVEL")]    
     public class ObjectTopLevelCustomPropertyExample : ICustomPropertyPlugin
     {
         private Model model = new Model();
