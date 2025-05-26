@@ -42,7 +42,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.checkBoxLocked = new System.Windows.Forms.CheckBox();
@@ -60,6 +59,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -71,9 +71,10 @@
             this.structuresExtender.SetAttributeName(this.PlateLengthTextBox, "PlateLength");
             this.structuresExtender.SetAttributeTypeName(this.PlateLengthTextBox, "Distance");
             this.structuresExtender.SetBindPropertyName(this.PlateLengthTextBox, null);
-            this.PlateLengthTextBox.Location = new System.Drawing.Point(128, 21);
+            this.PlateLengthTextBox.Location = new System.Drawing.Point(341, 50);
+            this.PlateLengthTextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.PlateLengthTextBox.Name = "PlateLengthTextBox";
-            this.PlateLengthTextBox.Size = new System.Drawing.Size(90, 20);
+            this.PlateLengthTextBox.Size = new System.Drawing.Size(233, 38);
             this.PlateLengthTextBox.TabIndex = 1;
             this.PlateLengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anyTextBox_KeyPress);
             // 
@@ -83,9 +84,10 @@
             this.structuresExtender.SetAttributeTypeName(this.label1, null);
             this.label1.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.label1, null);
-            this.label1.Location = new System.Drawing.Point(27, 24);
+            this.label1.Location = new System.Drawing.Point(72, 57);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(166, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Plate length";
             // 
@@ -95,9 +97,10 @@
             this.structuresExtender.SetAttributeTypeName(this.label3, null);
             this.label3.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.label3, null);
-            this.label3.Location = new System.Drawing.Point(27, 50);
+            this.label3.Location = new System.Drawing.Point(72, 119);
+            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.Size = new System.Drawing.Size(182, 32);
             this.label3.TabIndex = 6;
             this.label3.Text = "Bolt standard";
             // 
@@ -106,9 +109,10 @@
             this.structuresExtender.SetAttributeName(this.BoltStandardTextBox, "BoltStandard");
             this.structuresExtender.SetAttributeTypeName(this.BoltStandardTextBox, "String");
             this.structuresExtender.SetBindPropertyName(this.BoltStandardTextBox, null);
-            this.BoltStandardTextBox.Location = new System.Drawing.Point(128, 47);
+            this.BoltStandardTextBox.Location = new System.Drawing.Point(341, 112);
+            this.BoltStandardTextBox.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.BoltStandardTextBox.Name = "BoltStandardTextBox";
-            this.BoltStandardTextBox.Size = new System.Drawing.Size(90, 20);
+            this.BoltStandardTextBox.Size = new System.Drawing.Size(233, 38);
             this.BoltStandardTextBox.TabIndex = 5;
             this.BoltStandardTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anyTextBox_KeyPress);
             // 
@@ -118,10 +122,10 @@
             this.structuresExtender.SetAttributeTypeName(this.okApplyModifyGetOnOffCancel1, null);
             this.structuresExtender.SetBindPropertyName(this.okApplyModifyGetOnOffCancel1, null);
             this.okApplyModifyGetOnOffCancel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.okApplyModifyGetOnOffCancel1.Location = new System.Drawing.Point(0, 392);
-            this.okApplyModifyGetOnOffCancel1.Margin = new System.Windows.Forms.Padding(4);
+            this.okApplyModifyGetOnOffCancel1.Location = new System.Drawing.Point(0, 935);
+            this.okApplyModifyGetOnOffCancel1.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.okApplyModifyGetOnOffCancel1.Name = "okApplyModifyGetOnOffCancel1";
-            this.okApplyModifyGetOnOffCancel1.Size = new System.Drawing.Size(523, 29);
+            this.okApplyModifyGetOnOffCancel1.Size = new System.Drawing.Size(1395, 69);
             this.okApplyModifyGetOnOffCancel1.TabIndex = 8;
             this.okApplyModifyGetOnOffCancel1.OkClicked += new System.EventHandler(this.okApplyModifyGetOnOffCancel1_OkClicked);
             this.okApplyModifyGetOnOffCancel1.ApplyClicked += new System.EventHandler(this.okApplyModifyGetOnOffCancel1_ApplyClicked);
@@ -141,10 +145,10 @@
             this.saveLoad1.HelpKeyword = "";
             this.saveLoad1.HelpUrl = "";
             this.saveLoad1.Location = new System.Drawing.Point(0, 0);
-            this.saveLoad1.Margin = new System.Windows.Forms.Padding(4);
+            this.saveLoad1.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.saveLoad1.Name = "saveLoad1";
             this.saveLoad1.SaveAsText = "";
-            this.saveLoad1.Size = new System.Drawing.Size(523, 43);
+            this.saveLoad1.Size = new System.Drawing.Size(1395, 103);
             this.saveLoad1.TabIndex = 9;
             this.saveLoad1.UserDefinedHelpFilePath = null;
             // 
@@ -155,10 +159,11 @@
             this.structuresExtender.SetBindPropertyName(this.tabControl1, null);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 49);
+            this.tabControl1.Location = new System.Drawing.Point(0, 117);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(523, 337);
+            this.tabControl1.Size = new System.Drawing.Size(1395, 804);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -173,10 +178,11 @@
             this.tabPage1.Controls.Add(this.PlateLengthTextBox);
             this.tabPage1.Controls.Add(this.BoltStandardTextBox);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(10, 48);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(515, 311);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.tabPage1.Size = new System.Drawing.Size(1375, 746);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "albl_Parameters";
             // 
@@ -189,9 +195,10 @@
             this.checkBoxBoltStandard.Checked = true;
             this.checkBoxBoltStandard.CheckState = System.Windows.Forms.CheckState.Checked;
             this.structuresExtender.SetIsFilter(this.checkBoxBoltStandard, true);
-            this.checkBoxBoltStandard.Location = new System.Drawing.Point(107, 50);
+            this.checkBoxBoltStandard.Location = new System.Drawing.Point(285, 119);
+            this.checkBoxBoltStandard.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.checkBoxBoltStandard.Name = "checkBoxBoltStandard";
-            this.checkBoxBoltStandard.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxBoltStandard.Size = new System.Drawing.Size(34, 33);
             this.checkBoxBoltStandard.TabIndex = 8;
             this.checkBoxBoltStandard.UseVisualStyleBackColor = true;
             // 
@@ -204,9 +211,10 @@
             this.checkBoxPlateLength.Checked = true;
             this.checkBoxPlateLength.CheckState = System.Windows.Forms.CheckState.Checked;
             this.structuresExtender.SetIsFilter(this.checkBoxPlateLength, true);
-            this.checkBoxPlateLength.Location = new System.Drawing.Point(107, 24);
+            this.checkBoxPlateLength.Location = new System.Drawing.Point(285, 57);
+            this.checkBoxPlateLength.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.checkBoxPlateLength.Name = "checkBoxPlateLength";
-            this.checkBoxPlateLength.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxPlateLength.Size = new System.Drawing.Size(34, 33);
             this.checkBoxPlateLength.TabIndex = 7;
             this.checkBoxPlateLength.UseVisualStyleBackColor = true;
             // 
@@ -216,12 +224,12 @@
             this.structuresExtender.SetAttributeTypeName(this.tabPage2, null);
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.structuresExtender.SetBindPropertyName(this.tabPage2, null);
+            this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.textBox6);
             this.tabPage2.Controls.Add(this.textBox5);
             this.tabPage2.Controls.Add(this.textBox4);
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.comboBox4);
             this.tabPage2.Controls.Add(this.checkBoxLocked);
@@ -239,10 +247,11 @@
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(10, 48);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(515, 311);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.tabPage2.Size = new System.Drawing.Size(1375, 746);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "General";
             // 
@@ -251,9 +260,10 @@
             this.structuresExtender.SetAttributeName(this.textBox6, "ac_root");
             this.structuresExtender.SetAttributeTypeName(this.textBox6, "String");
             this.structuresExtender.SetBindPropertyName(this.textBox6, "Text");
-            this.textBox6.Location = new System.Drawing.Point(278, 226);
+            this.textBox6.Location = new System.Drawing.Point(741, 539);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.Size = new System.Drawing.Size(260, 38);
             this.textBox6.TabIndex = 7;
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anyTextBox_KeyPress);
             // 
@@ -262,9 +272,10 @@
             this.structuresExtender.SetAttributeName(this.textBox5, "ad_root");
             this.structuresExtender.SetAttributeTypeName(this.textBox5, "String");
             this.structuresExtender.SetBindPropertyName(this.textBox5, "Text");
-            this.textBox5.Location = new System.Drawing.Point(278, 199);
+            this.textBox5.Location = new System.Drawing.Point(741, 475);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.Size = new System.Drawing.Size(260, 38);
             this.textBox5.TabIndex = 6;
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anyTextBox_KeyPress);
             // 
@@ -273,9 +284,10 @@
             this.structuresExtender.SetAttributeName(this.textBox4, "joint_code");
             this.structuresExtender.SetAttributeTypeName(this.textBox4, "String");
             this.structuresExtender.SetBindPropertyName(this.textBox4, "Text");
-            this.textBox4.Location = new System.Drawing.Point(278, 171);
+            this.textBox4.Location = new System.Drawing.Point(741, 408);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(260, 38);
             this.textBox4.TabIndex = 5;
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anyTextBox_KeyPress);
             // 
@@ -284,9 +296,10 @@
             this.structuresExtender.SetAttributeName(this.textBox1, "group_no");
             this.structuresExtender.SetAttributeTypeName(this.textBox1, "Integer");
             this.structuresExtender.SetBindPropertyName(this.textBox1, "Text");
-            this.textBox1.Location = new System.Drawing.Point(278, 145);
+            this.textBox1.Location = new System.Drawing.Point(741, 346);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(260, 38);
             this.textBox1.TabIndex = 5;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anyTextBox_KeyPress);
             // 
@@ -295,32 +308,22 @@
             this.structuresExtender.SetAttributeName(this.textBox3, "zang1");
             this.structuresExtender.SetAttributeTypeName(this.textBox3, "Double");
             this.structuresExtender.SetBindPropertyName(this.textBox3, "Text");
-            this.textBox3.Location = new System.Drawing.Point(278, 49);
+            this.textBox3.Location = new System.Drawing.Point(741, 117);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(260, 38);
             this.textBox3.TabIndex = 5;
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anyTextBox_KeyPress);
-            // 
-            // pictureBox1
-            // 
-            this.structuresExtender.SetAttributeName(this.pictureBox1, null);
-            this.structuresExtender.SetAttributeTypeName(this.pictureBox1, null);
-            this.structuresExtender.SetBindPropertyName(this.pictureBox1, null);
-            this.pictureBox1.Image = global::SpliceConn.Properties.Resources.UpDirection;
-            this.pictureBox1.Location = new System.Drawing.Point(165, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 76);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // textBox2
             // 
             this.structuresExtender.SetAttributeName(this.textBox2, "zang2");
             this.structuresExtender.SetAttributeTypeName(this.textBox2, "Double");
             this.structuresExtender.SetBindPropertyName(this.textBox2, "Text");
-            this.textBox2.Location = new System.Drawing.Point(278, 74);
+            this.textBox2.Location = new System.Drawing.Point(741, 176);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(260, 38);
             this.textBox2.TabIndex = 3;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anyTextBox_KeyPress);
             // 
@@ -333,9 +336,10 @@
             this.comboBox4.Items.AddRange(new object[] {
             "No",
             "Yes"});
-            this.comboBox4.Location = new System.Drawing.Point(278, 121);
+            this.comboBox4.Location = new System.Drawing.Point(741, 289);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(100, 21);
+            this.comboBox4.Size = new System.Drawing.Size(260, 39);
             this.comboBox4.TabIndex = 2;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.anyComboBox_SelectedIndexChanged);
             // 
@@ -348,9 +352,10 @@
             this.checkBoxLocked.Checked = true;
             this.checkBoxLocked.CheckState = System.Windows.Forms.CheckState.Checked;
             this.structuresExtender.SetIsFilter(this.checkBoxLocked, true);
-            this.checkBoxLocked.Location = new System.Drawing.Point(257, 124);
+            this.checkBoxLocked.Location = new System.Drawing.Point(685, 296);
+            this.checkBoxLocked.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.checkBoxLocked.Name = "checkBoxLocked";
-            this.checkBoxLocked.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxLocked.Size = new System.Drawing.Size(34, 33);
             this.checkBoxLocked.TabIndex = 1;
             this.checkBoxLocked.UseVisualStyleBackColor = true;
             // 
@@ -369,9 +374,10 @@
             "-y",
             "+y",
             "auto"});
-            this.comboBox1.Location = new System.Drawing.Point(278, 23);
+            this.comboBox1.Location = new System.Drawing.Point(741, 55);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
+            this.comboBox1.Size = new System.Drawing.Size(260, 39);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.anyComboBox_SelectedIndexChanged);
             // 
@@ -384,9 +390,10 @@
             this.checkBoxAutoConnection.Checked = true;
             this.checkBoxAutoConnection.CheckState = System.Windows.Forms.CheckState.Checked;
             this.structuresExtender.SetIsFilter(this.checkBoxAutoConnection, true);
-            this.checkBoxAutoConnection.Location = new System.Drawing.Point(257, 229);
+            this.checkBoxAutoConnection.Location = new System.Drawing.Point(685, 546);
+            this.checkBoxAutoConnection.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.checkBoxAutoConnection.Name = "checkBoxAutoConnection";
-            this.checkBoxAutoConnection.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxAutoConnection.Size = new System.Drawing.Size(34, 33);
             this.checkBoxAutoConnection.TabIndex = 1;
             this.checkBoxAutoConnection.UseVisualStyleBackColor = true;
             // 
@@ -399,9 +406,10 @@
             this.checkBoxConnectionCode.Checked = true;
             this.checkBoxConnectionCode.CheckState = System.Windows.Forms.CheckState.Checked;
             this.structuresExtender.SetIsFilter(this.checkBoxConnectionCode, true);
-            this.checkBoxConnectionCode.Location = new System.Drawing.Point(257, 173);
+            this.checkBoxConnectionCode.Location = new System.Drawing.Point(685, 413);
+            this.checkBoxConnectionCode.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.checkBoxConnectionCode.Name = "checkBoxConnectionCode";
-            this.checkBoxConnectionCode.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxConnectionCode.Size = new System.Drawing.Size(34, 33);
             this.checkBoxConnectionCode.TabIndex = 1;
             this.checkBoxConnectionCode.UseVisualStyleBackColor = true;
             // 
@@ -414,9 +422,10 @@
             this.checkBoxRotationAngleX.Checked = true;
             this.checkBoxRotationAngleX.CheckState = System.Windows.Forms.CheckState.Checked;
             this.structuresExtender.SetIsFilter(this.checkBoxRotationAngleX, true);
-            this.checkBoxRotationAngleX.Location = new System.Drawing.Point(257, 77);
+            this.checkBoxRotationAngleX.Location = new System.Drawing.Point(685, 184);
+            this.checkBoxRotationAngleX.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.checkBoxRotationAngleX.Name = "checkBoxRotationAngleX";
-            this.checkBoxRotationAngleX.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRotationAngleX.Size = new System.Drawing.Size(34, 33);
             this.checkBoxRotationAngleX.TabIndex = 1;
             this.checkBoxRotationAngleX.UseVisualStyleBackColor = true;
             // 
@@ -429,9 +438,10 @@
             this.checkBoxClass.Checked = true;
             this.checkBoxClass.CheckState = System.Windows.Forms.CheckState.Checked;
             this.structuresExtender.SetIsFilter(this.checkBoxClass, true);
-            this.checkBoxClass.Location = new System.Drawing.Point(257, 147);
+            this.checkBoxClass.Location = new System.Drawing.Point(685, 351);
+            this.checkBoxClass.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.checkBoxClass.Name = "checkBoxClass";
-            this.checkBoxClass.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxClass.Size = new System.Drawing.Size(34, 33);
             this.checkBoxClass.TabIndex = 1;
             this.checkBoxClass.UseVisualStyleBackColor = true;
             // 
@@ -444,9 +454,10 @@
             this.checkBoxAutoDefault.Checked = true;
             this.checkBoxAutoDefault.CheckState = System.Windows.Forms.CheckState.Checked;
             this.structuresExtender.SetIsFilter(this.checkBoxAutoDefault, true);
-            this.checkBoxAutoDefault.Location = new System.Drawing.Point(257, 202);
+            this.checkBoxAutoDefault.Location = new System.Drawing.Point(685, 482);
+            this.checkBoxAutoDefault.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.checkBoxAutoDefault.Name = "checkBoxAutoDefault";
-            this.checkBoxAutoDefault.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxAutoDefault.Size = new System.Drawing.Size(34, 33);
             this.checkBoxAutoDefault.TabIndex = 1;
             this.checkBoxAutoDefault.UseVisualStyleBackColor = true;
             // 
@@ -459,9 +470,10 @@
             this.checkBoxRotationAngleY.Checked = true;
             this.checkBoxRotationAngleY.CheckState = System.Windows.Forms.CheckState.Checked;
             this.structuresExtender.SetIsFilter(this.checkBoxRotationAngleY, true);
-            this.checkBoxRotationAngleY.Location = new System.Drawing.Point(257, 51);
+            this.checkBoxRotationAngleY.Location = new System.Drawing.Point(685, 122);
+            this.checkBoxRotationAngleY.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.checkBoxRotationAngleY.Name = "checkBoxRotationAngleY";
-            this.checkBoxRotationAngleY.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRotationAngleY.Size = new System.Drawing.Size(34, 33);
             this.checkBoxRotationAngleY.TabIndex = 1;
             this.checkBoxRotationAngleY.UseVisualStyleBackColor = true;
             // 
@@ -474,9 +486,10 @@
             this.checkBoxUpDirection.Checked = true;
             this.checkBoxUpDirection.CheckState = System.Windows.Forms.CheckState.Checked;
             this.structuresExtender.SetIsFilter(this.checkBoxUpDirection, true);
-            this.checkBoxUpDirection.Location = new System.Drawing.Point(257, 26);
+            this.checkBoxUpDirection.Location = new System.Drawing.Point(685, 62);
+            this.checkBoxUpDirection.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.checkBoxUpDirection.Name = "checkBoxUpDirection";
-            this.checkBoxUpDirection.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxUpDirection.Size = new System.Drawing.Size(34, 33);
             this.checkBoxUpDirection.TabIndex = 1;
             this.checkBoxUpDirection.UseVisualStyleBackColor = true;
             // 
@@ -486,9 +499,10 @@
             this.structuresExtender.SetAttributeTypeName(this.label8, null);
             this.label8.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.label8, null);
-            this.label8.Location = new System.Drawing.Point(28, 234);
+            this.label8.Location = new System.Drawing.Point(75, 558);
+            this.label8.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(133, 13);
+            this.label8.Size = new System.Drawing.Size(353, 32);
             this.label8.TabIndex = 0;
             this.label8.Text = "AutoConnection rule group";
             // 
@@ -498,9 +512,10 @@
             this.structuresExtender.SetAttributeTypeName(this.label7, null);
             this.label7.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.label7, null);
-            this.label7.Location = new System.Drawing.Point(28, 207);
+            this.label7.Location = new System.Drawing.Point(75, 494);
+            this.label7.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 13);
+            this.label7.Size = new System.Drawing.Size(313, 32);
             this.label7.TabIndex = 0;
             this.label7.Text = "AutoDefaults rule group";
             // 
@@ -510,9 +525,10 @@
             this.structuresExtender.SetAttributeTypeName(this.label6, null);
             this.label6.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.label6, null);
-            this.label6.Location = new System.Drawing.Point(28, 179);
+            this.label6.Location = new System.Drawing.Point(75, 427);
+            this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.Size = new System.Drawing.Size(228, 32);
             this.label6.TabIndex = 0;
             this.label6.Text = "Connection code";
             // 
@@ -522,9 +538,10 @@
             this.structuresExtender.SetAttributeTypeName(this.label5, null);
             this.label5.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.label5, null);
-            this.label5.Location = new System.Drawing.Point(28, 152);
+            this.label5.Location = new System.Drawing.Point(75, 362);
+            this.label5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.Size = new System.Drawing.Size(85, 32);
             this.label5.TabIndex = 0;
             this.label5.Text = "Class";
             // 
@@ -534,9 +551,10 @@
             this.structuresExtender.SetAttributeTypeName(this.label4, null);
             this.label4.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.label4, null);
-            this.label4.Location = new System.Drawing.Point(28, 124);
+            this.label4.Location = new System.Drawing.Point(75, 296);
+            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.Size = new System.Drawing.Size(106, 32);
             this.label4.TabIndex = 0;
             this.label4.Text = "Locked";
             // 
@@ -546,23 +564,37 @@
             this.structuresExtender.SetAttributeTypeName(this.label2, null);
             this.label2.AutoSize = true;
             this.structuresExtender.SetBindPropertyName(this.label2, null);
-            this.label2.Location = new System.Drawing.Point(28, 26);
+            this.label2.Location = new System.Drawing.Point(75, 62);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(166, 32);
             this.label2.TabIndex = 0;
             this.label2.Text = "Up direction";
+            // 
+            // pictureBox1
+            // 
+            this.structuresExtender.SetAttributeName(this.pictureBox1, null);
+            this.structuresExtender.SetAttributeTypeName(this.pictureBox1, null);
+            this.structuresExtender.SetBindPropertyName(this.pictureBox1, null);
+            this.pictureBox1.Image = global::SpliceConnectionExample.Properties.Resources.UpDirection;
+            this.pictureBox1.Location = new System.Drawing.Point(448, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 147);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // SpliceConnection
             // 
             this.structuresExtender.SetAttributeName(this, null);
             this.structuresExtender.SetAttributeTypeName(this, null);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.structuresExtender.SetBindPropertyName(this, null);
-            this.ClientSize = new System.Drawing.Size(523, 421);
+            this.ClientSize = new System.Drawing.Size(1395, 1004);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.saveLoad1);
             this.Controls.Add(this.okApplyModifyGetOnOffCancel1);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "SpliceConnection";
             this.Text = "SpliceConnection";
             this.tabControl1.ResumeLayout(false);
@@ -594,7 +626,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.CheckBox checkBoxRotationAngleX;
@@ -611,4 +642,5 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.CheckBox checkBoxBoltStandard;
         private System.Windows.Forms.CheckBox checkBoxPlateLength;
-    }
+    private System.Windows.Forms.PictureBox pictureBox1;
+}

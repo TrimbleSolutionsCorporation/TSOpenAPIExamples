@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormPlugin", "Model\Plugins
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplicePlugin", "Model\Plugins\SplicePlugin\SplicePlugin.csproj", "{256B3400-CD21-4B62-AB11-E58ECCF3876C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpliceConnection", "Model\Plugins\SpliceConnection\SpliceConnection.csproj", "{65E1401E-0F75-44C1-9B1A-8E611DCB0102}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpliceConnectionExample", "Model\Plugins\SpliceConnection\SpliceConnectionExample.csproj", "{65E1401E-0F75-44C1-9B1A-8E611DCB0102}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportXML", "Model\Applications\ExportXml\ExportXML.csproj", "{9B5133C9-C22B-43CD-80B9-42F5387E85C1}"
 EndProject
