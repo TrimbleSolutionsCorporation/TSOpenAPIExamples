@@ -134,6 +134,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{81A8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointCloudExample", "Model\Applications\PointCloudExample\PointCloudExample.csproj", "{F9F854B6-6EDA-4761-B960-5AA33B9AF015}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetComponentInputExample", "Model\Applications\GetComponentInputExample\GetComponentInputExample.csproj", "{CE7B4420-94DF-4A4A-A649-EF1120F0248A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -364,6 +366,10 @@ Global
 		{F9F854B6-6EDA-4761-B960-5AA33B9AF015}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9F854B6-6EDA-4761-B960-5AA33B9AF015}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9F854B6-6EDA-4761-B960-5AA33B9AF015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE7B4420-94DF-4A4A-A649-EF1120F0248A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE7B4420-94DF-4A4A-A649-EF1120F0248A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE7B4420-94DF-4A4A-A649-EF1120F0248A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE7B4420-94DF-4A4A-A649-EF1120F0248A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -429,6 +435,7 @@ Global
 		{FD15FBAD-D0C9-401A-8267-4BFEEC6D2847} = {C3233320-D56A-45C9-8970-72A424E95A58}
 		{81A88A96-C58D-4B3C-AC72-E41BCFC444AB} = {CF7929DC-7783-4EEE-A6F3-3A2464C6431C}
 		{F9F854B6-6EDA-4761-B960-5AA33B9AF015} = {1CA78FD6-133C-41BD-8FAB-67BE2D7D6578}
+		{CE7B4420-94DF-4A4A-A649-EF1120F0248A} = {1CA78FD6-133C-41BD-8FAB-67BE2D7D6578}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2D4D923-76D8-4C6E-9311-519744E14D29}

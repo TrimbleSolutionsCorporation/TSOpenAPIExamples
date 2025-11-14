@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWpf>true</UseWpf>
+    <PlatformTarget>x64</PlatformTarget>
+	</PropertyGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="Tekla.Structures.Model" Version="2025.0.0" />
+    <PackageReference Include="TSAppConfigPatcherTask" Version="2.1.3" />	
+  </ItemGroup>
+
+</Project>
