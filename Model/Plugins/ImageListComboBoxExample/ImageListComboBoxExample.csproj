@@ -7,9 +7,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Tekla.Structures.Dialog" Version="2025.0.0" />
-		<PackageReference Include="Tekla.Structures.Model" Version="2025.0.0" />
-		<PackageReference Include="Tekla.Structures.Drawing" Version="2025.0.0" />
+		<PackageReference Include="Tekla.Structures.Dialog" Version="2026.0.0" />
+		<PackageReference Include="Tekla.Structures.Model" Version="2026.0.0" />
+		<PackageReference Include="Tekla.Structures.Drawing" Version="2026.0.0" />
 		<Content Include="Resources\*.*" />
 		<Content Include="Images\*.*" />
 	</ItemGroup>

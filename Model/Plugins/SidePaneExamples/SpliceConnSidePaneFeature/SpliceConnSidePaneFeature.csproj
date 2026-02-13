@@ -4,7 +4,7 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Tekla.Structures.Plugins.PropertyPane" Version="2025.0.0" />
-    <PackageReference Include="TeklaFusion" Version="4.1.10" />
+    <PackageReference Include="Tekla.Structures.Plugins.PropertyPane" Version="2026.0.0" />
+    <PackageReference Include="TeklaFusion" Version="4.1.32" />
   </ItemGroup>
 </Project>

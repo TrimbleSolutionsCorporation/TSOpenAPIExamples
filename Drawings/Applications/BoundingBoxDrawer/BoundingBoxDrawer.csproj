@@ -10,8 +10,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Tekla.Structures.Drawing" Version="2025.0.0" />
-		<PackageReference Include="Tekla.Structures.Model" Version="2025.0.0" />
+		<PackageReference Include="Tekla.Structures.Drawing" Version="2026.0.0" />
+		<PackageReference Include="Tekla.Structures.Model" Version="2026.0.0" />
 	</ItemGroup>
 
 </Project>
