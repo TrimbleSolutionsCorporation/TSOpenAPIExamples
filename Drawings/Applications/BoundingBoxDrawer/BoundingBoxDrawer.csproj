@@ -7,6 +7,7 @@
 		<Nullable>enable</Nullable>
 		<LangVersion>Latest</LangVersion>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<PlatformTarget>x64</PlatformTarget>
 	</PropertyGroup>
 
 	<ItemGroup>
