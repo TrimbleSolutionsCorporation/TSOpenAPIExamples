@@ -5,8 +5,8 @@
     Name="Tekla Structures Open API Ribbon Example" Manufacturer="Trimble Solutions Corporation"  Description= "Creates custom ribbon for TeklaStructures Open API tools"
     IconPath="%InstallerFolder%\Bitmaps\Icon.png" Type="Extension">
     <TeklaVersions>
-      <TeklaVersion Name="2025.0"/>
-      <MinTeklaVersion Name="2025.0"/>
+      <TeklaVersion Name="2026.0"/>
+      <MinTeklaVersion Name="2026.0"/>
       <MaxTeklaVersion Name="2099.1"/>
     </TeklaVersions>
   </Product>
