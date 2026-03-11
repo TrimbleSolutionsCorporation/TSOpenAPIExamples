@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 using Tekla.Structures.Model;
+using Tekla.Structures.Model.PointCloudDataServices;
 using Tekla.Structures.Model.UI;
 
 namespace PointCloudExample
@@ -44,6 +46,32 @@ namespace PointCloudExample
             }
 
             pointCloud.SetVisibility(viewList, true);
+        }
+
+        private void buttonTCPointCloud_Click(object sender, EventArgs e)
+        {
+            Form1 programInstance = new Form1();
+            programInstance.AttachPointCloudFromTCProject().GetAwaiter().GetResult();
+        }
+
+        public async System.Threading.Tasks.Task AttachPointCloudFromTCProject()
+        {
+            var projects = await PointCloudDataServices.GetProjectsWithPointCloudsAsync();
+            var pointClouds = projects.First().PointClouds;
+            var url = await PointCloudDataServices.GetPointCloudUrlAsync(projects.First(), pointClouds.First());
+
+            PointCloud pointCloud = new PointCloud
+            {
+                Name = pointClouds.First().Name,
+                Url = url,
+                TcProjectId = projects.First().Id,
+                TcPointCloudGuid = pointClouds.First().Id,
+                LocationBy = Guid.Empty,
+                UseAutoCreatedBasePoint = true,
+                Scale = 1.0
+            };
+
+            pointCloud.Attach();
         }
     }
 }
