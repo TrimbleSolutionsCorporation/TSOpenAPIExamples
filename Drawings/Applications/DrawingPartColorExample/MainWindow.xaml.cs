@@ -20,21 +20,17 @@ namespace DrawingPartColorExample
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button pickedButton = (Button)sender;
-            ColorDialog colorDialog = new ColorDialog();
+            Button pickedButton = (Button)sender;           
+            var selectedColor = ColorSelection.ShowColorPalette(new TeklaDrawingColor(System.Drawing.Color.FromArgb(255, 0, 0)));
 
-            if (colorDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                if(pickedButton.Name == this.CorrectMarkColor.Name)
-                this.CorrectMarkColorBox.Fill = new SolidColorBrush(Color.FromArgb(colorDialog.Color.A, colorDialog.Color.R, colorDialog.Color.G, colorDialog.Color.B));
+            if (pickedButton.Name == this.CorrectMarkColor.Name)
+                this.CorrectMarkColorBox.Fill = new SolidColorBrush(Color.FromRgb(selectedColor.RGBColor.R, selectedColor.RGBColor.G, selectedColor.RGBColor.B));
 
-                if (pickedButton.Name == this.WrongMarkColor.Name)
-                    this.WrongMarkColorBox.Fill = new SolidColorBrush(Color.FromArgb(colorDialog.Color.A, colorDialog.Color.R, colorDialog.Color.G, colorDialog.Color.B));
+            if (pickedButton.Name == this.WrongMarkColor.Name)
+                this.WrongMarkColorBox.Fill = new SolidColorBrush(Color.FromRgb(selectedColor.RGBColor.R, selectedColor.RGBColor.G, selectedColor.RGBColor.B));
 
-                if (pickedButton.Name == this.NoMarkColor.Name)
-                    this.NoMarkColorBox.Fill = new SolidColorBrush(Color.FromArgb(colorDialog.Color.A, colorDialog.Color.R, colorDialog.Color.G, colorDialog.Color.B));
-
-            }
+            if (pickedButton.Name == this.NoMarkColor.Name)
+                this.NoMarkColorBox.Fill = new SolidColorBrush(Color.FromRgb(selectedColor.RGBColor.R, selectedColor.RGBColor.G, selectedColor.RGBColor.B));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
