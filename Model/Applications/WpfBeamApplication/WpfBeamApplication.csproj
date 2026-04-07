@@ -6,11 +6,10 @@
     <UseWpf>true</UseWpf>
     <PlatformTarget>x64</PlatformTarget>
 	</PropertyGroup>
-	
+
   <ItemGroup>
-    <PackageReference Include="Tekla.Structures.Dialog" Version="2026.0.0" />
-    <PackageReference Include="Tekla.Structures.Model" Version="2026.0.0" />
-    <PackageReference Include="TSAppConfigPatcherTask" Version="2.1.3" />	
+    <PackageReference Include="Tekla.Structures.Dialog" Version="2026.0.3" />
+    <PackageReference Include="TSAppConfigPatcherTask" Version="3.0.2" />
   </ItemGroup>
 
 </Project>
