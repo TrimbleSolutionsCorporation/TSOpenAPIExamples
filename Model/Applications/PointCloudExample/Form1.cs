@@ -51,12 +51,16 @@ namespace PointCloudExample
         private void buttonTCPointCloud_Click(object sender, EventArgs e)
         {
             Form1 programInstance = new Form1();
-            programInstance.AttachPointCloudFromTCProject().GetAwaiter().GetResult();
+            programInstance.AttachPointCloudFromTCProject().GetAwaiter().OnCompleted(() =>
+            {
+                MessageBox.Show("Point cloud attached from Trimble Connect project.");
+            });
         }
 
         public async System.Threading.Tasks.Task AttachPointCloudFromTCProject()
         {
             var projects = await PointCloudDataServices.GetProjectsWithPointCloudsAsync();
+            // Fetches points clouds uploaded to Trimble Connect with Reality Capture extension.
             var pointClouds = projects.First().PointClouds;
             var url = await PointCloudDataServices.GetPointCloudUrlAsync(projects.First(), pointClouds.First());
 
