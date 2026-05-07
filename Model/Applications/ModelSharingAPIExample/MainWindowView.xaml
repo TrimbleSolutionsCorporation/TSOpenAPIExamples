@@ -1,0 +1,88 @@
+﻿<Window x:Class="ModelSharingAPIExample.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:local="clr-namespace:ModelSharingAPIExample"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:tsm="clr-namespace:Tekla.Structures.Model;assembly=Tekla.Structures.Model"
+        Title="Model Sharing API Demo" Height="600" Width="480">
+  <Window.DataContext>
+    <local:MainWindowViewModel />
+  </Window.DataContext>
+  <DockPanel LastChildFill="False">
+    <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+      <CheckBox IsChecked="{Binding RunInWorkerThread}">Run in worker thread</CheckBox>
+      <CheckBox IsChecked="{Binding ShowProgressDialog}">Progress dialog</CheckBox>
+      <CheckBox IsChecked="{Binding WatchEvents}">Watch events</CheckBox>
+      <Button Command="{Binding ClearOutputCommand}">Clear</Button>
+    </DockPanel>
+    <TabControl DockPanel.Dock="Top" Grid.IsSharedSizeScope="True">
+      <TabItem Header="Misc">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition SharedSizeGroup="tabChildren"/>
+          </Grid.RowDefinitions>
+          <DockPanel x:Name="BiggestChild" LastChildFill="False">
+            <Button DockPanel.Dock="Top" Command="{Binding TestSharingOperationAsyncCommand}">Test Sharing Operation</Button>
+            <Button DockPanel.Dock="Top" Command="{Binding FakeResult1Command}" Visibility="Collapsed">Fake result 1</Button>
+            <TextBox DockPanel.Dock="Top" Text="{Binding InviteModelId}" ToolTip="Model Guid" />
+            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+              <TextBox DockPanel.Dock="Left" Text="{Binding NewUserEmail}" ToolTip="User email" MinWidth="150"/>
+              <ComboBox DockPanel.Dock="Left" SelectedItem="{Binding NewUserRole, Mode=TwoWay}">
+                <x:Static Member="tsm:SharingRole.Owner"/>
+                <x:Static Member="tsm:SharingRole.Editor"/>
+                <x:Static Member="tsm:SharingRole.ProjectViewer"/>
+                <x:Static Member="tsm:SharingRole.Viewer"/>
+              </ComboBox>
+              <CheckBox DockPanel.Dock="Left" IsChecked="{Binding NewUserSendEmail}">Send email</CheckBox>
+            </DockPanel>
+            <TextBox DockPanel.Dock="Top" Text="{Binding NewUserCustomMessage}" ToolTip="Custom message" AcceptsReturn="True" />
+            <Button DockPanel.Dock="Top" Command="{Binding InviteUserAsyncCommand}">Invite user</Button>
+            <Button DockPanel.Dock="Top" Command="{Binding GetModelsAsyncCommand}">Get shared models</Button>
+            <TextBox DockPanel.Dock="Top" Text="{Binding ModelToExclude}" ToolTip="Model To Exclude"/>
+            <Button DockPanel.Dock="Top" Command="{Binding ExcludeFromSharingAsyncCommand}">Exclude</Button>
+          </DockPanel>
+        </Grid>
+      </TabItem>
+      <TabItem Header="Write">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition SharedSizeGroup="tabChildren"/>
+          </Grid.RowDefinitions>
+          <DockPanel LastChildFill="False">
+            <Button DockPanel.Dock="Top" Command="{Binding GetLocationsAsyncCommand}">Get locations</Button>
+            <DockPanel DockPanel.Dock="Top">
+              <TextBox DockPanel.Dock="Left" Text="{Binding NewModelCode}" ToolTip="Code" MinWidth="50"/>
+              <TextBox DockPanel.Dock="Left" Text="{Binding NewModelDescription}" ToolTip="Description" MinWidth="50"/>
+              <ComboBox SelectedItem="{Binding NewModelLocation}" ItemsSource="{Binding AvailableLocations}" DisplayMemberPath="DisplayName"/>
+            </DockPanel>
+            <Button DockPanel.Dock="Top" Command="{Binding StartSharingAsyncCommand}">Start Sharing</Button>
+            <Button DockPanel.Dock="Top" Command="{Binding WriteOutAsyncCommand}">Write Out</Button>
+            <Button DockPanel.Dock="Top" Command="{Binding CreateBaselineAsyncCommand}">Create Baseline</Button>
+            <TextBox DockPanel.Dock="Top" Text="{Binding ModelIdToRemove}" ToolTip="Model To Remove from service"/>
+            <Button DockPanel.Dock="Top" Command="{Binding RemoveModelAsyncCommand}">Remove from service</Button>
+          </DockPanel>
+        </Grid>
+      </TabItem>
+      <TabItem Header="Read">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition SharedSizeGroup="tabChildren"/>
+          </Grid.RowDefinitions>
+          <DockPanel LastChildFill="False">
+            <TextBox DockPanel.Dock="Top" Text="{Binding ModelIdToGetUpdates}" ToolTip="Model To get updates"/>
+            <Button DockPanel.Dock="Top" Command="{Binding GetUpdatesAsyncCommand}">Get Updates</Button>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+              <Button DockPanel.Dock="Right" Command="{Binding SetJonPathCommand}" >...</Button>
+              <TextBox DockPanel.Dock="Left" Text="{Binding JoinPath}" ToolTip="Join Path" />
+            </DockPanel>
+            <TextBox DockPanel.Dock="Top" Text="{Binding ModelIdToJoin}" ToolTip="Model To Join"/>
+            <TextBox DockPanel.Dock="Top" Text="{Binding UpdateIdToJoin}" ToolTip="Update To Join"/>
+            <Button DockPanel.Dock="Top" Command="{Binding JoinAsyncCommand}">Join</Button>
+            <Button DockPanel.Dock="Top" Command="{Binding ReadInAsyncCommand}">Read In</Button>
+          </DockPanel>
+        </Grid>
+      </TabItem>
+    </TabControl>
+    <TextBox DockPanel.Dock="Top" Text="{Binding Output, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"
+                 Height="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"></TextBox>
+  </DockPanel>
+</Window>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32414.318
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11723.189 insiders
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicViews", "Drawings\Applications\BasicViews\BasicViews.csproj", "{B766A520-16B3-4311-8F7D-6C17D79BDE58}"
 EndProject
@@ -135,6 +135,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointCloudExample", "Model\Applications\PointCloudExample\PointCloudExample.csproj", "{F9F854B6-6EDA-4761-B960-5AA33B9AF015}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetComponentInputExample", "Model\Applications\GetComponentInputExample\GetComponentInputExample.csproj", "{CE7B4420-94DF-4A4A-A649-EF1120F0248A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelSharingAPIExample", "Model\Applications\ModelSharingAPIExample\ModelSharingAPIExample.csproj", "{8B703FA0-69CD-78BD-3C88-88B7E97C25C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -370,6 +372,10 @@ Global
 		{CE7B4420-94DF-4A4A-A649-EF1120F0248A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE7B4420-94DF-4A4A-A649-EF1120F0248A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE7B4420-94DF-4A4A-A649-EF1120F0248A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B703FA0-69CD-78BD-3C88-88B7E97C25C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B703FA0-69CD-78BD-3C88-88B7E97C25C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B703FA0-69CD-78BD-3C88-88B7E97C25C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B703FA0-69CD-78BD-3C88-88B7E97C25C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -436,6 +442,7 @@ Global
 		{81A88A96-C58D-4B3C-AC72-E41BCFC444AB} = {CF7929DC-7783-4EEE-A6F3-3A2464C6431C}
 		{F9F854B6-6EDA-4761-B960-5AA33B9AF015} = {1CA78FD6-133C-41BD-8FAB-67BE2D7D6578}
 		{CE7B4420-94DF-4A4A-A649-EF1120F0248A} = {1CA78FD6-133C-41BD-8FAB-67BE2D7D6578}
+		{8B703FA0-69CD-78BD-3C88-88B7E97C25C0} = {1CA78FD6-133C-41BD-8FAB-67BE2D7D6578}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2D4D923-76D8-4C6E-9311-519744E14D29}
