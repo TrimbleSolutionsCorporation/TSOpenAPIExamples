@@ -71,8 +71,8 @@ namespace ExportComponents
             "CAD",
             "DGN",
             "DWG/DXF",
-            "FEM",
-            "IFC"});
+            "FEM"});
+            // "IFC"}); - IFC component deleted in version 2026. Use method CreateIFC2x3Export instead
             this.comboBoxFormat.Location = new System.Drawing.Point(435, 100);
             this.comboBoxFormat.Name = "comboBoxFormat";
             this.comboBoxFormat.Size = new System.Drawing.Size(414, 39);

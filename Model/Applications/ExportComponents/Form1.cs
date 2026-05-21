@@ -69,11 +69,12 @@ namespace ExportComponents
                     SelectedFormat_Number = 1000004;
                     SelectedFormat_Name = "FEM"; // It can be anything
                     break;
-                case "IFC":
-                    FillAttributeComboBox("IFCExportPlugin.MainDialog.xml");
-                    SelectedFormat_Number = Tekla.Structures.Model.BaseComponent.PLUGIN_OBJECT_NUMBER; //Mandatory
-                    SelectedFormat_Name = "ExportIFC"; // Mandatory
-                    break;
+                // IFC component deleted in version 2026. Use method CreateIFC2x3Export instead
+                //case "IFC":
+                //    FillAttributeComboBox("IFCExportPlugin.MainDialog.xml");
+                //    SelectedFormat_Number = Tekla.Structures.Model.BaseComponent.PLUGIN_OBJECT_NUMBER; //Mandatory
+                //    SelectedFormat_Name = "ExportIFC"; // Mandatory
+                //    break;
             }
 
             comboBoxFile.Enabled = true;
