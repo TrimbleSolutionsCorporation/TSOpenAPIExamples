@@ -13,7 +13,6 @@ namespace BeamApplication
             InitializeForm();
         }
 
-        //Use default values for plugins in models without a standard attribute file
         protected override string LoadValuesPath(string fileName)
         {
             SetAttributeValue(textBox1, "HEA200");
