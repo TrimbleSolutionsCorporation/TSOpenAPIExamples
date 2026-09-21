@@ -1,0 +1,475 @@
+﻿<tsd:PluginWindowBase
+    x:Class="TeklaWPFConnection.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TeklaWPFConnection"
+    xmlns:ui="http://schemas.trimble.com/fusion"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"
+    Title="WPF Plugin Connection Template"
+    Width="794"
+    Height="588"
+    HorizontalAlignment="Stretch"
+    mc:Ignorable="d">
+    <!--Loaded="{ui:CommandHandler OnLoaded}"-->
+    <d:UserControl.DataContext>
+        <local:MainWindowViewModel />
+    </d:UserControl.DataContext>
+
+    <!-- Used if Fusion is available-->
+    <!--<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                -->
+    <!--
+                    This resource URL found in FusionExample/Properties/DesignTimeResources.xaml on github
+                    It imports the TS style used at runtime, so it's useful to better be able to see the end results.
+                -->
+    <!--
+                <ResourceDictionary Source="/Fusion;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="48" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" MinHeight="48" />
+        </Grid.RowDefinitions>
+        <UIControls:WpfSaveLoad
+            Grid.Row="0"
+            Margin="0,0,0,0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top" />
+        <TabControl Grid.Row="1">
+            <TabItem x:Name="parameterTab" Header="Parameters">
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="175" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="175" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Grid.RowSpan="5">
+                        <Button x:Name="weldButton1" Width="150" Height="50" MouseEnter="Button_MouseEnter" Content="Weld1"
+                                Tag="{Binding WeldButton1, Mode=TwoWay}" MouseLeave="Button_MouseLeave" Click="WeldButton_Click"></Button>
+
+                        <Button x:Name="weldButton2" Width="150" Height="50" MouseEnter="Button_MouseEnter" Content="Weld2"
+                                Tag="{Binding WeldButton2, Mode=TwoWay}" MouseLeave="Button_MouseLeave" Click="WeldButton_Click"></Button>
+                        <Button x:Name="partButton1" Width="150" Height="50" MouseEnter="Button_MouseEnter" Content="Part1"
+                                Tag="{Binding PartButton1, Mode=TwoWay}" MouseLeave="Button_MouseLeave" Click="PartButton_Click"></Button>
+                        <Button x:Name="partButton2" Width="150" Height="50" MouseEnter="Button_MouseEnter" Content="Part2"
+                                Tag="{Binding PartButton2, Mode=TwoWay}" MouseLeave="Button_MouseLeave" Click="PartButton_Click"></Button>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Background="Transparent"
+                                HorizontalAlignment="Center" Grid.RowSpan="5">
+
+                        <!--  Large staircase image  -->
+                        <Image x:Name="mainImage" Source="/TeklaWPFConnection;component/Resources/Main2.bmp">
+                        </Image>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" Grid.RowSpan="5">
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="webAdjustTab" Header="Web Adjust">
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <Label
+                    x:Name="partNameLabel"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Part_name" />
+                        <UIControls:WpfFilterCheckBox
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            AttributeName="name">
+                        </UIControls:WpfFilterCheckBox>
+                        <TextBox
+                           x:Name="partNameTextBox"
+                           Width="120"
+                           Height="23"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="{Binding Name, Mode=TwoWay}"
+                           TextWrapping="Wrap">
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <Label
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Length_factor"
+                    RenderTransformOrigin="0.754,-0.24" />
+                        <ComboBox
+                    Width="90"
+                    VerticalAlignment="Center"
+                    SelectedIndex="{Binding Path=LengthFactor, Mode=TwoWay}">
+                            <TextBlock Text="1" />
+                            <TextBlock Text="2" />
+                            <TextBlock Text="3" />
+                            <TextBlock Text="4" />
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Label
+                    x:Name="label_Copy"
+                    Width="100"
+                    Height="30"
+                    Content="Profile" />
+                        <UIControls:WpfFilterCheckBox VerticalAlignment="Center" AttributeName="profile" />
+                        <TextBox
+                    x:Name="textBox_Copy"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding Profilename, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                        <UIControls:WpfProfileCatalog
+                    x:Name="profileCatalog"
+                    VerticalAlignment="Center"
+                    SelectClicked="profileCatalog_SelectClicked"
+                    SelectionDone="profileCatalog_SelectionDone" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <Label
+                    x:Name="label_Copy1"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Offset" />
+                        <UIControls:WpfFilterCheckBox
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    AttributeName="offset" />
+                        <TextBox
+                    x:Name="textBox_Copy1"
+                    Width="120"
+                    Height="23"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Text="{Binding Offset, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Orientation="Horizontal">
+                        <Label
+                    x:Name="label_Material"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Material" />
+                        <UIControls:WpfFilterCheckBox
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    AttributeName="material" />
+                        <TextBox
+                    x:Name="materialBoxT2"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding Material, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                        <UIControls:WpfMaterialCatalog
+                    x:Name="materialCatalog"
+                    VerticalAlignment="Center"
+                    BorderThickness="0"
+                    FontSize="6"
+                    SelectClicked="WPFMaterialCatalog_SelectClicked"
+                    SelectionDone="WPFMaterialCatalog_SelectionDone" />
+                    </StackPanel>
+                    <StackPanel
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Orientation="Horizontal">
+                        <Label
+                    x:Name="label_component"
+                    Width="100"
+                    Height="30"
+                    VerticalAlignment="Center"
+                    Content="Component" />
+                        <UIControls:WpfFilterCheckBox VerticalAlignment="Center" AttributeName="componentname" />
+                        <TextBox
+                    x:Name="componentnameBox"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding ComponentName, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                        <UIControls:WpfFilterCheckBox VerticalAlignment="Center" AttributeName="componentnumber" />
+                        <TextBox
+                    x:Name="componentnumberBox"
+                    Width="120"
+                    Height="23"
+                    VerticalAlignment="Center"
+                    Text="{Binding ComponentNumber, Mode=TwoWay}"
+                    TextWrapping="Wrap" />
+                        <UIControls:WpfComponentCatalog
+                    x:Name="componentCatalog"
+                    VerticalAlignment="Center"
+                    SelectClicked="componentCatalog_SelectClicked"
+                    SelectionDone="componentCatalog_SelectionDone" />
+                    </StackPanel>
+                    <Image Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" 
+                           Source="pack://application:,,,/TeklaWPFConnection;component/Resources/Main.bmp">
+
+                    </Image>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="optionsTab" Header="Options">
+                
+                <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                    <Image
+                            Name="imgbmp"
+                            Height="200"
+                            Width="500"
+                            Margin="0,0,0,0"
+                            Panel.ZIndex="0"
+                            RenderOptions.BitmapScalingMode="HighQuality" 
+                            Source="pack://application:,,,/TeklaWPFConnection;component/Resources/Main.bmp"
+                            >
+                    </Image>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="generalTab" Header="General">
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <Label
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Width="180" Height="30"
+                    Content="Up direction"
+                    RenderTransformOrigin="0.754,-0.24" />
+                                <UIControls:WpfFilterCheckBox
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            AttributeName="zsuunta">
+                                </UIControls:WpfFilterCheckBox>
+                                <ComboBox
+                    Width="120" Height="23"
+                    VerticalAlignment="Center"
+                    SelectedIndex="{Binding Path=Zsuunta, Mode=TwoWay}">
+                                    <TextBlock Text="none" />
+                                    <TextBlock Text="-z" />
+                                    <TextBlock Text="+z" />
+                                    <TextBlock Text="+x" />
+                                    <TextBlock Text="-x" />
+                                    <TextBlock Text="-y" />
+                                    <TextBlock Text="+y" />
+                                    <TextBlock Text="auto" />
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label
+                    x:Name="zang1Label"
+                    Width="180" Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="" />
+                                <UIControls:WpfFilterCheckBox
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            AttributeName="zang1">
+                                </UIControls:WpfFilterCheckBox>
+                                <TextBox
+                           x:Name="zang1TextBox"
+                           Width="120" Height="23"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="{Binding Zang1, Mode=TwoWay}"
+                           TextWrapping="Wrap">
+                                </TextBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label
+                    x:Name="zang2Label"
+                    Width="180" Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="" />
+                                <UIControls:WpfFilterCheckBox
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            AttributeName="zang2">
+                                </UIControls:WpfFilterCheckBox>
+                                <TextBox
+                           x:Name="zang2TextBox"
+                           Width="120" Height="23"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="{Binding Zang2, Mode=TwoWay}"
+                           TextWrapping="Wrap">
+                                </TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                        <Image
+                            Grid.Column="1"
+                            Name="dirImage"
+                            Height="80"
+                            Width="100"
+                            VerticalAlignment="Top" HorizontalAlignment="Left"
+                            Margin="0,0,0,0"
+                            Panel.ZIndex="0"
+                            RenderOptions.BitmapScalingMode="HighQuality" 
+                            Source="pack://application:,,,/TeklaWPFConnection;component/Resources/UpDirection.PNG"
+                            >
+                        </Image>
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Label
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Width="180" Height="30"
+                    Content="Locked"
+                    RenderTransformOrigin="0.754,-0.24" />
+                        <UIControls:WpfFilterCheckBox
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            AttributeName="OBJECT_LOCKED">
+                        </UIControls:WpfFilterCheckBox>
+                        <ComboBox
+                    Width="120" Height="23"
+                    VerticalAlignment="Center"
+                    SelectedIndex="{Binding Path=OBJECT_LOCKED, Mode=TwoWay}">
+                            <TextBlock Text="No" />
+                            <TextBlock Text="Yes" />
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <Label
+                    x:Name="group_noLabel"
+                    Width="180" Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Class" />
+                        <UIControls:WpfFilterCheckBox
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            AttributeName="group_no">
+                        </UIControls:WpfFilterCheckBox>
+                        <TextBox
+                           x:Name="group_noTextBox"
+                           Width="120" Height="23"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="{Binding Group_no, Mode=TwoWay}"
+                           TextWrapping="Wrap">
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Orientation="Horizontal">
+                        <Label
+                    x:Name="joint_codeLabel"
+                    Width="180" Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="Connection code" />
+                        <UIControls:WpfFilterCheckBox
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            AttributeName="joint_code">
+                        </UIControls:WpfFilterCheckBox>
+                        <TextBox
+                           x:Name="joint_codeTextBox"
+                           Width="120" Height="23"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="{Binding Joint_code, Mode=TwoWay}"
+                           TextWrapping="Wrap">
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Orientation="Horizontal">
+                        <Label
+                    x:Name="ad_rootLabel"
+                    Width="180" Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="AutoDefaults rules group" />
+                        <UIControls:WpfFilterCheckBox
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            AttributeName="ad_root">
+                        </UIControls:WpfFilterCheckBox>
+                        <TextBox
+                           x:Name="ad_rootTextBox"
+                           Width="120" Height="23"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="{Binding Ad_root, Mode=TwoWay}"
+                           TextWrapping="Wrap">
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="5" Orientation="Horizontal">
+                        <Label
+                    x:Name="ac_rootLabel"
+                    Width="180" Height="30"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Content="AutoConnection rule group" />
+                        <UIControls:WpfFilterCheckBox
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            AttributeName="ac_root">
+                        </UIControls:WpfFilterCheckBox>
+                        <TextBox
+                           x:Name="ac_rootTextBox"
+                           Width="120" Height="23"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Text="{Binding Ac_root, Mode=TwoWay}"
+                           TextWrapping="Wrap">
+                        </TextBox>
+                    </StackPanel>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <UIControls:WpfOkApplyModifyGetOnOffCancel
+            Grid.Row="2"
+            ApplyClicked="WPFOkApplyModifyGetOnOffCancel_ApplyClicked"
+            CancelClicked="WPFOkApplyModifyGetOnOffCancel_CancelClicked"
+            GetClicked="WPFOkApplyModifyGetOnOffCancel_GetClicked"
+            ModifyClicked="WPFOkApplyModifyGetOnOffCancel_ModifyClicked"
+            OkClicked="WPFOkApplyModifyGetOnOffCancel_OkClicked"
+            OnOffClicked="WPFOkApplyModifyGetOnOffCancel_OnOffClicked" />
+    </Grid>
+</tsd:PluginWindowBase>
