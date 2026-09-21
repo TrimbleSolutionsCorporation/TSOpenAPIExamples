@@ -1,10 +1,10 @@
 ﻿<tsd:PluginWindowBase
-    x:Class="TeklaWPFConnection.MainWindow"
+    x:Class="WPFConnection.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:TeklaWPFConnection"
+    xmlns:local="clr-namespace:WPFConnection"
     xmlns:ui="http://schemas.trimble.com/fusion"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"

@@ -6,8 +6,8 @@
     <Copyright>Copyright © 1992-$([System.DateTime]::Now.ToString("yyyy")) Trimble Solutions Corporation and its licensors. All rights reserved.</Copyright>
 	<UseWPF>true</UseWPF>
 	<UseWindowsForms>true</UseWindowsForms>
-	<RootNamespace>TeklaWPFConnection</RootNamespace>
-	<AssemblyName>TeklaWPFConnectionBase</AssemblyName>
+	<RootNamespace>WPFConnection</RootNamespace>
+	<AssemblyName>WPFConnectionBase</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
 	<PackageReference Include="Tekla.Structures.Drawing" Version="2026.0.3" />

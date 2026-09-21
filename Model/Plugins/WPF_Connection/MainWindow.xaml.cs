@@ -7,7 +7,7 @@ using System.Windows.Media.Imaging;
 using Tekla.Structures.Dialog;
 
 
-namespace TeklaWPFConnection
+namespace WPFConnection
 {
     /// <summary>
     /// Interaction logic for MainPluginWindow.xaml

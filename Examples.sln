@@ -138,7 +138,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetComponentInputExample", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelSharingAPIExample", "Model\Applications\ModelSharingAPIExample\ModelSharingAPIExample.csproj", "{8B703FA0-69CD-78BD-3C88-88B7E97C25C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeklaWPFConnection", "Model\Plugins\WPF_Connection\TeklaWPFConnection.csproj", "{602C236A-B034-2712-6650-D440AEF30A71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFConnection", "Model\Plugins\WPF_Connection\WPFConnection.csproj", "{602C236A-B034-2712-6650-D440AEF30A71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

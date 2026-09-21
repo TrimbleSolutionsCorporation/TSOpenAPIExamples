@@ -7,7 +7,7 @@ using Tekla.Structures.Dialog;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using TD = Tekla.Structures.Datatype;
 
-namespace TeklaWPFConnection
+namespace WPFConnection
 {
     /// <summary>
     /// Data logic for MainWindow

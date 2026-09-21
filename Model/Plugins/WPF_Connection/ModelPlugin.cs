@@ -6,7 +6,7 @@ using Tekla.Structures.Geometry3d;
 using Tekla.Structures.Model;
 using Tekla.Structures.Plugins;
 
-namespace TeklaWPFConnection
+namespace WPFConnection
 {
     public class PluginData
     {
@@ -81,8 +81,8 @@ namespace TeklaWPFConnection
         #endregion
     }
 
-    [Plugin("TeklaWPFConnection")]
-    [PluginUserInterface("TeklaWPFConnection.MainWindow")]
+    [Plugin("WPFConnection")]
+    [PluginUserInterface("WPFConnection.MainWindow")]
     [SecondaryType(ConnectionBase.SecondaryType.SECONDARYTYPE_ONE)]
     [AutoDirectionType(AutoDirectionTypeEnum.AUTODIR_BASIC)]
     [PositionType(PositionTypeEnum.MIDDLE_PLANE)]
