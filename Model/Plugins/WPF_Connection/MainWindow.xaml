@@ -8,30 +8,14 @@
     xmlns:ui="http://schemas.trimble.com/fusion"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"
-    Title="WPF Plugin Connection Template"
+    Title="WPF Plugin ConnectionBase"
     Width="794"
     Height="588"
     HorizontalAlignment="Stretch"
     mc:Ignorable="d">
-    <!--Loaded="{ui:CommandHandler OnLoaded}"-->
     <d:UserControl.DataContext>
         <local:MainWindowViewModel />
     </d:UserControl.DataContext>
-
-    <!-- Used if Fusion is available-->
-    <!--<Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                -->
-    <!--
-                    This resource URL found in FusionExample/Properties/DesignTimeResources.xaml on github
-                    It imports the TS style used at runtime, so it's useful to better be able to see the end results.
-                -->
-    <!--
-                <ResourceDictionary Source="/Fusion;component/Themes/Generic.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="48" />
@@ -44,44 +28,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Top" />
         <TabControl Grid.Row="1">
-            <TabItem x:Name="parameterTab" Header="Parameters">
-                <Grid Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="175" />
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="175" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Grid.RowSpan="5">
-                        <Button x:Name="weldButton1" Width="150" Height="50" MouseEnter="Button_MouseEnter" Content="Weld1"
-                                Tag="{Binding WeldButton1, Mode=TwoWay}" MouseLeave="Button_MouseLeave" Click="WeldButton_Click"></Button>
-
-                        <Button x:Name="weldButton2" Width="150" Height="50" MouseEnter="Button_MouseEnter" Content="Weld2"
-                                Tag="{Binding WeldButton2, Mode=TwoWay}" MouseLeave="Button_MouseLeave" Click="WeldButton_Click"></Button>
-                        <Button x:Name="partButton1" Width="150" Height="50" MouseEnter="Button_MouseEnter" Content="Part1"
-                                Tag="{Binding PartButton1, Mode=TwoWay}" MouseLeave="Button_MouseLeave" Click="PartButton_Click"></Button>
-                        <Button x:Name="partButton2" Width="150" Height="50" MouseEnter="Button_MouseEnter" Content="Part2"
-                                Tag="{Binding PartButton2, Mode=TwoWay}" MouseLeave="Button_MouseLeave" Click="PartButton_Click"></Button>
-                    </StackPanel>
-                    <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Background="Transparent"
-                                HorizontalAlignment="Center" Grid.RowSpan="5">
-
-                        <!--  Large staircase image  -->
-                        <Image x:Name="mainImage" Source="/TeklaWPFConnection;component/Resources/Main2.bmp">
-                        </Image>
-                    </StackPanel>
-                    <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" Grid.RowSpan="5">
-
-                    </StackPanel>
-                </Grid>
-            </TabItem>
-            <TabItem x:Name="webAdjustTab" Header="Web Adjust">
+            <TabItem x:Name="PartTab" Header="Part Parameters">
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -233,27 +180,7 @@
                     SelectClicked="componentCatalog_SelectClicked"
                     SelectionDone="componentCatalog_SelectionDone" />
                     </StackPanel>
-                    <Image Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" 
-                           Source="pack://application:,,,/TeklaWPFConnection;component/Resources/Main.bmp">
-
-                    </Image>
                 </Grid>
-            </TabItem>
-            <TabItem x:Name="optionsTab" Header="Options">
-                
-                <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" VerticalAlignment="Center"
-                            HorizontalAlignment="Center">
-                    <Image
-                            Name="imgbmp"
-                            Height="200"
-                            Width="500"
-                            Margin="0,0,0,0"
-                            Panel.ZIndex="0"
-                            RenderOptions.BitmapScalingMode="HighQuality" 
-                            Source="pack://application:,,,/TeklaWPFConnection;component/Resources/Main.bmp"
-                            >
-                    </Image>
-                </StackPanel>
             </TabItem>
             <TabItem x:Name="generalTab" Header="General">
                 <Grid Grid.Row="1">
@@ -339,18 +266,6 @@
                                 </TextBox>
                             </StackPanel>
                         </StackPanel>
-                        <Image
-                            Grid.Column="1"
-                            Name="dirImage"
-                            Height="80"
-                            Width="100"
-                            VerticalAlignment="Top" HorizontalAlignment="Left"
-                            Margin="0,0,0,0"
-                            Panel.ZIndex="0"
-                            RenderOptions.BitmapScalingMode="HighQuality" 
-                            Source="pack://application:,,,/TeklaWPFConnection;component/Resources/UpDirection.PNG"
-                            >
-                        </Image>
                     </StackPanel>
 
 

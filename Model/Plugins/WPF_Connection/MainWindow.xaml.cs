@@ -1,15 +1,10 @@
-﻿//using OffshoreLibrary;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-//using System.Windows.Forms;
 using System.Windows.Media.Imaging;
 using Tekla.Structures.Dialog;
-using Tekla.Structures.Model;
 
 
 namespace TeklaWPFConnection
@@ -19,13 +14,11 @@ namespace TeklaWPFConnection
     /// </summary>
     public partial class MainWindow : PluginWindowBase
     {
-        // define event
         #region Global Variables
         public MainWindowViewModel dataModel;
 
         #region Custom Weld Form from Offshore Library 
         public static MainWindow mainWindow;
-        //static WeldLogic WL = new WeldLogic();
         #endregion
 
         #endregion
@@ -151,20 +144,12 @@ namespace TeklaWPFConnection
                 WeldParams = "";
             }
             Window parentWindow = this;
-            //OffshoreLibrary.WeldForm weldForm = new OffshoreLibrary.WeldForm();
-            //weldForm.WeldProperties= WeldParams;
-            //weldForm.Owner= parentWindow;
-            //weldForm.OwnerPluginName = parentWindow.GetType().FullName;
-            //weldForm.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-            //weldForm.ShowDialog();
-            //SetButtonTagProperty(button, weldForm.WeldProperties);
 
             UpdateWeldButtonInfo(button);
         }
 
         private static void UpdateWeldButtonInfo(Button sender)
         {
-            //WL.SetWeldInfoToButton(sender);
         }
 
         private void SetButtonTagProperty(Button sender, string Param)
@@ -179,7 +164,6 @@ namespace TeklaWPFConnection
             logo.BeginInit();
             logo.UriSource = new Uri(@"/TeklaWPFConnection;component/Resources/Main2.bmp", UriKind.RelativeOrAbsolute);
             logo.EndInit();
-            mainImage.Source = logo;
         }
 
         private void Button_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
@@ -188,7 +172,6 @@ namespace TeklaWPFConnection
             logo.BeginInit();
             logo.UriSource = new Uri(@"/TeklaWPFConnection;component/Resources/Main.bmp", UriKind.RelativeOrAbsolute);
             logo.EndInit();
-            mainImage.Source = logo;
         }
         #endregion
 
@@ -202,15 +185,6 @@ namespace TeklaWPFConnection
                 PartParams = "";
             }
             Window parentWindow = this;
-            //OffshoreLibrary.PartForm partForm = new OffshoreLibrary.PartForm(true);
-            //partForm.PartProperties = PartParams;
-            //partForm.Owner = parentWindow;
-            //partForm.OwnerPluginName = parentWindow.GetType().FullName;
-            //partForm.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-            //partForm.ShowDialog();
-            //SetButtonTagProperty(partbutton, partForm.PartProperties);
-
-            //UpdateWeldButtonInfo(button);
         }
     }
 }

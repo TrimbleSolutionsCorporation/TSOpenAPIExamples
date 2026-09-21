@@ -1,4 +1,3 @@
-//using OffshoreLibrary;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -116,13 +115,6 @@ namespace TeklaWPFConnection
         #endregion
         #endregion
 
-        //WeldLogic CreateWeld = new WeldLogic();
-        //List<string> WeldList = new List<string>();
-        //List<string> OverrideList = new List<string>();
-        //List<Guid> WeldFamilyList = new List<Guid>();
-
-        //PartData.PData_s _pButton1 = new PartData.PData_s();
-        //PartData.PData_s _pButton2 = new PartData.PData_s();
         #endregion
 
         #region Properties
@@ -153,18 +145,18 @@ namespace TeklaWPFConnection
         {
             try
             {
-                //if (DrawModel.CheckTimeLock())
                 {
                     List<ModelObject> SelectedList = new List<ModelObject>
                     {
                         new Model().SelectModelObject(Primary),
-                        new Model().SelectModelObject(Secondaries[0] as Identifier)
+                        new Model().SelectModelObject(Secondaries[0])
                     };
 
                     GetValuesFromDialog();
 
-                    Beam myBeam = new Beam(new Point(0, 0, 0), new Point(1000, 0, 0));
-                    myBeam.Profile.ProfileString = "HEA300";
+                    Beam myBeam = new Beam(new Point(0, 0, 0), new Point(1000 * _LengthFactor, 0, 0));
+                    myBeam.Profile.ProfileString = _Profile;
+                    myBeam.Material.MaterialString = _Material;
                     myBeam.Insert();
 
                     //Write connection methods here
@@ -214,19 +206,6 @@ namespace TeklaWPFConnection
             if (IsDefaultValue(_LengthFactor) || _LengthFactor == 0)
                 _Offset = 1;
             #endregion
-
-            //WeldList.Add(Data.weldButton1);
-            //WeldList.Add(Data.weldButton2);
-
-
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    WeldFamilyList.Add(Guid.NewGuid());
-            //}
-
-            //PartData PD = new PartData();
-            //_pButton1 = PD.GetPartProperties(Data.partButton1);
-            //_pButton2 = PD.GetPartProperties(Data.partButton2);
 
         }
         // Write your private methods here.
