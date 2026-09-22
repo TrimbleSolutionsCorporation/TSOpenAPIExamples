@@ -26,6 +26,7 @@ namespace SpliceConn
         [StructuresField("joint_code")] // It is mandatory to use type string for this attribute
         public string ConnectionCode;
         [StructuresField("ad_root")] // It is mandatory to use type string for this attribute
+        // AutoDefaults not working with plugins yet
         public string AutoDefaults;
         [StructuresField("ac_root")] // It is mandatory to use type string for this attribute
         public string AutoConnection;
